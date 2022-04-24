@@ -30,8 +30,8 @@ const Routing = () => {
                         tabBarIcon: ({ focused }) => (
                             <Ionicons
                                 name="ios-calendar-outline"
-                                color={focused ? COLORS.bottomTabBg : '#000'}
-                                size={30}
+                                color={focused ? '#fff' : '#63D471'}
+                                size={28}
                             />
                         ),
                     }}
@@ -45,8 +45,8 @@ const Routing = () => {
                         tabBarIcon: ({ focused }) => (
                             <Ionicons
                                 name="md-people-outline"
-                                color={focused ? COLORS.bottomTabBg : '#000'}
-                                size={30}
+                                color={focused ? '#fff' : '#63D471'}
+                                size={25}
                             />
                         )
                     }}
@@ -60,8 +60,8 @@ const Routing = () => {
                         tabBarIcon: ({ focused }) => (
                             <Ionicons
                                 name="bulb-outline"
-                                color={focused ? COLORS.bottomTabBg : '#000'}
-                                size={30}
+                                color={focused ? '#fff' : '#63D471'}
+                                size={25}
                             />
                         )
                     }}
@@ -75,8 +75,8 @@ const Routing = () => {
                         tabBarIcon: ({ focused }) => (
                             <Feather
                                 name="phone-call"
-                                color={focused ? COLORS.bottomTabBg : '#000'}
-                                size={30}
+                                color={focused ? '#fff' : '#63D471'}
+                                size={25}
                             />
                         )
                     }}
@@ -99,6 +99,7 @@ const styles = StyleSheet.create({
                 height: 70,
             },
         }),
+        backgroundColor: '#1b5433',
     },
 });
 

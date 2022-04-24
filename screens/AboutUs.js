@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import {
     Text,
-    View,
     StyleSheet,
     SafeAreaView,
-} from 'react-native'
-import COLORS from "../constants/colors";
+} from 'react-native';
+import ContactUs from "./ContactUs";
+import About from "../components/About";
 import Header from "../components/header";
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 
@@ -29,7 +29,6 @@ class AboutUsScreen extends Component {
         return (
             <SafeAreaView style={styles.background}>
                 <Header heading="About Us" />
-
                 <SegmentedControlTab
                     borderRadius={10}
                     tabStyle={styles.tabStyle}
@@ -41,7 +40,7 @@ class AboutUsScreen extends Component {
                     activeTabTextStyle={styles.activeTabTextStyle}
                     tabsContainerStyle={styles.tabsContainerStyle}
                 />
-
+                {this.state.selectedIndex === 0 ? (<About />) : <ContactUs />}
             </SafeAreaView >
         )
     }
@@ -50,11 +49,20 @@ class AboutUsScreen extends Component {
 const styles = StyleSheet.create({
     background: {
         flex: 1,
-        backgroundColor: COLORS.screenBg
+        backgroundColor: '#FFF', 
     },
     tabStyle: {
+        width: 'auto',
+        elevation: 23,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 11,
+        },
+        shadowOpacity: 0.57,
+        shadowRadius: 15.19,
         borderColor: 'transparent',
-        backgroundColor: '#CDDECF',
+        backgroundColor: '#D9DDDB',
     },
     tabsContainerStyle: {
         height: 43,
@@ -71,8 +79,8 @@ const styles = StyleSheet.create({
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
         backgroundColor: 'white',
-        borderTopRightRadius: 10,
-        borderBottomRightRadius: 10
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10
     },
     activeTabTextStyle: {
         color: 'black',
@@ -82,7 +90,7 @@ const styles = StyleSheet.create({
         color: 'black',
         fontSize: 16,
         fontFamily: 'PTSerif-Regular'
-    }
+    },
 })
 
 
