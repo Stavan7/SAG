@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   headingText: {
     fontSize: 23,
     color: 'white',
-    fontFamily:'Roboto-Bold'
+    fontFamily:'PTSerif-Bold'
   },
 });
 
