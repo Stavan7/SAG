@@ -50,6 +50,10 @@
 		B8489FA25ABB46EAB46550AF /* Muli-Semi-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6A043B1DAEE6494480A1EBBB /* Muli-Semi-BoldItalic.ttf */; };
 		F4F87F39691B4E47A24BAF31 /* Muli-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AC8A63487BE486BB772DBB4 /* Muli-SemiBold.ttf */; };
 		4D9624640FA642908FA6B431 /* Muli.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AEFE321A1F6C4E4282678C3E /* Muli.ttf */; };
+		AB76A3E5CBFF4F04880523A7 /* PTSerif-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 317D1D157A81445EB7307931 /* PTSerif-Bold.ttf */; };
+		4D0D47057D1D4E829D35F303 /* PTSerif-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3367BA3E76EC47E9BD02EAE1 /* PTSerif-BoldItalic.ttf */; };
+		EF9A719CF43343B0BE80F358 /* PTSerif-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 883A1D67602E4424AD4D4905 /* PTSerif-Italic.ttf */; };
+		CD2B9DBA6E5E469885F3A26B /* PTSerif-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A9A404B06AA3430D8D465DFF /* PTSerif-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +116,10 @@
 		6A043B1DAEE6494480A1EBBB /* Muli-Semi-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Muli-Semi-BoldItalic.ttf"; path = "../assets/fonts/Muli/Muli-Semi-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		6AC8A63487BE486BB772DBB4 /* Muli-SemiBold.ttf */ = {isa = PBXFileReference; name = "Muli-SemiBold.ttf"; path = "../assets/fonts/Muli/Muli-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		AEFE321A1F6C4E4282678C3E /* Muli.ttf */ = {isa = PBXFileReference; name = "Muli.ttf"; path = "../assets/fonts/Muli/Muli.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		317D1D157A81445EB7307931 /* PTSerif-Bold.ttf */ = {isa = PBXFileReference; name = "PTSerif-Bold.ttf"; path = "../assets/fonts/Serif/PTSerif-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		3367BA3E76EC47E9BD02EAE1 /* PTSerif-BoldItalic.ttf */ = {isa = PBXFileReference; name = "PTSerif-BoldItalic.ttf"; path = "../assets/fonts/Serif/PTSerif-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		883A1D67602E4424AD4D4905 /* PTSerif-Italic.ttf */ = {isa = PBXFileReference; name = "PTSerif-Italic.ttf"; path = "../assets/fonts/Serif/PTSerif-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A9A404B06AA3430D8D465DFF /* PTSerif-Regular.ttf */ = {isa = PBXFileReference; name = "PTSerif-Regular.ttf"; path = "../assets/fonts/Serif/PTSerif-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +250,10 @@
 				6A043B1DAEE6494480A1EBBB /* Muli-Semi-BoldItalic.ttf */,
 				6AC8A63487BE486BB772DBB4 /* Muli-SemiBold.ttf */,
 				AEFE321A1F6C4E4282678C3E /* Muli.ttf */,
+				317D1D157A81445EB7307931 /* PTSerif-Bold.ttf */,
+				3367BA3E76EC47E9BD02EAE1 /* PTSerif-BoldItalic.ttf */,
+				883A1D67602E4424AD4D4905 /* PTSerif-Italic.ttf */,
+				A9A404B06AA3430D8D465DFF /* PTSerif-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -375,6 +387,10 @@
 				B8489FA25ABB46EAB46550AF /* Muli-Semi-BoldItalic.ttf in Resources */,
 				F4F87F39691B4E47A24BAF31 /* Muli-SemiBold.ttf in Resources */,
 				4D9624640FA642908FA6B431 /* Muli.ttf in Resources */,
+				AB76A3E5CBFF4F04880523A7 /* PTSerif-Bold.ttf in Resources */,
+				4D0D47057D1D4E829D35F303 /* PTSerif-BoldItalic.ttf in Resources */,
+				EF9A719CF43343B0BE80F358 /* PTSerif-Italic.ttf in Resources */,
+				CD2B9DBA6E5E469885F3A26B /* PTSerif-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

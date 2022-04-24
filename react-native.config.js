@@ -3,5 +3,10 @@ module.exports = {
     ios: {},
     android: {},
   },
-  assets: ['./assets/fonts/', './assets/fonts/Roboto', './assets/fonts/Muli'],
+  assets: [
+    './assets/fonts/',
+    './assets/fonts/Muli',
+    './assets/fonts/Serif',
+    './assets/fonts/Roboto',
+  ],
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  View,
   Text,
   StyleSheet,
   SafeAreaView
@@ -40,7 +39,7 @@ const styles = StyleSheet.create({
   headingText: {
     fontSize: 23,
     color: 'white',
-    fontFamily: 'Muli',
+    fontFamily:'Roboto-Bold'
   },
 });
 

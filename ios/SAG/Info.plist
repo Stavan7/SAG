@@ -91,6 +91,10 @@
 		<string>Muli-Semi-BoldItalic.ttf</string>
 		<string>Muli-SemiBold.ttf</string>
 		<string>Muli.ttf</string>
+		<string>PTSerif-Bold.ttf</string>
+		<string>PTSerif-BoldItalic.ttf</string>
+		<string>PTSerif-Italic.ttf</string>
+		<string>PTSerif-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
