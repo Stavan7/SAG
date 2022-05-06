@@ -19,7 +19,7 @@ class About extends Component {
                 <Image
                     resizeMode="cover"
                     style={styles.image}
-                    source={require('../assets/bgImage.jpg')}
+                    source={require('../assets/grpImage.jpeg')}
                 />
 
                 <View style={styles.swiperView}>
