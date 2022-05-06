@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import {
-    Text,
     StyleSheet,
     SafeAreaView,
 } from 'react-native';
 import Header from "../components/header";
-import PastEvents from "../components/PastEvents";
-import UpComingEvents from "../components/UpComingEvents";
+import PastEvents from "./PastEvents";
+import UpComingEvents from "./UpComingEvents";
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 
 class EventsScreen extends Component {
@@ -91,6 +90,5 @@ const styles = StyleSheet.create({
         fontFamily: 'PTSerif-Bold'
     },
 })
-
 
 export default EventsScreen;

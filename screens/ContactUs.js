@@ -5,8 +5,7 @@ import {
     StyleSheet,
 } from 'react-native';
 import data from '../data/data';
-import Swiper from 'react-native-swiper';
-import COLORS from '../constants/colors';
+import Swiper from 'react-native-swiper'; 
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 const swiper = data.ContactUsSwiper;

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import {
-    Text,
     StyleSheet,
     SafeAreaView,
 } from 'react-native';
@@ -8,7 +7,6 @@ import ContactUs from "./ContactUs";
 import About from "../components/About";
 import Header from "../components/header";
 import SegmentedControlTab from 'react-native-segmented-control-tab';
-
 
 class AboutUsScreen extends Component {
     constructor() {
@@ -49,7 +47,7 @@ class AboutUsScreen extends Component {
 const styles = StyleSheet.create({
     background: {
         flex: 1,
-        backgroundColor: '#FFF', 
+        backgroundColor: '#FFF',
     },
     tabStyle: {
         width: 'auto',
@@ -92,6 +90,5 @@ const styles = StyleSheet.create({
         fontFamily: 'PTSerif-Regular'
     },
 })
-
 
 export default AboutUsScreen;
