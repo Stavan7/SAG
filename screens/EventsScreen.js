@@ -23,7 +23,7 @@ class EventsScreen extends Component {
         });
     };
 
-    render() {
+    render(navigation) {
         return (
             <SafeAreaView style={styles.background}>
                 <Header heading="Events" />
@@ -38,7 +38,12 @@ class EventsScreen extends Component {
                     activeTabTextStyle={styles.activeTabTextStyle}
                     tabsContainerStyle={styles.tabsContainerStyle}
                 />
-                {this.state.selectedIndex === 0 ? (<UpComingEvents />) : <PastEvents />}
+                {
+                    this.state.selectedIndex === 0 ?
+                        (<UpComingEvents navigation={navigation} />)
+                        : <PastEvents navigation={navigation} />
+                }
+
             </SafeAreaView >
         )
     }

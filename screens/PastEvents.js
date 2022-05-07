@@ -10,43 +10,45 @@ import {
 } from 'react-native';
 import data from '../data/data'
 import COLORS from '../constants/colors';
+import { useNavigation } from '@react-navigation/native';
+
 
 const events = data.PastEvents;
 
-class PastEvents extends Component {
-    render() {
-        return (
-            <SafeAreaView style={styles.container}>
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    {
-                        events.map(event => {
-                            return (
-                                <TouchableOpacity
-                                    key={event.id}
-                                    activeOpacity={0.8}
-                                    onPress={() =>console.log("Event clicked")}>
-                                    <View style={styles.eventContainer}>
-                                        <Image
-                                            source={event.image}
-                                            style={styles.carousel}
-                                            key={event.id}
-                                        />
-                                        <View style={styles.textContainer} >
-                                            <Text style={styles.title}>{event.title}</Text>
-                                            <Text style={styles.date}>{event.date}</Text>
-                                            <Text style={styles.description}>{event.description}</Text>
-                                        </View>
+const PastEventsScreen = () => {
+    const navigation = useNavigation();
+    return (
+        <SafeAreaView style={styles.container}>
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {
+                    events.map(event => {
+                        return (
+                            <TouchableOpacity
+                                key={event.id}
+                                activeOpacity={0.8}
+                                onPress={() => navigation.navigate('EventsDetail', event)}>
+                                <View style={styles.eventContainer}>
+                                    <Image
+                                        source={event.image}
+                                        style={styles.carousel}
+                                        key={event.id}
+                                    />
+                                    <View style={styles.textContainer} >
+                                        <Text style={styles.title}>{event.title}</Text>
+                                        <Text style={styles.date}>{event.date}</Text>
+                                        <Text style={styles.description} numberOfLines={4}>{event.description}</Text>
                                     </View>
-                                </TouchableOpacity>
+                                </View>
+                            </TouchableOpacity>
 
-                            )
-                        })
-                    }
-                </ScrollView>
-            </SafeAreaView>
-        )
-    }
+                        )
+                    })
+                }
+            </ScrollView>
+        </SafeAreaView>
+    )
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -105,4 +107,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default PastEvents
+export default PastEventsScreen

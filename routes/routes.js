@@ -1,7 +1,7 @@
 import React from 'react';
 import COLORS from '../constants/colors';
 import { StyleSheet } from 'react-native';
-import EventsScreen from '../screens/Events';
+import EventRoutes from './EventRoutes';
 import GalleryScreen from '../screens/Gallery';
 import AboutUsScreen from '../screens/AboutUs';
 import CommunityScreen from '../screens/Community';
@@ -15,7 +15,6 @@ const Tab = createBottomTabNavigator();
 const Routing = () => {
     return (
         <>
-
             <Tab.Navigator
                 screenOptions={{
                     tabBarShowLabel: false,
@@ -23,8 +22,8 @@ const Routing = () => {
                     tabBarStyle: { ...styles.shadow },
                 }}>
                 <Tab.Screen
-                    name="Events"
-                    component={EventsScreen}
+                    name="EventRoutes"
+                    component={EventRoutes}
                     options={{
                         tabBarLabel: 'Events',
                         tabBarIcon: ({ focused }) => (
