@@ -29,11 +29,6 @@ export class EventRoutes extends Component {
                     component={PastEvents}
                     options={{ headerShown: false }}
                 />
-                <Stack.Screen
-                    name="EventsDetail"
-                    component={EventDetailsScreen}
-                    options={{ headerShown: false }}
-                />
             </Stack.Navigator>
         )
     }

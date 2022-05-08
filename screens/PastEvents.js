@@ -26,7 +26,7 @@ const PastEventsScreen = () => {
                             <TouchableOpacity
                                 key={event.id}
                                 activeOpacity={0.8}
-                                onPress={() => navigation.navigate('EventsDetail', event)}>
+                                onPress={() => navigation.navigate('NoBottomTab', { screen: 'EventsDetail', params: event })}>
                                 <View style={styles.eventContainer}>
                                     <Image
                                         source={event.image}

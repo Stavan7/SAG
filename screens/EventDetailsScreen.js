@@ -10,7 +10,7 @@ import {
 import COLORS from '../constants/colors';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
-const EventDetailsScreen = ({ route, navigation, viewPhotos }) => {
+const EventDetailsScreen = ({ route, navigation }) => {
     const data = route.params
     return (
         <SafeAreaView style={styles.view}>
@@ -57,16 +57,13 @@ const EventDetailsScreen = ({ route, navigation, viewPhotos }) => {
 const styles = StyleSheet.create({
     view: {
         flex: 1,
-        marginBottom: 50,
         backgroundColor: 'white'
     },
     container: {
         flex: 1,
         margin: 20,
         padding: 10,
-        borderWidth: 1,
         borderRadius: 16,
-        borderColor: 'black',
         elevation: 23,
         shadowOffset: {
             width: 0,

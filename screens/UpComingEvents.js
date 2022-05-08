@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import {
-    Text,
     View,
-    StyleSheet
+    StyleSheet,
+    SafeAreaView
 } from 'react-native';
 
 class UpComingEventsScreen extends Component {
     render() {
         return (
-            <View style={styles.container}> 
-            </View>
+            <SafeAreaView style={styles.containerw}>
+            </SafeAreaView>
         )
     }
 }
@@ -17,8 +17,7 @@ class UpComingEventsScreen extends Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 20,
-        marginBottom: 80,
+        backgroundColor: 'transparent'
     },
 })
 
