@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import data from '../data/data';
 import Swiper from 'react-native-swiper';
+import LinearGradient from 'react-native-linear-gradient'
 
 const content = data.AboutUs;
 
@@ -22,46 +23,42 @@ class About extends Component {
                     source={require('../assets/grpImage.jpeg')}
                 />
 
-                <View style={styles.swiperView}>
-                    <Swiper
-                        autoplay
-                        bounces={true}
-                        autoplayTimeout={3.5}
-                        showsPagination={true}
-                        autoplayDirection={true}
-                        removeClippedSubviews={true}
-                        automaticallyAdjustContentInsets={true}
-                        dot={<View style={styles.dot}></View>}
-                        activeDot={<View style={styles.activeDot}></View>}
-                    >
-                        {
-                            content.map(data => {
-                                return (
-                                    <View style={styles.card} key={data.id}>
+                <Swiper
+                    autoplay
+                    bounces={true}
+                    autoplayTimeout={4.5}
+                >
+                    {
+                        content.map(data => {
+                            return (
+                                <LinearGradient
+                                    colors={['#166d3b', '#233329']} style={styles.swiperView} key={data.id}>
+                                    <View style={styles.card} >
                                         <Text style={styles.header}>{data.header} : </Text>
                                         <Text style={styles.about}>{data.content}</Text>
                                     </View>
-                                )
-                            })
-                        }
-                    </Swiper>
-                </View>
-            </SafeAreaView>
+                                </LinearGradient>
+
+                            )
+                        })
+                    }
+                </Swiper>
+
+            </SafeAreaView >
         )
     }
 }
 
 const styles = StyleSheet.create({
     background: {
-        flex: 1, 
+        flex: 1,
     },
     image: {
         height: 210,
         width: '90%',
         marginTop: 20,
         alignSelf: 'center',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
+        borderRadius: 20,
     },
     textContainer: {
         width: '88%',
@@ -70,42 +67,37 @@ const styles = StyleSheet.create({
     header: {
         fontSize: 23,
         color: 'white',
+        marginTop: 10,
+        textAlign: "justify",
         fontFamily: 'PTSerif-Bold'
     },
     about: {
         fontSize: 18,
         marginTop: 10,
         color: 'white',
-        textAlign: "justify",
         fontFamily: 'PTSerif-Regular'
     },
     card: {
-        flex: 1,
-        padding: 20,
+        flexGrow: 1,
+        backgroundColor: '#1f462f',
+        position: 'absolute',
+        top: 45,
+        right: -80,
+        zIndex: 1,
+        height: 300,
+        width: '105%',
         borderRadius: 20,
-        backgroundColor: '#1c5232',
+        padding: 10,
+        opacity: 0.98
     },
     swiperView: {
-        width: '90%',
-        height: '55%',
-        marginTop: -20,
-        alignSelf: 'center',
-    },
-    dot: {
-        width: 8,
-        height: 8,
-        borderRadius: 4,
-        marginTop: '70%',
-        marginHorizontal: 5,
-        backgroundColor: 'grey',
-    },
-    activeDot: {
-        width: 8,
-        height: 8,
-        borderRadius: 4,
-        marginTop: '70%',
-        marginHorizontal: 5,
-        backgroundColor: 'grey',
+        width: '60%',
+        height: '65%',
+        marginTop: 20,
+        marginLeft: 40,
+        borderRadius: 20,
+        backgroundColor: 'black',
+        alignSelf: 'flex-start',
     },
 })
 

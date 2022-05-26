@@ -83,26 +83,30 @@ class ContactUs extends Component {
 
                     <View style={styles.paymentsContainer}>
                         <Text style={styles.linkHeader}>Payment Links</Text>
-                        <Text style={styles.upi}>UPI</Text>
-                        <Text style={styles.upilinks} selectable>johndoe25@okaxis.com</Text>
-                        <Text style={styles.upilinks} selectable>johndoe25@okaxis.com</Text>
+                        <LinearGradient colors={['#166d3b', '#233329']} style={styles.paymentsCard}>
+                            <Text style={styles.upi}>UPI</Text>
+                            <Text style={styles.upilinks} selectable>johndoe25@okaxis.com</Text>
+                            <Text style={styles.upilinks} selectable>johndoe25@okaxis.com</Text>
+                            <View style={{ flexDirection: 'row' }}>
+                                <Image source={require('../assets/qr-dummy.png')} style={styles.qrcode} />
+                                <Text style={styles.qrcodeText}>Scan the QR code to continue with the payment </Text>
+                            </View>
+                        </LinearGradient>
                     </View>
 
-                    <View style={styles.qrcodeContainer}>
-                        <Image source={require('../assets/qr-dummy.png')} style={styles.qrcode} />
-                        <Text style={styles.qrcodeText}>Scan the QR code to continue with the payment </Text>
-                    </View>
+
 
                     <View style={{ margin: 20 }}>
                         <Text style={styles.mailContainer}>Write to us at</Text>
                         <TouchableOpacity activeOpacity={0.7}>
-                            <Text style={styles.upilinks} >johndoe@gmail.com</Text>
+                            <Text style={styles.mailid} >johndoe@gmail.com</Text>
                         </TouchableOpacity>
                         <TouchableOpacity activeOpacity={0.7}>
-                            <Text style={styles.upilinks} >johndoe@gmail.com</Text>
+                            <Text style={styles.mailid} >johndoe@gmail.com</Text>
                         </TouchableOpacity>
 
                     </View>
+
                 </ScrollView>
             </SafeAreaView>
         );
@@ -153,24 +157,25 @@ const styles = StyleSheet.create({
     },
     paymentsContainer: {
         marginTop: 20,
-        marginHorizontal: 20
+        marginHorizontal: 20,
+    },
+    paymentsCard: {
+        borderWidth: 1,
+        borderColor: 'green',
+        borderRadius: 20,
+        padding: 10
     },
     upi: {
         marginBottom: 10,
-        color: 'black',
-        fontSize: 18,
+        color: 'white',
+        fontSize: 19,
         fontFamily: 'PTSerif-Bold',
     },
     upilinks: {
-        marginBottom: 10,
-        color: '#233329',
-        fontSize: 16,
+        color: 'white',
+        fontSize: 17,
         textDecorationLine: 'underline',
         fontFamily: 'PTSerif-Regular',
-    },
-    qrcodeContainer: {
-        flexDirection: 'row',
-        marginHorizontal: 20
     },
     qrcode: {
         height: 230,
@@ -181,17 +186,23 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 10,
         fontSize: 18,
-        color: '#233329',
+        color: 'white',
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold',
         textAlignVertical: 'center',
     },
     mailContainer: {
-        marginBottom: 10,
         color: 'black',
         fontSize: 18,
+        marginVertical: 10,
         fontFamily: 'PTSerif-Bold',
     },
+    mailid: {
+        color: '#000',
+        fontSize: 17,
+        textDecorationLine: 'underline',
+        fontFamily: 'PTSerif-Regular',
+    }
 });
 
 export default ContactUs;
