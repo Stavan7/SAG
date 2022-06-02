@@ -32,7 +32,10 @@ class About extends Component {
                         content.map(data => {
                             return (
                                 <LinearGradient
-                                    colors={['#166d3b', '#233329']} style={styles.swiperView} key={data.id}>
+                                    key={data.id}
+                                    colors={['#4F4E4C', '#111010']}
+                                    style={styles.swiperView}
+                                >
                                     <View style={styles.card} >
                                         <Text style={styles.header}>{data.header} : </Text>
                                         <Text style={styles.about}>{data.content}</Text>
@@ -79,16 +82,16 @@ const styles = StyleSheet.create({
     },
     card: {
         flexGrow: 1,
-        backgroundColor: '#1f462f',
+        backgroundColor: '#000',
         position: 'absolute',
-        top: 45,
-        right: -80,
+        top: 35,
+        right: -70,
         zIndex: 1,
-        height: 300,
+        height: '95%',
         width: '105%',
         borderRadius: 20,
         padding: 10,
-        opacity: 0.98
+        opacity: 0.87
     },
     swiperView: {
         width: '60%',

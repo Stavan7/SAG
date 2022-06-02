@@ -1,19 +1,17 @@
 import React from 'react';
 import {
+  View,
   Text,
   StyleSheet,
   SafeAreaView
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
 
 const Header = ({ heading }) => {
   return (
     <SafeAreaView>
-      <LinearGradient
-        colors={['#166d3b', '#233329']}
-        style={styles.header}>
+      <View style={styles.header} >
         <Text style={styles.headingText}>{heading}</Text>
-      </LinearGradient>
+      </View>
     </SafeAreaView>
   );
 };
@@ -21,7 +19,7 @@ const Header = ({ heading }) => {
 const styles = StyleSheet.create({
   header: {
     margin: 20,
-    borderRadius: 17,
+    borderRadius: 16,
     ...Platform.select({
       ios: {
         height: 90,
@@ -30,12 +28,13 @@ const styles = StyleSheet.create({
         height: 50,
       },
     }),
+    backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
   },
   headingText: {
     fontSize: 23,
-    color: 'white',
+    color: '#fff',
     fontFamily: 'PTSerif-Bold'
   },
 });

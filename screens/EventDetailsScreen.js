@@ -7,7 +7,6 @@ import {
     SafeAreaView,
     TouchableOpacity
 } from 'react-native'
-import COLORS from '../constants/colors';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const EventDetailsScreen = ({ route, navigation }) => {
@@ -19,7 +18,7 @@ const EventDetailsScreen = ({ route, navigation }) => {
                     <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.goBack()}>
                         <FontAwesome
                             name="close"
-                            color={COLORS.bottomTabBg}
+                            color='black'
                             size={28}
                         />
                     </TouchableOpacity>
@@ -41,7 +40,7 @@ const EventDetailsScreen = ({ route, navigation }) => {
                             <Text style={styles.btnText}>View Photos</Text>
                             <FontAwesome
                                 name="arrow-right"
-                                color={COLORS.bottomTabBg}
+                                color='black'
                                 size={25}
                             />
                         </View>
@@ -64,16 +63,16 @@ const styles = StyleSheet.create({
         margin: 20,
         padding: 10,
         borderRadius: 16,
-        elevation: 23,
+        elevation: 16,
         shadowOffset: {
             width: 0,
             height: 11,
         },
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
-        borderColor: 'transparent',
+        borderColor: 'black',
         backgroundColor: '#fff',
-        shadowColor: COLORS.bottomTabBg,
+        shadowColor: '#000'
     },
     iconsContainer: {
         top: -14,
@@ -112,22 +111,25 @@ const styles = StyleSheet.create({
         fontFamily: 'PTSerif-Bold',
     },
     image: {
+        zIndex: 1,
         marginTop: 10,
         height: '35%',
         width: '100%',
+        marginBottom: -20,
         borderTopLeftRadius: 20,
         borderTopRightRadius: 20,
     },
     card: {
         flex: 1,
         padding: 20,
-        marginTop: -20,
         borderRadius: 20,
-        backgroundColor: '#1c5232',
+        opacity: 0.87,
+        backgroundColor: '#000',
+        overflow: 'visible'
     },
     description: {
         fontSize: 17,
-        marginTop: 10,
+        marginTop: 20,
         color: 'white',
         textAlign: "justify",
         fontFamily: 'PTSerif-Regular'

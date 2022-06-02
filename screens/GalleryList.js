@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     Text,
     View,
@@ -8,25 +8,29 @@ import {
     SafeAreaView,
     TouchableOpacity
 } from 'react-native';
-import data from '../data/data'
+import data from '../data/data';
+import Header from "../components/header";
 import LinearGradient from 'react-native-linear-gradient';
-import { useNavigation } from '@react-navigation/native';
 
 
 const events = data.PastEvents;
 
-const PastEventsScreen = () => {
-    const navigation = useNavigation();
+const GalleryList = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
+            <Header heading="Gallery" />
             <ScrollView showsVerticalScrollIndicator={false}>
+
                 {
                     events.map(event => {
                         return (
                             <TouchableOpacity
                                 key={event.id}
                                 activeOpacity={0.8}
-                                onPress={() => navigation.navigate('NoBottomTab', { screen: 'EventsDetail', params: event })}>
+                                onPress={() => navigation.navigate('NoBottomTab', {
+                                    screen: 'Gallery',
+                                    params: events
+                                })}>
                                 <View style={styles.eventContainer}>
                                     <Image
                                         source={event.image}
@@ -36,7 +40,6 @@ const PastEventsScreen = () => {
                                     <LinearGradient colors={['#000', '#000']} style={styles.textContainer}>
                                         <Text style={styles.title}>{event.title}</Text>
                                         <Text style={styles.date}>{event.date}</Text>
-                                        <Text style={styles.description} numberOfLines={4}>{event.description}</Text>
                                     </LinearGradient>
                                 </View>
                             </TouchableOpacity>
@@ -53,11 +56,11 @@ const PastEventsScreen = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginTop: 20,
         marginBottom: 80,
+        backgroundColor: 'white'
     },
     eventContainer: {
-        height: 200,
+        height: 140,
         borderRadius: 10,
         marginVertical: 10,
         marginHorizontal: 20,
@@ -82,8 +85,8 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flex: 1,
-        padding: 10,
         opacity: 0.87,
+        justifyContent: 'center',
         borderTopRightRadius: 16,
         borderBottomRightRadius: 16
     },
@@ -109,4 +112,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default PastEventsScreen
+export default GalleryList

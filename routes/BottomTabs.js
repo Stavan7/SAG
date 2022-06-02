@@ -1,8 +1,8 @@
 import React from 'react';
 import EventRoutes from './EventRoutes';
 import { StyleSheet } from 'react-native';
-import GalleryScreen from '../screens/Gallery';
 import AboutUsScreen from '../screens/AboutUs';
+import GalleryList from '../screens/GalleryList';
 import CommunityScreen from '../screens/Community';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -28,23 +28,23 @@ const BottomTabs = () => {
                         tabBarIcon: ({ focused }) => (
                             <Ionicons
                                 name="ios-calendar-outline"
-                                color={focused ? '#fff' : '#63D471'}
-                                size={28}
+                                color={focused ? '#fff' : '#757575'}
+                                size={26}
                             />
                         ),
                     }}
                 />
                 <Tab.Screen
                     name="Gallery"
-                    component={GalleryScreen}
+                    component={GalleryList}
                     options={{
                         title: 'Gallery',
                         tabBarLabel: 'Gallery',
                         tabBarIcon: ({ focused }) => (
                             <Ionicons
                                 name="md-people-outline"
-                                color={focused ? '#fff' : '#63D471'}
-                                size={25}
+                                color={focused ? '#fff' : '#757575'}
+                                size={26}
                             />
                         )
                     }}
@@ -58,8 +58,8 @@ const BottomTabs = () => {
                         tabBarIcon: ({ focused }) => (
                             <Ionicons
                                 name="bulb-outline"
-                                color={focused ? '#fff' : '#63D471'}
-                                size={25}
+                                color={focused ? '#fff' : '#757575'}
+                                size={26}
                             />
                         )
                     }}
@@ -73,8 +73,8 @@ const BottomTabs = () => {
                         tabBarIcon: ({ focused }) => (
                             <Feather
                                 name="phone-call"
-                                color={focused ? '#fff' : '#63D471'}
-                                size={25}
+                                color={focused ? '#fff' : '#757575'}
+                                size={26}
                             />
                         )
                     }}
@@ -94,10 +94,10 @@ const styles = StyleSheet.create({
                 height: 90,
             },
             android: {
-                height: 70,
+                height: 80,
             },
         }),
-        backgroundColor: '#1b5433',
+        backgroundColor: '#000',
     },
 });
 

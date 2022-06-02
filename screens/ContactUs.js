@@ -50,40 +50,38 @@ class ContactUs extends Component {
 
                     <Text style={styles.linkHeader}>Social Media Links</Text>
                     <View style={{ flexDirection: 'row', marginHorizontal: 20, justifyContent: 'space-evenly' }}>
-                        <LinearGradient
-                            colors={['#166d3b', '#233329']} style={{ borderRadius: 35 }}>
+
+                        <View style={{ borderRadius: 35, backgroundColor: '#000' }}>
                             <Avatar
                                 size="large"
-                                icon={{ name: 'whatsapp', color: 'white', type: 'font-awesome' }}
+                                icon={{ name: 'whatsapp', color: '#FFFFFF', type: 'font-awesome' }}
                                 onPress={() => Linking.openURL('https://google.com')}
                                 activeOpacity={0.7}
                             />
-                        </LinearGradient>
+                        </View>
 
-                        <LinearGradient
-                            colors={['#166d3b', '#233329']} style={{ borderRadius: 35 }}>
+                        <View style={{ borderRadius: 35, backgroundColor: '#000' }}>
                             <Avatar
                                 size="large"
-                                icon={{ name: 'instagram', color: 'white', type: 'font-awesome' }}
+                                icon={{ name: 'instagram', color: '#FFFFFF', type: 'font-awesome' }}
                                 onPress={() => Linking.openURL('https://instagram.com/social_army_group?igshid=YmMyMTA2M2Y=')}
                                 activeOpacity={0.7}
                             />
-                        </LinearGradient>
+                        </View>
 
-                        <LinearGradient
-                            colors={['#166d3b', '#233329']} style={{ borderRadius: 35 }}>
+                        <View style={{ borderRadius: 35, backgroundColor: '#000' }}>
                             <Avatar
                                 size="large"
-                                icon={{ name: 'facebook-f', color: 'white', type: 'font-awesome' }}
+                                icon={{ name: 'facebook-f', color: '#FFFFFF', type: 'font-awesome' }}
                                 onPress={() => Linking.openURL('https://www.facebook.com/social_army_group-103076275246248/')}
                                 activeOpacity={0.7}
                             />
-                        </LinearGradient>
+                        </View>
                     </View>
 
                     <View style={styles.paymentsContainer}>
                         <Text style={styles.linkHeader}>Payment Links</Text>
-                        <LinearGradient colors={['#166d3b', '#233329']} style={styles.paymentsCard}>
+                        <LinearGradient colors={['#4F4E4C', '#111010']} style={styles.paymentsCard}>
                             <Text style={styles.upi}>UPI</Text>
                             <Text style={styles.upilinks} selectable>johndoe25@okaxis.com</Text>
                             <Text style={styles.upilinks} selectable>johndoe25@okaxis.com</Text>
@@ -160,10 +158,8 @@ const styles = StyleSheet.create({
         marginHorizontal: 20,
     },
     paymentsCard: {
-        borderWidth: 1,
-        borderColor: 'green',
         borderRadius: 20,
-        padding: 10
+        padding: 20
     },
     upi: {
         marginBottom: 10,

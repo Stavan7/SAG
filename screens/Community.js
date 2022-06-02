@@ -13,8 +13,8 @@ class CommunityScreen extends Component {
             <SafeAreaView style={styles.background}>
                 <Header heading="Community" />
                 <View style={styles.header}>
-                    <Text style={styles.headerText}>Meet the founders</Text>
-                    <Text style={styles.headerText}>Meet the team</Text>
+                    <Text style={styles.headerText}>Meet our Founders</Text>
+                    <Text style={styles.headerText}>Meet our Team</Text>
                 </View>
             </SafeAreaView>
         )
