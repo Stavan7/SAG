@@ -9,6 +9,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import data from '../data/data';
+import FastImage from 'react-native-fast-image'
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
@@ -28,15 +29,14 @@ const PastEventsScreen = () => {
                                 activeOpacity={0.8}
                                 onPress={() => navigation.navigate('NoBottomTab', { screen: 'EventsDetail', params: event })}>
                                 <View style={styles.eventContainer}>
-                                    <Image
+                                    <FastImage
                                         source={event.image}
                                         style={styles.carousel}
-                                        key={event.id}
                                     />
                                     <LinearGradient colors={['#000', '#000']} style={styles.textContainer}>
-                                        <Text style={styles.title}>{event.title}</Text>
+                                        <Text style={styles.title} numberOfLines={2}>{event.title}</Text>
                                         <Text style={styles.date}>{event.date}</Text>
-                                        <Text style={styles.description}>{event.tag}</Text>
+                                        <Text style={styles.description} numberOfLines={2}>{event.description}</Text>
                                     </LinearGradient>
                                 </View>
                             </TouchableOpacity>
@@ -74,9 +74,8 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
     },
     carousel: {
-        width: '40%',
+        width: '41%',
         height: 'auto',
-        resizeMode: 'cover',
         borderTopLeftRadius: 16,
         borderBottomLeftRadius: 16
     },
@@ -103,9 +102,19 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 16,
         marginTop: 20,
-        color: 'white',
-        marginBottom: 5,
+        color: '#FFF',
+        textAlign: 'left',
         fontFamily: 'PTSerif-Regular'
+    },
+    tag: {
+        color: 'white',
+        marginTop: 10,
+        fontSize: 13,
+        fontFamily: 'PTSerif-Regular',
+        borderRadius: 16,
+        borderWidth: 1,
+        borderColor: 'white',
+        padding: 5
     }
 })
 

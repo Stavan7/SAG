@@ -29,7 +29,7 @@ const EventDetailsScreen = ({ route, navigation }) => {
                 <Image style={styles.image} source={data.image} />
 
                 <View style={styles.card}>
-                    <Text style={styles.description}>{data.fullDescription}</Text>
+                    <Text style={styles.description}>{data.description}</Text>
 
 
                     <TouchableOpacity

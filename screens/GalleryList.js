@@ -6,12 +6,11 @@ import {
     ScrollView,
     StyleSheet,
     SafeAreaView,
-    TouchableOpacity
+    TouchableOpacity,
 } from 'react-native';
 import data from '../data/data';
 import Header from "../components/header";
-import LinearGradient from 'react-native-linear-gradient';
-
+import FastImage from 'react-native-fast-image'
 
 const events = data.PastEvents;
 
@@ -29,18 +28,18 @@ const GalleryList = ({ navigation }) => {
                                 activeOpacity={0.8}
                                 onPress={() => navigation.navigate('NoBottomTab', {
                                     screen: 'Gallery',
-                                    params: events
+                                    params: event
                                 })}>
                                 <View style={styles.eventContainer}>
-                                    <Image
-                                        source={event.image}
+                                    <FastImage
+                                        source={event.gallery}
                                         style={styles.carousel}
-                                        key={event.id}
+                                        resizeMethod="scale"
                                     />
-                                    <LinearGradient colors={['#000', '#000']} style={styles.textContainer}>
+                                    <View style={styles.textContainer}>
                                         <Text style={styles.title}>{event.title}</Text>
                                         <Text style={styles.date}>{event.date}</Text>
-                                    </LinearGradient>
+                                    </View>
                                 </View>
                             </TouchableOpacity>
 
@@ -57,11 +56,11 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         marginBottom: 80,
-        backgroundColor: 'white'
+        backgroundColor: '#FFF',
     },
     eventContainer: {
         height: 140,
-        borderRadius: 10,
+        borderRadius: 16,
         marginVertical: 10,
         marginHorizontal: 20,
         flexDirection: 'row',
@@ -72,23 +71,22 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
+        opacity: 0.87,
         borderColor: 'transparent',
-        backgroundColor: '#fff',
         shadowColor: 'black',
+        backgroundColor: '#000'
     },
     carousel: {
         width: '40%',
         height: 'auto',
-        resizeMode: 'cover',
         borderTopLeftRadius: 16,
-        borderBottomLeftRadius: 16
+        borderBottomLeftRadius: 16,
     },
     textContainer: {
         flex: 1,
-        opacity: 0.87,
         justifyContent: 'center',
         borderTopRightRadius: 16,
-        borderBottomRightRadius: 16
+        borderBottomRightRadius: 16,
     },
     title: {
         fontSize: 20,
