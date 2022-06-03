@@ -8,7 +8,7 @@ import {
     SafeAreaView,
     TouchableOpacity
 } from 'react-native';
-import data from '../data/data'
+import data from '../data/data';
 import LinearGradient from 'react-native-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
 
@@ -36,7 +36,7 @@ const PastEventsScreen = () => {
                                     <LinearGradient colors={['#000', '#000']} style={styles.textContainer}>
                                         <Text style={styles.title}>{event.title}</Text>
                                         <Text style={styles.date}>{event.date}</Text>
-                                        <Text style={styles.description} numberOfLines={4}>{event.description}</Text>
+                                        <Text style={styles.description}>{event.tag}</Text>
                                     </LinearGradient>
                                 </View>
                             </TouchableOpacity>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     },
     eventContainer: {
         height: 200,
-        borderRadius: 10,
+        borderRadius: 16,
         marginVertical: 10,
         marginHorizontal: 20,
         flexDirection: 'row',
@@ -90,19 +90,19 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 20,
         color: '#FFF',
-        textAlign: 'center',
+        textAlign: 'left',
         fontFamily: 'PTSerif-Bold'
     },
     date: {
         fontSize: 16,
-        marginTop: 5,
+        marginTop: 10,
         color: '#FFF',
-        textAlign: 'center',
+        textAlign: 'left',
         fontFamily: 'PTSerif-Bold'
     },
     description: {
         fontSize: 16,
-        marginTop: 25,
+        marginTop: 20,
         color: 'white',
         marginBottom: 5,
         fontFamily: 'PTSerif-Regular'
