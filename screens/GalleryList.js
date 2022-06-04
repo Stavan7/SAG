@@ -2,7 +2,7 @@ import React from 'react'
 import {
     Text,
     View,
-    Image,
+    FlatList,
     ScrollView,
     StyleSheet,
     SafeAreaView,
@@ -15,38 +15,40 @@ import FastImage from 'react-native-fast-image'
 const events = data.PastEvents;
 
 const GalleryList = ({ navigation }) => {
+
+
+    const renderItem = ({ item }) => {
+        return (
+            <TouchableOpacity
+                key={item.id}
+                activeOpacity={0.8}
+                onPress={() => navigation.navigate('NoBottomTab', {
+                    screen: 'Gallery',
+                    params: item
+                })}>
+                <View style={styles.eventContainer}>
+                    <FastImage
+                        source={item.gallery}
+                        style={styles.carousel}
+                        resizeMethod="scale"
+                    />
+                    <View style={styles.textContainer}>
+                        <Text style={styles.title}>{item.title}</Text>
+                        <Text style={styles.date}>{item.date}</Text>
+                    </View>
+                </View>
+            </TouchableOpacity>
+        )
+    }
+
     return (
         <SafeAreaView style={styles.container}>
             <Header heading="Gallery" />
-            <ScrollView showsVerticalScrollIndicator={false}>
-
-                {
-                    events.map(event => {
-                        return (
-                            <TouchableOpacity
-                                key={event.id}
-                                activeOpacity={0.8}
-                                onPress={() => navigation.navigate('NoBottomTab', {
-                                    screen: 'Gallery',
-                                    params: event
-                                })}>
-                                <View style={styles.eventContainer}>
-                                    <FastImage
-                                        source={event.gallery}
-                                        style={styles.carousel}
-                                        resizeMethod="scale"
-                                    />
-                                    <View style={styles.textContainer}>
-                                        <Text style={styles.title}>{event.title}</Text>
-                                        <Text style={styles.date}>{event.date}</Text>
-                                    </View>
-                                </View>
-                            </TouchableOpacity>
-
-                        )
-                    })
-                }
-            </ScrollView>
+            <FlatList
+                data={events}
+                initialNumToRender={10}
+                renderItem={renderItem}
+            />
         </SafeAreaView >
     )
 }

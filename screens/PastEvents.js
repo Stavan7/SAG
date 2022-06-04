@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     Text,
     View,
-    Image,
+    FlatList,
     ScrollView,
     StyleSheet,
     SafeAreaView,
@@ -18,33 +18,34 @@ const events = data.PastEvents;
 
 const PastEventsScreen = () => {
     const navigation = useNavigation();
+
+    const renderItem = ({ item }) => {
+        return (
+            <TouchableOpacity
+                activeOpacity={0.8}
+                onPress={() => navigation.navigate('NoBottomTab', { screen: 'EventsDetail', params: item })}>
+                <View style={styles.eventContainer}>
+                    <FastImage
+                        source={item.image}
+                        style={styles.carousel}
+                    />
+                    <LinearGradient colors={['#000', '#000']} style={styles.textContainer}>
+                        <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
+                        <Text style={styles.date}>{item.date}</Text>
+                        <Text style={styles.description} numberOfLines={3} >{item.description}</Text>
+                    </LinearGradient>
+                </View>
+            </TouchableOpacity>
+        )
+    }
+
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView showsVerticalScrollIndicator={false}>
-                {
-                    events.map(event => {
-                        return (
-                            <TouchableOpacity
-                                key={event.id}
-                                activeOpacity={0.8}
-                                onPress={() => navigation.navigate('NoBottomTab', { screen: 'EventsDetail', params: event })}>
-                                <View style={styles.eventContainer}>
-                                    <FastImage
-                                        source={event.image}
-                                        style={styles.carousel}
-                                    />
-                                    <LinearGradient colors={['#000', '#000']} style={styles.textContainer}>
-                                        <Text style={styles.title} numberOfLines={2}>{event.title}</Text>
-                                        <Text style={styles.date}>{event.date}</Text>
-                                        <Text style={styles.description} numberOfLines={3} >{event.description}</Text>
-                                    </LinearGradient>
-                                </View>
-                            </TouchableOpacity>
-
-                        )
-                    })
-                }
-            </ScrollView>
+            <FlatList
+                data={events}
+                initialNumToRender={10}
+                renderItem={renderItem}
+            />
         </SafeAreaView >
     )
 }
@@ -81,7 +82,7 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flex: 1,
-        padding: 10, 
+        padding: 10,
         borderTopRightRadius: 16,
         borderBottomRightRadius: 16
     },
