@@ -4,6 +4,7 @@ import {
     View,
     Image,
     StyleSheet,
+    ScrollView,
     SafeAreaView,
     TouchableOpacity
 } from 'react-native'
@@ -26,27 +27,14 @@ const EventDetailsScreen = ({ route, navigation }) => {
                 </View>
                 <Text style={styles.header}>{data.title}</Text>
                 <Text style={styles.date}>{data.date}</Text>
-                <Image style={styles.image} source={data.image} />
+                <Image style={styles.image} source={data.event} />
 
                 <View style={styles.card}>
-                    <Text style={styles.description}>{data.description}</Text>
-
-
-                    <TouchableOpacity
-                        style={styles.btn}
-                        activeOpacity={0.5}
-                        onPress={() => navigation.navigate('Gallery')}>
-                        <View style={styles.btnContainer}>
-                            <Text style={styles.btnText}>View Photos</Text>
-                            <FontAwesome
-                                name="arrow-right"
-                                color='black'
-                                size={25}
-                            />
-                        </View>
-                    </TouchableOpacity>
-
+                    <ScrollView>
+                        <Text style={styles.description}> {data.description}</Text>
+                    </ScrollView>
                 </View>
+
             </View>
         </SafeAreaView>
 
@@ -111,27 +99,23 @@ const styles = StyleSheet.create({
         fontFamily: 'PTSerif-Bold',
     },
     image: {
-        zIndex: 1,
         marginTop: 10,
         height: '35%',
         width: '100%',
-        marginBottom: -20,
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
+        marginBottom: 20,
+        borderRadius: 20,
     },
     card: {
         flex: 1,
-        padding: 20,
         borderRadius: 20,
-        opacity: 0.87,
+        paddingVertical: 20,
+        paddingHorizontal: 10,
         backgroundColor: '#000',
-        overflow: 'visible'
     },
     description: {
         fontSize: 17,
-        marginTop: 20,
         color: 'white',
-        textAlign: "justify",
+        textAlign: "left",
         fontFamily: 'PTSerif-Regular'
     },
     btn: {

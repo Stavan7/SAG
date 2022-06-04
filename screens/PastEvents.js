@@ -36,7 +36,7 @@ const PastEventsScreen = () => {
                                     <LinearGradient colors={['#000', '#000']} style={styles.textContainer}>
                                         <Text style={styles.title} numberOfLines={2}>{event.title}</Text>
                                         <Text style={styles.date}>{event.date}</Text>
-                                        <Text style={styles.description} numberOfLines={2}>{event.description}</Text>
+                                        <Text style={styles.description} numberOfLines={3} >{event.description}</Text>
                                     </LinearGradient>
                                 </View>
                             </TouchableOpacity>
@@ -81,8 +81,7 @@ const styles = StyleSheet.create({
     },
     textContainer: {
         flex: 1,
-        padding: 10,
-        opacity: 0.87,
+        padding: 10, 
         borderTopRightRadius: 16,
         borderBottomRightRadius: 16
     },
