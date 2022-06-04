@@ -2,12 +2,12 @@ import React from 'react'
 import {
     Text,
     View,
-    Image,
     StyleSheet,
     ScrollView,
     SafeAreaView,
     TouchableOpacity
-} from 'react-native'
+} from 'react-native';
+import FastImage from 'react-native-fast-image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 const EventDetailsScreen = ({ route, navigation }) => {
@@ -27,7 +27,7 @@ const EventDetailsScreen = ({ route, navigation }) => {
                 </View>
                 <Text style={styles.header}>{data.title}</Text>
                 <Text style={styles.date}>{data.date}</Text>
-                <Image style={styles.image} source={data.event} />
+                <FastImage style={styles.image} source={data.event} />
 
                 <View style={styles.card}>
                     <ScrollView>

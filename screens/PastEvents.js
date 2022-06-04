@@ -2,8 +2,7 @@ import React from 'react'
 import {
     Text,
     View,
-    FlatList,
-    ScrollView,
+    FlatList, 
     StyleSheet,
     SafeAreaView,
     TouchableOpacity
