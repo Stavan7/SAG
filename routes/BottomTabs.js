@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
                 height: 90,
             },
             android: {
-                height: 80,
+                height: '10%',
             },
         }),
         backgroundColor: '#000',

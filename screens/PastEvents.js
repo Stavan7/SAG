@@ -44,6 +44,7 @@ const PastEventsScreen = () => {
                 data={events}
                 initialNumToRender={10}
                 renderItem={renderItem}
+                showsVerticalScrollIndicator={false}
             />
         </SafeAreaView >
     )
