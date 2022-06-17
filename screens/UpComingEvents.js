@@ -2,10 +2,10 @@ import React from 'react'
 import {
     View,
     Text,
-    StyleSheet,
     SafeAreaView,
 } from 'react-native';
 import LottieView from 'lottie-react-native';
+import { ScaledSheet, verticalScale } from 'react-native-size-matters';
 
 const UpComingEventsScreen = () => {
     return (
@@ -14,7 +14,7 @@ const UpComingEventsScreen = () => {
                 <Text style={styles.title}>No Upcoming Events</Text>
                 <Text style={styles.subtitle}>Stay Tuned !</Text>
             </View>
-            <View style={{ height: '71%', marginTop: 10 }}>
+            <View style={{ height: '70%', marginTop: verticalScale(10) }}>
                 <LottieView
                     loop
                     autoPlay
@@ -26,31 +26,31 @@ const UpComingEventsScreen = () => {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        marginBottom: 80,
+        marginBottom: '70@ms',
         backgroundColor: 'transparent'
     },
     textContainer: {
-        marginTop: 20,
-        marginHorizontal: 20
+        marginTop: '20@ms',
+        marginHorizontal: '20@s'
     },
     title: {
-        fontSize: 32,
+        fontSize: '25@s',
         color: 'black',
         fontFamily: 'PTSerif-Bold'
     },
     subtitle: {
-        fontSize: 32,
+        fontSize: '25@s',
         color: '#086f23',
         fontFamily: 'PTSerif-Bold'
     },
     footer: {
-        fontSize: 14,
-        marginTop: 20,
+        fontSize: '14@ms',
+        marginTop: '20@ms',
         color: '#000',
-        marginHorizontal: 20,
+        marginHorizontal: '20@ms',
         textDecorationLine: 'underline',
         fontFamily: 'PTSerif-Regular'
     }

@@ -1,11 +1,11 @@
 import React from 'react';
 import EventRoutes from './EventRoutes';
-import { StyleSheet } from 'react-native';
 import AboutUsScreen from '../screens/AboutUs';
 import GalleryList from '../screens/GalleryList';
 import CommunityScreen from '../screens/Community';
 import Feather from 'react-native-vector-icons/Feather';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 
@@ -29,7 +29,7 @@ const BottomTabs = () => {
                             <Ionicons
                                 name="ios-calendar-outline"
                                 color={focused ? '#fff' : '#757575'}
-                                size={26}
+                                size={moderateScale(25)}
                             />
                         ),
                     }}
@@ -44,7 +44,7 @@ const BottomTabs = () => {
                             <Ionicons
                                 name="md-people-outline"
                                 color={focused ? '#fff' : '#757575'}
-                                size={26}
+                                size={moderateScale(25)}
                             />
                         )
                     }}
@@ -59,7 +59,7 @@ const BottomTabs = () => {
                             <Ionicons
                                 name="bulb-outline"
                                 color={focused ? '#fff' : '#757575'}
-                                size={26}
+                                size={moderateScale(25)}
                             />
                         )
                     }}
@@ -74,7 +74,7 @@ const BottomTabs = () => {
                             <Feather
                                 name="phone-call"
                                 color={focused ? '#fff' : '#757575'}
-                                size={26}
+                                size={moderateScale(25)}
                             />
                         )
                     }}
@@ -84,17 +84,17 @@ const BottomTabs = () => {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     shadow: {
         position: 'absolute',
-        borderTopLeftRadius: 20,
-        borderTopRightRadius: 20,
+        borderTopLeftRadius: '10@ms',
+        borderTopRightRadius: '10@ms',
         ...Platform.select({
             ios: {
                 height: 90,
             },
             android: {
-                height: '10%',
+                height: '70@ms',
             },
         }),
         backgroundColor: '#000',

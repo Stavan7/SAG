@@ -2,9 +2,9 @@ import React from 'react';
 import {
   View,
   Text,
-  StyleSheet,
   SafeAreaView
 } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 
 const Header = ({ heading }) => {
   return (
@@ -16,16 +16,16 @@ const Header = ({ heading }) => {
   );
 };
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   header: {
-    margin: 20,
-    borderRadius: 16,
+    margin: '20@vs',
+    borderRadius: '10@ms',
     ...Platform.select({
       ios: {
         height: 90,
       },
       android: {
-        height: 50,
+        height: '50@ms',
       },
     }),
     backgroundColor: '#000',
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   headingText: {
-    fontSize: 23,
+    fontSize: '23@ms',
     color: '#fff',
     fontFamily: 'PTSerif-Bold'
   },
