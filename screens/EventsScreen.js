@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PastEvents from "./PastEvents";
 import Header from "../components/header";
-import { SafeAreaView } from 'react-native';
+import { View, SafeAreaView } from 'react-native';
 import UpComingEvents from "./UpComingEvents";
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';

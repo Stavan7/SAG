@@ -18,7 +18,6 @@ const Header = ({ heading }) => {
 
 const styles = ScaledSheet.create({
   header: {
-    margin: '20@vs',
     borderRadius: '10@ms',
     ...Platform.select({
       ios: {
@@ -28,12 +27,14 @@ const styles = ScaledSheet.create({
         height: '50@ms',
       },
     }),
+    margin: '10@ms',
     backgroundColor: '#000',
     alignItems: 'center',
     justifyContent: 'center',
+    marginBottom: '20@ms'
   },
   headingText: {
-    fontSize: '23@ms',
+    fontSize: '20@ms',
     color: '#fff',
     fontFamily: 'PTSerif-Bold'
   },

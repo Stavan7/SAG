@@ -29,7 +29,7 @@ const BottomTabs = () => {
                             <Ionicons
                                 name="ios-calendar-outline"
                                 color={focused ? '#fff' : '#757575'}
-                                size={moderateScale(25)}
+                                size={moderateScale(23)}
                             />
                         ),
                     }}
@@ -44,7 +44,7 @@ const BottomTabs = () => {
                             <Ionicons
                                 name="md-people-outline"
                                 color={focused ? '#fff' : '#757575'}
-                                size={moderateScale(25)}
+                                size={moderateScale(23)}
                             />
                         )
                     }}
@@ -59,7 +59,7 @@ const BottomTabs = () => {
                             <Ionicons
                                 name="bulb-outline"
                                 color={focused ? '#fff' : '#757575'}
-                                size={moderateScale(25)}
+                                size={moderateScale(23)}
                             />
                         )
                     }}
@@ -74,7 +74,7 @@ const BottomTabs = () => {
                             <Feather
                                 name="phone-call"
                                 color={focused ? '#fff' : '#757575'}
-                                size={moderateScale(25)}
+                                size={moderateScale(23)}
                             />
                         )
                     }}
@@ -94,7 +94,7 @@ const styles = ScaledSheet.create({
                 height: 90,
             },
             android: {
-                height: '70@ms',
+                height: '59@ms',
             },
         }),
         backgroundColor: '#000',

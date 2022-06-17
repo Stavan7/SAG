@@ -3,22 +3,32 @@ import {
     View,
     Text,
     FlatList,
-    StyleSheet,
     ScrollView,
     SafeAreaView
 } from 'react-native';
 import contacts from '../data/contacts';
 import Header from "../components/header";
-import { ListItem, Avatar } from 'react-native-elements'
+import { ListItem, Avatar } from 'react-native-elements';
+import { moderateScale, ScaledSheet } from 'react-native-size-matters';
+import Founders from "../components/Founders";
 
 const CommunityScreen = () => {
     const getUserItem = ({ item: contacts }) => {
         return (
             <View styles={{ flex: 1 }}>
-                <ListItem key={contacts.id} bottomDivider >
-                    <Avatar rounded size='small' source={{ uri: contacts.avatarUrl }} />
+                <ListItem
+                    key={contacts.name}
+                    containerStyle={{
+                        borderWidth: 1,
+                        borderColor: 'black',
+                        borderRadius: moderateScale(10),
+                        marginBottom: moderateScale(10)
+                    }}
+                >
+                    <Avatar rounded size='large' source={{ uri: contacts.avatarUrl }} />
                     <ListItem.Content>
-                        <ListItem.Title style={styles.listName}>{contacts.name}</ListItem.Title>
+                        <ListItem.Title style={styles.listTitle}>{contacts.name}</ListItem.Title>
+                        <ListItem.Subtitle style={styles.listSubtitle}>{contacts.email}</ListItem.Subtitle>
                     </ListItem.Content>
                 </ListItem>
             </View>
@@ -28,6 +38,8 @@ const CommunityScreen = () => {
     return (
         <SafeAreaView style={styles.background}>
             <Header heading="Community" />
+            <Founders />
+
             <View style={styles.viewContact}>
                 <Text style={styles.headerText}>Meet Our Team</Text>
                 <FlatList
@@ -41,31 +53,34 @@ const CommunityScreen = () => {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     background: {
         flex: 1,
+        marginBottom: '70@ms',
         backgroundColor: 'white'
     },
-    scroll: {
-        height: 100,
-        borderWidth: 1,
-        borderColor: 'black'
-    },
     headerText: {
-        fontSize: 23,
+        fontSize: '20@ms',
         color: '#086f23',
+        marginBottom: '10@ms',
+        marginLeft: '10@ms',
         fontFamily: 'PTSerif-Bold',
     },
     viewContact: {
         flex: 1,
         backgroundColor: '#fff',
-        borderRadius: 20,
-        margin: 10,
-        padding: 0,
+        borderRadius: '10@ms',
+        margin: '10@ms',
     },
-    listName: {
-        fontSize: 17,
+    listTitle: {
+        fontSize: '16@ms',
         color: '#000',
+        fontFamily: 'PTSerif-Bold',
+    },
+    listSubtitle: {
+        fontSize: '14@ms',
+        color: '#000',
+        marginTop: '10@ms',
         fontFamily: 'PTSerif-Regular',
     }
 })

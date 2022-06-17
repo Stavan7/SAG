@@ -2,15 +2,14 @@ import React from 'react'
 import {
     Text,
     View,
-    FlatList,
-    ScrollView,
-    StyleSheet,
+    FlatList, 
     SafeAreaView,
     TouchableOpacity,
 } from 'react-native';
 import data from '../data/data';
 import Header from "../components/header";
-import FastImage from 'react-native-fast-image'
+import FastImage from 'react-native-fast-image';
+import { ScaledSheet } from 'react-native-size-matters';
 
 const events = data.PastEvents;
 
@@ -54,62 +53,56 @@ const GalleryList = ({ navigation }) => {
 }
 
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     container: {
-        flex: 1,
-        marginBottom: 80,
-        backgroundColor: '#FFF',
+        flex: 1, 
+        marginBottom: '70@ms',
+        backgroundColor: 'transparent'
     },
     eventContainer: {
-        height: 140,
-        borderRadius: 16,
-        marginVertical: 10,
-        marginHorizontal: 20,
+        height: '120@vs',
+        marginVertical: '10@ms',
+        marginHorizontal: '20@ms',
         flexDirection: 'row',
         elevation: 23,
         shadowOffset: {
             width: 0,
-            height: 11,
+            height: '11@vs',
         },
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
-        opacity: 0.87,
         borderColor: 'transparent',
+        backgroundColor: '#fff',
         shadowColor: 'black',
-        backgroundColor: '#000'
+        borderRadius: '10@ms'
     },
     carousel: {
-        width: '40%',
+        width: '41%',
         height: 'auto',
-        borderTopLeftRadius: 16,
-        borderBottomLeftRadius: 16,
+        borderTopLeftRadius: '10@ms',
+        borderBottomLeftRadius: '10@ms'
     },
     textContainer: {
         flex: 1,
+        padding: '10@s',
+        backgroundColor: '#000',
         justifyContent: 'center',
-        borderTopRightRadius: 16,
-        borderBottomRightRadius: 16,
+        borderTopRightRadius: '10@ms',
+        borderBottomRightRadius: '10@ms',
     },
     title: {
-        fontSize: 20,
+        fontSize: '17@ms',
         color: '#FFF',
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold'
     },
     date: {
-        fontSize: 16,
-        marginTop: 5,
+        fontSize: '15@ms',
+        marginTop: '10@ms',
         color: '#FFF',
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold'
     },
-    description: {
-        fontSize: 16,
-        marginTop: 25,
-        color: 'white',
-        marginBottom: 5,
-        fontFamily: 'PTSerif-Regular'
-    }
 })
 
 export default GalleryList

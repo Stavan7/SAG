@@ -14,8 +14,9 @@ const UpComingEventsScreen = () => {
                 <Text style={styles.title}>No Upcoming Events</Text>
                 <Text style={styles.subtitle}>Stay Tuned !</Text>
             </View>
-            <View style={{ height: '70%', marginTop: verticalScale(10) }}>
+            <View style={{ height: '70%', marginTop: verticalScale(10), }}>
                 <LottieView
+                    resizeMode="contain"
                     loop
                     autoPlay
                     source={require('../assets/lottieAnimations/waiting.json')}
@@ -28,8 +29,8 @@ const UpComingEventsScreen = () => {
 
 const styles = ScaledSheet.create({
     container: {
-        flex: 1,
-        marginBottom: '70@ms',
+        flex: 1, 
+        marginBottom: '61@ms',
         backgroundColor: 'transparent'
     },
     textContainer: {
@@ -37,18 +38,19 @@ const styles = ScaledSheet.create({
         marginHorizontal: '20@s'
     },
     title: {
-        fontSize: '25@s',
+        fontSize: '21@ms',
         color: 'black',
         fontFamily: 'PTSerif-Bold'
     },
     subtitle: {
-        fontSize: '25@s',
+        fontSize: '21@ms',
         color: '#086f23',
         fontFamily: 'PTSerif-Bold'
     },
     footer: {
+        position: 'absolute',
         fontSize: '14@ms',
-        marginTop: '20@ms',
+        bottom: '10@vs',
         color: '#000',
         marginHorizontal: '20@ms',
         textDecorationLine: 'underline',

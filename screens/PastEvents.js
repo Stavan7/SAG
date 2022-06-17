@@ -9,8 +9,7 @@ import {
 import data from '../data/data';
 import FastImage from 'react-native-fast-image'
 import { useNavigation } from '@react-navigation/native';
-import LinearGradient from 'react-native-linear-gradient';
-import { ScaledSheet, moderateScale } from 'react-native-size-matters';
+import { ScaledSheet } from 'react-native-size-matters';
 
 
 const events = data.PastEvents;
@@ -89,20 +88,20 @@ const styles = ScaledSheet.create({
         borderBottomRightRadius: '10@ms',
     },
     title: {
-        fontSize: '18@ms',
+        fontSize: '17@ms',
         color: '#FFF',
         textAlign: 'left',
         fontFamily: 'PTSerif-Bold'
     },
     date: {
-        fontSize: '16@ms',
+        fontSize: '15@ms',
         marginTop: '10@ms',
         color: '#FFF',
         textAlign: 'left',
         fontFamily: 'PTSerif-Bold'
     },
     description: {
-        fontSize: '14@ms',
+        fontSize: '13@ms',
         marginTop: '16@ms',
         color: '#FFF',
         textAlign: 'left',

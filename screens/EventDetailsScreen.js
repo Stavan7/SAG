@@ -2,11 +2,14 @@ import React from 'react'
 import {
     Text,
     View,
-    StyleSheet,
     ScrollView,
     SafeAreaView,
     TouchableOpacity
 } from 'react-native';
+import {
+    ScaledSheet,
+    moderateScale
+} from 'react-native-size-matters';
 import FastImage from 'react-native-fast-image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
@@ -20,7 +23,7 @@ const EventDetailsScreen = ({ route, navigation }) => {
                         <FontAwesome
                             name="close"
                             color='black'
-                            size={28}
+                            size={moderateScale(25)}
                         />
                     </TouchableOpacity>
 
@@ -41,16 +44,16 @@ const EventDetailsScreen = ({ route, navigation }) => {
     )
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     view: {
         flex: 1,
         backgroundColor: 'white'
     },
     container: {
         flex: 1,
-        margin: 20,
-        padding: 10,
-        borderRadius: 16,
+        margin: '20@ms',
+        padding: '10@ms',
+        borderRadius: '10@ms',
         elevation: 16,
         shadowOffset: {
             width: 0,
@@ -63,12 +66,12 @@ const styles = StyleSheet.create({
         shadowColor: '#000'
     },
     iconsContainer: {
-        top: -14,
-        width: 45,
-        height: 45,
-        right: -14,
-        borderWidth: 2,
-        borderRadius: 50,
+        top: '-14@ms',
+        width: '40@ms',
+        height: '40@ms',
+        right: '-14@ms',
+        borderWidth: '2@ms',
+        borderRadius: '50@ms',
         borderColor: 'black',
         position: 'absolute',
         alignItems: 'center',
@@ -85,61 +88,39 @@ const styles = StyleSheet.create({
         shadowColor: 'black',
     },
     header: {
-        marginTop: 10,
-        fontSize: 23,
+        marginTop: '10@ms',
+        fontSize: '20@ms',
         color: '#000',
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold',
     },
     date: {
-        fontSize: 18,
         color: '#000',
-        marginTop: 5,
+        marginTop: '5@ms',
+        fontSize: '17@ms',
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold',
     },
     image: {
-        marginTop: 10,
         height: '35%',
         width: '100%',
-        marginBottom: 20,
-        borderRadius: 20,
+        marginTop: '10@ms',
+        borderRadius: '10@ms',
     },
     card: {
         flex: 1,
-        borderRadius: 20,
-        paddingVertical: 20,
-        paddingHorizontal: 10,
+        marginTop: '-20@ms',
+        borderRadius: '10@ms',
+        paddingVertical: '20@ms',
+        paddingHorizontal: '10@ms',
         backgroundColor: '#000',
     },
     description: {
-        fontSize: 17,
+        fontSize: '16@ms',
         color: 'white',
         textAlign: "left",
         fontFamily: 'PTSerif-Regular'
     },
-    btn: {
-        bottom: 10,
-        position: 'absolute',
-        alignSelf: 'center',
-        alignItems: 'center',
-        justifyContent: 'center'
-    },
-    btnContainer: {
-        height: 50,
-        width: '80%',
-        borderRadius: 20,
-        flexDirection: 'row',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        justifyContent: 'space-around',
-    },
-    btnText: {
-        fontSize: 20,
-        color: '#000',
-        textAlign: 'center',
-        fontFamily: 'PTSerif-Bold',
-    }
 })
 
 export default EventDetailsScreen

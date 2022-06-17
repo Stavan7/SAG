@@ -44,6 +44,38 @@ const data = {
             content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
         },
     ],
+    Founders: [
+        {
+            id: 1,
+            name: 'Ajay Waghmode',
+            position: 'Founder',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2019/05/27/19/08/puppy-4233378_960_720.jpg',
+        },
+        {
+            id: 2,
+            name: 'Vijay Waghmode',
+            position: 'Co-Founder',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2015/05/05/08/36/pets-753464_960_720.jpg',
+        },
+        {
+            id: 3,
+            name: 'Arun Matthews',
+            position: 'President',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2019/07/03/10/16/pug-4314106_960_720.jpg',
+        },
+        {
+            id: 4,
+            name: 'Nirai Rajan',
+            position: 'Treasurer',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2018/01/17/00/46/shiba-inu-3087207_960_720.jpg',
+        },
+        {
+            id: 5,
+            name: 'Nishant Charan',
+            position: 'Vice-President',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2012/08/28/00/43/dog-55141_960_720.jpg',
+        },
+    ],
 
     PastEvents: [
         {
@@ -111,7 +143,7 @@ Special thanks to @Akshar for these beautiful pictures.\n`
         },
         {
             id: 5,
-            title: "TREE PLANTATION",
+            title: "TREE PLANTATION DRIVE",
             date: "15th August 2021",
             image: require('../assets/lottieImages/gardening.png'),
             gallery: require('../assets/lottieAnimations/gardening.gif'),
@@ -136,7 +168,7 @@ Please place water bowls for animals and birds and save their life🕊️`
         },
         {
             id: 7,
-            title: "TREE PLANTATION",
+            title: "TREE PLANTATION DRIVE",
             date: "5th June 2021",
             image: require('../assets/lottieImages/gardening.png'),
             gallery: require('../assets/lottieAnimations/gardening.gif'),
@@ -222,7 +254,7 @@ S.A.G enjoying Cycling.`,
         },
         {
             id: 13,
-            title: "GIP Dam Clean ",
+            title: "GIP DAM CLEAN DRIVE",
             date: "9th August 2020",
             image: require('../assets/lottieImages/cleaning.png'),
             gallery: require('../assets/lottieAnimations/cleaning.gif'),
