@@ -45,16 +45,17 @@ const Founders = () => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'transparent',
+        backgroundColor: 'white',
     },
     eventContainer: {
-        height: '230@ms',
-        width: '170@ms',
-        marginHorizontal: '9@ms', 
+        flex: 1,
+        height: '91%',
+        width: '155@s',
+        marginHorizontal: '9@ms',
     },
     carousel: {
         width: 'auto',
-        height: '70%',
+        height: '68%',
         borderTopLeftRadius: '10@ms',
         borderTopRightRadius: '10@ms'
     },
@@ -67,22 +68,22 @@ const styles = ScaledSheet.create({
         borderBottomRightRadius: '10@ms',
     },
     title: {
-        fontSize: '17@ms',
+        fontSize: '16@ms',
         color: '#FFF',
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold'
     },
     date: {
         fontSize: '14@ms',
-        marginTop: '8@ms',
         color: '#FFF',
+        marginTop: '3@ms',
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold'
     },
     headerText: {
         fontSize: '20@ms',
         color: '#086f23',
-        marginBottom: '25@ms',
+        marginBottom: '16@ms',
         marginLeft: '20@ms',
         fontFamily: 'PTSerif-Bold',
     },

@@ -1,9 +1,11 @@
 import React from 'react';
+import { Text } from 'react-native';
 import EventRoutes from './EventRoutes';
-import AboutUsScreen from '../screens/AboutUs';
 import GalleryList from '../screens/GalleryList';
 import CommunityScreen from '../screens/Community';
+import AboutUsScreen from '../screens/AboutUsScreen';
 import Feather from 'react-native-vector-icons/Feather';
+import ContactUsScreen from '../screens/ContactUsScreen';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -26,11 +28,22 @@ const BottomTabs = () => {
                     options={{
                         tabBarLabel: 'Events',
                         tabBarIcon: ({ focused }) => (
-                            <Ionicons
-                                name="ios-calendar-outline"
-                                color={focused ? '#fff' : '#757575'}
-                                size={moderateScale(23)}
-                            />
+                            focused ? (
+                                <>
+                                    <Ionicons
+                                        name="ios-calendar-outline"
+                                        color={focused ? '#fff' : '#757575'}
+                                        size={moderateScale(23)}
+                                    />
+                                    <Text style={styles.dot}>{'\u2B24'}</Text>
+                                </>
+                            ) : (
+                                <Ionicons
+                                    name="ios-calendar-outline"
+                                    color={focused ? '#fff' : '#757575'}
+                                    size={moderateScale(23)}
+                                />
+                            )
                         ),
                     }}
                 />
@@ -41,11 +54,22 @@ const BottomTabs = () => {
                         title: 'Gallery',
                         tabBarLabel: 'Gallery',
                         tabBarIcon: ({ focused }) => (
-                            <Ionicons
-                                name="md-people-outline"
-                                color={focused ? '#fff' : '#757575'}
-                                size={moderateScale(23)}
-                            />
+                            focused ? (
+                                <>
+                                    <Ionicons
+                                        name="md-image-outline"
+                                        color={focused ? '#fff' : '#757575'}
+                                        size={moderateScale(23)}
+                                    />
+                                    <Text style={styles.dot}>{'\u2B24'}</Text>
+                                </>
+                            ) : (
+                                <Ionicons
+                                    name="md-image-outline"
+                                    color={focused ? '#fff' : '#757575'}
+                                    size={moderateScale(23)}
+                                />
+                            )
                         )
                     }}
                 />
@@ -56,11 +80,22 @@ const BottomTabs = () => {
                         title: 'Community',
                         tabBarLabel: 'Community',
                         tabBarIcon: ({ focused }) => (
-                            <Ionicons
-                                name="bulb-outline"
-                                color={focused ? '#fff' : '#757575'}
-                                size={moderateScale(23)}
-                            />
+                            focused ? (
+                                <>
+                                    <Ionicons
+                                        name="md-people-outline"
+                                        color={focused ? '#fff' : '#757575'}
+                                        size={moderateScale(23)}
+                                    />
+                                    <Text style={styles.dot}>{'\u2B24'}</Text>
+                                </>
+                            ) : (
+                                <Ionicons
+                                    name="md-people-outline"
+                                    color={focused ? '#fff' : '#757575'}
+                                    size={moderateScale(23)}
+                                />
+                            )
                         )
                     }}
                 />
@@ -71,11 +106,50 @@ const BottomTabs = () => {
                         title: 'AboutUs',
                         tabBarLabel: 'AboutUs',
                         tabBarIcon: ({ focused }) => (
-                            <Feather
-                                name="phone-call"
-                                color={focused ? '#fff' : '#757575'}
-                                size={moderateScale(23)}
-                            />
+                            focused ? (
+                                <>
+                                    <Ionicons
+                                        name="ios-information-circle-outline"
+                                        color={focused ? '#fff' : '#757575'}
+                                        size={moderateScale(23)}
+                                    />
+                                    <Text style={styles.dot}>{'\u2B24'}</Text>
+
+                                </>
+                            ) : (
+                                <Ionicons
+                                    name="ios-information-circle-outline"
+                                    color={focused ? '#fff' : '#757575'}
+                                    size={moderateScale(23)}
+                                />
+                            )
+                        )
+                    }}
+                />
+                <Tab.Screen
+                    name="ContactUs"
+                    component={ContactUsScreen}
+                    options={{
+                        title: 'ContactUs',
+                        tabBarLabel: 'ContactUs',
+                        tabBarIcon: ({ focused }) => (
+                            focused ? (
+                                <>
+                                    <Feather
+                                        name="phone-call"
+                                        color={focused ? '#fff' : '#757575'}
+                                        size={moderateScale(23)}
+                                    />
+                                    <Text style={styles.dot}>{'\u2B24'}</Text>
+
+                                </>
+                            ) : (
+                                <Feather
+                                    name="phone-call"
+                                    color={focused ? '#fff' : '#757575'}
+                                    size={moderateScale(23)}
+                                />
+                            )
                         )
                     }}
                 />
@@ -87,18 +161,21 @@ const BottomTabs = () => {
 const styles = ScaledSheet.create({
     shadow: {
         position: 'absolute',
-        borderTopLeftRadius: '10@ms',
-        borderTopRightRadius: '10@ms',
         ...Platform.select({
             ios: {
                 height: 90,
             },
             android: {
-                height: '59@ms',
+                height: '62@ms',
             },
         }),
         backgroundColor: '#000',
     },
+    dot: {
+        color: 'green',
+        fontSize: '7@ms',
+        marginTop: '3@ms',
+    }
 });
 
 export default BottomTabs;

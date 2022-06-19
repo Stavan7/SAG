@@ -2,7 +2,8 @@ import React from 'react'
 import {
     Text,
     View,
-    FlatList, 
+    Alert,
+    FlatList,
     SafeAreaView,
     TouchableOpacity,
 } from 'react-native';
@@ -13,18 +14,26 @@ import { ScaledSheet } from 'react-native-size-matters';
 
 const events = data.PastEvents;
 
-const GalleryList = ({ navigation }) => {
+const showAlert = () =>
+    Alert.alert(
+        "Sorry !",
+        "Can't Access Images right now",
+        [
+            {
+                text: "Cancel",
+                style: "cancel",
+            },
+        ],
+        { cancelable: true }
+    );
 
-
+const GalleryList = () => {
     const renderItem = ({ item }) => {
         return (
             <TouchableOpacity
                 key={item.id}
                 activeOpacity={0.8}
-                onPress={() => navigation.navigate('NoBottomTab', {
-                    screen: 'Gallery',
-                    params: item
-                })}>
+                onPress={() => showAlert()}>
                 <View style={styles.eventContainer}>
                     <FastImage
                         source={item.gallery}
@@ -52,11 +61,10 @@ const GalleryList = ({ navigation }) => {
     )
 }
 
-
 const styles = ScaledSheet.create({
     container: {
-        flex: 1, 
-        marginBottom: '70@ms',
+        flex: 1,
+        marginBottom: '59@ms',
         backgroundColor: 'transparent'
     },
     eventContainer: {

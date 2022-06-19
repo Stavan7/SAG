@@ -11,7 +11,6 @@ import FastImage from 'react-native-fast-image'
 import { useNavigation } from '@react-navigation/native';
 import { ScaledSheet } from 'react-native-size-matters';
 
-
 const events = data.PastEvents;
 
 const PastEventsScreen = () => {
@@ -54,7 +53,7 @@ const styles = ScaledSheet.create({
     container: {
         flex: 1,
         marginTop: '20@ms',
-        marginBottom: '70@ms',
+        marginBottom: '59@ms',
         backgroundColor: 'transparent'
     },
     eventContainer: {
