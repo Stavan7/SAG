@@ -9,7 +9,7 @@ import {
 import contacts from '../data/contacts';
 import Header from "../components/header";
 import Founders from "../components/Founders";
-import { ListItem, Avatar } from '@rneui/themed';
+import { ListItem, Avatar } from 'react-native-elements';
 import { moderateScale, ScaledSheet, verticalScale } from 'react-native-size-matters';
 
 const HEIGHT = Dimensions.get('window').height
