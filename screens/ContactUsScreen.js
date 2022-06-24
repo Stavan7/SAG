@@ -13,6 +13,7 @@ import data from '../data/data';
 import Header from "../components/header";
 import { Avatar } from 'react-native-elements';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
+import COLORS from '../constants/colors';
 
 const swiper = data.ContactUsSwiper;
 const HEIGHT = Dimensions.get('screen').height;
@@ -112,7 +113,7 @@ const styles = ScaledSheet.create({
     safeArea: {
         flex: 1,
         marginBottom: '59@ms',
-        backgroundColor: '#fff'
+        backgroundColor: COLORS.WHITE
     },
     paymentView: {
         flex: 1,
@@ -121,7 +122,7 @@ const styles = ScaledSheet.create({
         marginBottom: '20@ms',
         alignSelf: 'center',
         borderRadius: '10@ms',
-        backgroundColor: 'black',
+        backgroundColor: COLORS.BLACK,
         paddingHorizontal: '20@ms',
         paddingVertical: '10@ms',
         elevation: 23,
@@ -132,7 +133,7 @@ const styles = ScaledSheet.create({
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
         borderColor: 'transparent',
-        shadowColor: '#086f23',
+        shadowColor: COLORS.GREEN,
         borderRadius: '10@ms'
     },
     upiImage: {
@@ -145,7 +146,7 @@ const styles = ScaledSheet.create({
     },
     linkHeader: {
         marginBottom: '10@ms',
-        color: 'black',
+        color: COLORS.BLACK,
         fontSize: '18@ms',
         textAlign: "left",
         marginHorizontal: '20@ms',
@@ -153,12 +154,12 @@ const styles = ScaledSheet.create({
     },
     upi: {
         marginVertical: '3@ms',
-        color: '#086f23',
+        color: COLORS.GREEN,
         fontSize: '17@ms',
         fontFamily: 'PTSerif-Bold',
     },
     upilinks: {
-        color: '#fff',
+        color: COLORS.WHITE,
         fontSize: '14@ms',
         marginVertical: '5@ms',
         fontFamily: 'PTSerif-Regular',
@@ -171,19 +172,19 @@ const styles = ScaledSheet.create({
         flex: 1,
         padding: '10@ms',
         fontSize: '15@ms',
-        color: 'white',
+        color: COLORS.WHITE,
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold',
         textAlignVertical: 'center',
     },
     mailContainer: {
-        color: 'black',
+        color: COLORS.BLACK,
         fontSize: '17@ms',
         marginVertical: '10@ms',
         fontFamily: 'PTSerif-Bold',
     },
     mailid: {
-        color: 'black',
+        color: COLORS.BLACK,
         fontSize: '16@ms',
         marginBottom: '10@ms',
         textDecorationLine: 'underline',

@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import data from '../data/data';
+import COLORS from '../constants/colors';
 import Header from "../components/header";
 import FastImage from 'react-native-fast-image';
 import { ScaledSheet } from 'react-native-size-matters';
@@ -80,8 +81,8 @@ const styles = ScaledSheet.create({
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
         borderColor: 'transparent',
-        backgroundColor: '#fff',
-        shadowColor: 'black',
+        backgroundColor: COLORS.BLACK,
+        shadowColor: COLORS.BLACK,
         borderRadius: '10@ms'
     },
     carousel: {
@@ -93,21 +94,21 @@ const styles = ScaledSheet.create({
     textContainer: {
         flex: 1,
         padding: '10@s',
-        backgroundColor: '#000',
+        backgroundColor: COLORS.BLACK,
         justifyContent: 'center',
         borderTopRightRadius: '10@ms',
         borderBottomRightRadius: '10@ms',
     },
     title: {
         fontSize: '17@ms',
-        color: '#FFF',
+        color: COLORS.WHITE,
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold'
     },
     date: {
         fontSize: '15@ms',
         marginTop: '10@ms',
-        color: '#FFF',
+        color: COLORS.WHITE,
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold'
     },

@@ -10,6 +10,7 @@ import {
 import data from '../data/data';
 import Header from "../components/header";
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
+import COLORS from '../constants/colors';
 
 const content = data.AboutUs;
 const HEIGHT = Dimensions.get('screen').height;
@@ -48,10 +49,10 @@ const styles = ScaledSheet.create({
     background: {
         flex: 1,
         marginBottom: '59@ms',
-        backgroundColor: 'white'
+        backgroundColor: COLORS.WHITE
     },
     container: {
-        backgroundColor: '#000',
+        backgroundColor: COLORS.BLACK,
         borderTopLeftRadius: moderateScale(20),
         borderTopRightRadius: moderateScale(20)
     },
@@ -65,19 +66,20 @@ const styles = ScaledSheet.create({
     },
     header: {
         fontSize: '17@ms',
-        color: 'white',
+        color: COLORS.GREEN,
         textAlign: "justify",
         fontFamily: 'PTSerif-Bold'
     },
     about: {
         fontSize: '16@ms',
-        color: 'white',
+        color: COLORS.WHITE,
         marginTop: '10@ms',
         fontFamily: 'PTSerif-Regular'
     },
     card: {
         flex: 1,
         padding: '20@ms',
+        paddingBottom: '0@ms'
     },
 })
 

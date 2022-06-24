@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import EventRoutes from './EventRoutes';
+import COLORS from '../constants/colors';
 import GalleryList from '../screens/GalleryList';
 import CommunityScreen from '../screens/Community';
 import AboutUsScreen from '../screens/AboutUsScreen';
@@ -32,7 +33,7 @@ const BottomTabs = () => {
                                 <>
                                     <Ionicons
                                         name="ios-calendar-outline"
-                                        color={focused ? '#fff' : '#757575'}
+                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -40,7 +41,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Ionicons
                                     name="ios-calendar-outline"
-                                    color={focused ? '#fff' : '#757575'}
+                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -58,7 +59,7 @@ const BottomTabs = () => {
                                 <>
                                     <Ionicons
                                         name="md-image-outline"
-                                        color={focused ? '#fff' : '#757575'}
+                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -66,7 +67,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Ionicons
                                     name="md-image-outline"
-                                    color={focused ? '#fff' : '#757575'}
+                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -84,7 +85,7 @@ const BottomTabs = () => {
                                 <>
                                     <Ionicons
                                         name="md-people-outline"
-                                        color={focused ? '#fff' : '#757575'}
+                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -92,7 +93,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Ionicons
                                     name="md-people-outline"
-                                    color={focused ? '#fff' : '#757575'}
+                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -110,7 +111,7 @@ const BottomTabs = () => {
                                 <>
                                     <Ionicons
                                         name="ios-information-circle-outline"
-                                        color={focused ? '#fff' : '#757575'}
+                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -119,7 +120,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Ionicons
                                     name="ios-information-circle-outline"
-                                    color={focused ? '#fff' : '#757575'}
+                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -137,7 +138,7 @@ const BottomTabs = () => {
                                 <>
                                     <Feather
                                         name="phone-call"
-                                        color={focused ? '#fff' : '#757575'}
+                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -146,7 +147,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Feather
                                     name="phone-call"
-                                    color={focused ? '#fff' : '#757575'}
+                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -169,10 +170,10 @@ const styles = ScaledSheet.create({
                 height: '62@ms',
             },
         }),
-        backgroundColor: '#000',
+        backgroundColor: COLORS.BLACK,
     },
     dot: {
-        color: 'green',
+        color: COLORS.GREEN,
         fontSize: '7@ms',
         marginTop: '3@ms',
     }

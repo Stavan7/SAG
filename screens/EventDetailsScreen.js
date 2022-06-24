@@ -10,6 +10,7 @@ import {
     ScaledSheet,
     moderateScale
 } from 'react-native-size-matters';
+import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
@@ -47,7 +48,7 @@ const EventDetailsScreen = ({ route, navigation }) => {
 const styles = ScaledSheet.create({
     view: {
         flex: 1,
-        backgroundColor: 'white'
+        backgroundColor: COLORS.WHITE
     },
     container: {
         flex: 1,
@@ -61,9 +62,9 @@ const styles = ScaledSheet.create({
         },
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
-        borderColor: 'black',
-        backgroundColor: '#fff',
-        shadowColor: '#000'
+        borderColor: COLORS.BLACK,
+        backgroundColor: COLORS.WHITE,
+        shadowColor: COLORS.BLACK
     },
     iconsContainer: {
         top: '-14@ms',
@@ -72,7 +73,7 @@ const styles = ScaledSheet.create({
         right: '-14@ms',
         borderWidth: '2@ms',
         borderRadius: '50@ms',
-        borderColor: 'black',
+        borderColor: COLORS.BLACK,
         position: 'absolute',
         alignItems: 'center',
         justifyContent: 'center',
@@ -84,18 +85,18 @@ const styles = ScaledSheet.create({
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
         borderColor: 'transparent',
-        backgroundColor: '#fff',
-        shadowColor: 'black',
+        backgroundColor: COLORS.WHITE,
+        shadowColor: COLORS.BLACK,
     },
     header: {
         marginTop: '10@ms',
         fontSize: '20@ms',
-        color: '#000',
+        color: COLORS.BLACK,
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold',
     },
     date: {
-        color: '#000',
+        color: COLORS.BLACK,
         marginTop: '5@ms',
         fontSize: '17@ms',
         textAlign: 'center',
@@ -113,11 +114,11 @@ const styles = ScaledSheet.create({
         borderRadius: '10@ms',
         paddingVertical: '20@ms',
         paddingHorizontal: '10@ms',
-        backgroundColor: '#000',
+        backgroundColor: COLORS.BLACK,
     },
     description: {
         fontSize: '16@ms',
-        color: 'white',
+        color: COLORS.WHITE,
         textAlign: "left",
         fontFamily: 'PTSerif-Regular'
     },

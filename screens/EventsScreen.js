@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PastEvents from "./PastEvents";
+import COLORS from '../constants/colors';
 import Header from "../components/header";
 import { SafeAreaView } from 'react-native';
 import UpComingEvents from "./UpComingEvents";
@@ -49,12 +50,12 @@ class EventsScreen extends Component {
 const styles = ScaledSheet.create({
     background: {
         flex: 1,
-        backgroundColor: '#FFF',
+        backgroundColor: COLORS.WHITE,
     },
     tabStyle: {
         width: 'auto',
         elevation: '23@vs',
-        shadowColor: "#000",
+        shadowColor: COLORS.BLACK,
         shadowOffset: {
             width: 0,
             height: '11@vs',
@@ -71,21 +72,21 @@ const styles = ScaledSheet.create({
     },
     activeTabStyle: {
         elevation: '23@vs',
-        shadowColor: "#000",
+        shadowColor: COLORS.BLACK,
         shadowOffset: {
             width: 0,
             height: '11@ms',
         },
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
-        backgroundColor: 'white',
+        backgroundColor: COLORS.WHITE,
     },
     activeTabTextStyle: {
-        color: 'black',
+        color: COLORS.BLACK,
         fontFamily: 'PTSerif-Bold'
     },
     tabTextStyle: {
-        color: 'black',
+        color: COLORS.BLACK,
         fontSize: '14@ms',
         fontFamily: 'PTSerif-Bold'
     },

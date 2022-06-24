@@ -7,6 +7,7 @@ import {
     SafeAreaView
 } from 'react-native';
 import contacts from '../data/contacts';
+import COLORS from '../constants/colors';
 import Header from "../components/header";
 import Founders from "../components/Founders";
 import { ListItem, Avatar } from 'react-native-elements';
@@ -53,11 +54,11 @@ const styles = ScaledSheet.create({
     background: {
         flex: 1,
         marginBottom: '59@ms',
-        backgroundColor: 'white'
+        backgroundColor: COLORS.WHITE
     },
     headerText: {
         fontSize: '20@ms',
-        color: '#086f23',
+        color: COLORS.GREEN,
         marginBottom: '16@ms',
         marginLeft: '10@ms',
         fontFamily: 'PTSerif-Bold',
@@ -65,25 +66,25 @@ const styles = ScaledSheet.create({
     founders: { height: HEIGHT / 2.7 },
     listContainer: {
         borderWidth: 1,
-        borderColor: 'black',
+        borderColor: COLORS.BLACK,
         height: verticalScale(80),
         borderRadius: moderateScale(10),
         marginBottom: moderateScale(10)
     },
     viewContact: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: COLORS.WHITE,
         borderRadius: '10@ms',
         marginHorizontal: '10@ms',
     },
     listTitle: {
         fontSize: '16@ms',
-        color: '#000',
+        color: COLORS.BLACK,
         fontFamily: 'PTSerif-Bold',
     },
     listSubtitle: {
         fontSize: '14@ms',
-        color: '#000',
+        color: COLORS.BLACK,
         marginTop: '5@ms',
         fontFamily: 'PTSerif-Regular',
     }

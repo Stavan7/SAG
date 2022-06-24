@@ -6,6 +6,7 @@ import {
     SafeAreaView,
 } from 'react-native';
 import data from '../data/data';
+import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';
 import { ScaledSheet } from 'react-native-size-matters';
 
@@ -45,7 +46,7 @@ const Founders = () => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        backgroundColor: 'white',
+        backgroundColor: COLORS.WHITE,
     },
     eventContainer: {
         flex: 1,
@@ -62,27 +63,27 @@ const styles = ScaledSheet.create({
     textContainer: {
         flex: 1,
         padding: '10@s',
-        backgroundColor: '#000',
+        backgroundColor: COLORS.BLACK,
         justifyContent: 'center',
         borderBottomLeftRadius: '10@ms',
         borderBottomRightRadius: '10@ms',
     },
     title: {
         fontSize: '16@ms',
-        color: '#FFF',
+        color: COLORS.WHITE,
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold'
     },
     date: {
         fontSize: '14@ms',
-        color: '#FFF',
+        color: COLORS.WHITE,
         marginTop: '3@ms',
         textAlign: 'center',
         fontFamily: 'PTSerif-Bold'
     },
     headerText: {
         fontSize: '20@ms',
-        color: '#086f23',
+        color: COLORS.GREEN,
         marginBottom: '16@ms',
         marginLeft: '20@ms',
         fontFamily: 'PTSerif-Bold',

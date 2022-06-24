@@ -1,8 +1,8 @@
 const COLORS = {
-    text: '#fff',
-    header: '#045803',
-    bottomTabBg: '#045803',
-    screenBg: 'rgba(217, 237, 217, 1)',
+    BLACK: '#000',
+    WHITE: '#FFF',
+    GREEN: '#086f23',
+    ICONS: '#757575'
 }
 
 export default COLORS;

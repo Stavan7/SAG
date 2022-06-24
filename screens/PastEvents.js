@@ -7,6 +7,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import data from '../data/data';
+import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image'
 import { useNavigation } from '@react-navigation/native';
 import { ScaledSheet } from 'react-native-size-matters';
@@ -70,7 +71,7 @@ const styles = ScaledSheet.create({
         shadowRadius: 15.19,
         borderColor: 'transparent',
         backgroundColor: '#fff',
-        shadowColor: 'black',
+        shadowColor: COLORS.BLACK,
         borderRadius: '10@ms'
     },
     carousel: {
@@ -82,27 +83,27 @@ const styles = ScaledSheet.create({
     textContainer: {
         flex: 1,
         padding: '10@s',
-        backgroundColor: '#000',
+        backgroundColor: COLORS.BLACK,
         borderTopRightRadius: '10@ms',
         borderBottomRightRadius: '10@ms',
     },
     title: {
         fontSize: '17@ms',
-        color: '#FFF',
+        color: COLORS.WHITE,
         textAlign: 'left',
         fontFamily: 'PTSerif-Bold'
     },
     date: {
         fontSize: '15@ms',
         marginTop: '10@ms',
-        color: '#FFF',
+        color: COLORS.WHITE,
         textAlign: 'left',
         fontFamily: 'PTSerif-Bold'
     },
     description: {
         fontSize: '13@ms',
         marginTop: '16@ms',
-        color: '#FFF',
+        color: COLORS.WHITE,
         textAlign: 'left',
         fontFamily: 'PTSerif-Regular'
     },

@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import LottieView from 'lottie-react-native';
 import { ScaledSheet, verticalScale } from 'react-native-size-matters';
+import COLORS from '../constants/colors';
 
 const UpComingEventsScreen = () => {
     return (
@@ -29,7 +30,7 @@ const UpComingEventsScreen = () => {
 
 const styles = ScaledSheet.create({
     container: {
-        flex: 1, 
+        flex: 1,
         marginBottom: '61@ms',
         backgroundColor: 'transparent'
     },
@@ -39,19 +40,19 @@ const styles = ScaledSheet.create({
     },
     title: {
         fontSize: '21@ms',
-        color: 'black',
+        color: COLORS.BLACK,
         fontFamily: 'PTSerif-Bold'
     },
     subtitle: {
         fontSize: '21@ms',
-        color: '#086f23',
+        color: COLORS.GREEN,
         fontFamily: 'PTSerif-Bold'
     },
     footer: {
         position: 'absolute',
         fontSize: '14@ms',
         bottom: '10@vs',
-        color: '#000',
+        color: COLORS.BLACK,
         marginHorizontal: '20@ms',
         textDecorationLine: 'underline',
         fontFamily: 'PTSerif-Regular'
