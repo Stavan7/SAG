@@ -5,8 +5,7 @@ module.exports = {
   },
   assets: [
     './assets/fonts/',
-    './assets/fonts/Muli',
+    './assets/fonts/Inter',
     './assets/fonts/Serif',
-    './assets/fonts/Roboto',
   ],
 };

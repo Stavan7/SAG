@@ -30,7 +30,7 @@ const PastEventsScreen = () => {
                     <View style={styles.textContainer}>
                         <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
                         <Text style={styles.date}>{item.date}</Text>
-                        <Text style={styles.description} numberOfLines={3} >{item.description}</Text>
+                        <Text style={styles.description} numberOfLines={3} >{item.shortDescription}</Text>
                     </View>
                 </View>
             </TouchableOpacity>
@@ -39,7 +39,7 @@ const PastEventsScreen = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <FlatList
+            <FlatList 
                 data={events}
                 initialNumToRender={10}
                 renderItem={renderItem}
@@ -91,21 +91,22 @@ const styles = ScaledSheet.create({
         fontSize: '17@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: 'Inter-SemiBold'
     },
     date: {
         fontSize: '15@ms',
         marginTop: '10@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: 'Inter-SemiBold'
     },
     description: {
         fontSize: '13@ms',
         marginTop: '16@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
-        fontFamily: 'PTSerif-Regular'
+        lineHeight: '20@ms',
+        fontFamily: 'Inter-Regular'
     },
 })
 
