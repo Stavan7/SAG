@@ -6,6 +6,7 @@ import {
     SafeAreaView,
 } from 'react-native';
 import data from '../data/data';
+import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';
 import { ScaledSheet } from 'react-native-size-matters';
@@ -72,21 +73,21 @@ const styles = ScaledSheet.create({
         fontSize: '16@ms',
         color: COLORS.WHITE,
         textAlign: 'center',
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD,
     },
     date: {
         fontSize: '14@ms',
         color: COLORS.WHITE,
         marginTop: '3@ms',
         textAlign: 'center',
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD,
     },
     headerText: {
         fontSize: '20@ms',
         color: COLORS.GREEN,
         marginBottom: '16@ms',
         marginLeft: '20@ms',
-        fontFamily: 'PTSerif-Bold',
+        fontFamily: FONTS.SEMIBOLD,
     },
 })
 

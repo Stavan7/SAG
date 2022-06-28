@@ -4,16 +4,17 @@ import {
     Text,
     SafeAreaView,
 } from 'react-native';
+import FONTS from '../constants/fonts';
+import COLORS from '../constants/colors';
 import LottieView from 'lottie-react-native';
 import { ScaledSheet, verticalScale } from 'react-native-size-matters';
-import COLORS from '../constants/colors';
 
 const UpComingEventsScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.textContainer}>
                 <Text style={styles.title}>No Upcoming Events</Text>
-                <Text style={styles.subtitle}>Stay Tuned !</Text>
+                <Text style={styles.subtitle}>Stay Tuned !!</Text>
             </View>
             <View style={{ height: '70%', marginTop: verticalScale(10), }}>
                 <LottieView
@@ -41,12 +42,12 @@ const styles = ScaledSheet.create({
     title: {
         fontSize: '21@ms',
         color: COLORS.BLACK,
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD
     },
     subtitle: {
         fontSize: '21@ms',
         color: COLORS.GREEN,
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD
     },
     footer: {
         position: 'absolute',
@@ -55,7 +56,7 @@ const styles = ScaledSheet.create({
         color: COLORS.BLACK,
         marginHorizontal: '20@ms',
         textDecorationLine: 'underline',
-        fontFamily: 'PTSerif-Regular'
+        fontFamily: FONTS.REGULAR
     }
 })
 

@@ -10,6 +10,7 @@ import {
     ScaledSheet,
     moderateScale
 } from 'react-native-size-matters';
+import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -93,14 +94,14 @@ const styles = ScaledSheet.create({
         fontSize: '20@ms',
         color: COLORS.BLACK,
         textAlign: 'center',
-        fontFamily: 'PTSerif-Bold',
+        fontFamily: FONTS.SEMIBOLD,
     },
     date: {
         color: COLORS.BLACK,
         marginTop: '5@ms',
         fontSize: '17@ms',
         textAlign: 'center',
-        fontFamily: 'PTSerif-Bold',
+        fontFamily: FONTS.SEMIBOLD,
     },
     image: {
         height: '35%',
@@ -120,7 +121,7 @@ const styles = ScaledSheet.create({
         fontSize: '16@ms',
         color: COLORS.WHITE,
         textAlign: "left",
-        fontFamily: 'PTSerif-Regular'
+        fontFamily: FONTS.REGULAR
     },
 })
 

@@ -10,10 +10,11 @@ import {
     TouchableOpacity
 } from 'react-native';
 import data from '../data/data';
+import FONTS from '../constants/fonts';
+import COLORS from '../constants/colors';
 import Header from "../components/header";
 import { Avatar } from 'react-native-elements';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
-import COLORS from '../constants/colors';
 
 const swiper = data.ContactUsSwiper;
 const HEIGHT = Dimensions.get('screen').height;
@@ -150,7 +151,7 @@ const styles = ScaledSheet.create({
         fontSize: '18@ms',
         textAlign: "left",
         marginHorizontal: '20@ms',
-        fontFamily: 'PTSerif-Bold',
+        fontFamily: FONTS.SEMIBOLD,
     },
     upi: {
         marginVertical: '3@ms',
@@ -162,7 +163,7 @@ const styles = ScaledSheet.create({
         color: COLORS.WHITE,
         fontSize: '14@ms',
         marginVertical: '5@ms',
-        fontFamily: 'PTSerif-Regular',
+        fontFamily: FONTS.REGULAR,
     },
     qrcode: {
         height: '130@vs',
@@ -174,21 +175,21 @@ const styles = ScaledSheet.create({
         fontSize: '15@ms',
         color: COLORS.WHITE,
         textAlign: 'center',
-        fontFamily: 'PTSerif-Bold',
+        fontFamily: FONTS.MEDIUM,
         textAlignVertical: 'center',
     },
     mailContainer: {
         color: COLORS.BLACK,
         fontSize: '17@ms',
         marginVertical: '10@ms',
-        fontFamily: 'PTSerif-Bold',
+        fontFamily: FONTS.SEMIBOLD,
     },
     mailid: {
         color: COLORS.BLACK,
         fontSize: '16@ms',
         marginBottom: '10@ms',
         textDecorationLine: 'underline',
-        fontFamily: 'PTSerif-Regular',
+        fontFamily: FONTS.MEDIUM,
 
     },
     emailView: {

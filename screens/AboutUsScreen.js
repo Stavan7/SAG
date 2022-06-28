@@ -8,9 +8,11 @@ import {
     SafeAreaView,
 } from 'react-native';
 import data from '../data/data';
+import FONTS from '../constants/fonts';
+import COLORS from '../constants/colors';
 import Header from "../components/header";
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
-import COLORS from '../constants/colors';
+
 
 const content = data.AboutUs;
 const HEIGHT = Dimensions.get('screen').height;
@@ -68,13 +70,13 @@ const styles = ScaledSheet.create({
         fontSize: '17@ms',
         color: COLORS.GREEN,
         textAlign: "justify",
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD
     },
     about: {
         fontSize: '16@ms',
         color: COLORS.WHITE,
         marginTop: '10@ms',
-        fontFamily: 'PTSerif-Regular'
+        fontFamily: FONTS.REGULAR
     },
     card: {
         flex: 1,

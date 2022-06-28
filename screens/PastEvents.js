@@ -7,6 +7,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import data from '../data/data';
+import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image'
 import { useNavigation } from '@react-navigation/native';
@@ -39,7 +40,7 @@ const PastEventsScreen = () => {
 
     return (
         <SafeAreaView style={styles.container}>
-            <FlatList 
+            <FlatList
                 data={events}
                 initialNumToRender={10}
                 renderItem={renderItem}
@@ -91,22 +92,23 @@ const styles = ScaledSheet.create({
         fontSize: '17@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
-        fontFamily: 'Inter-SemiBold'
+        fontFamily: FONTS.SEMIBOLD,  
+      
     },
     date: {
         fontSize: '15@ms',
-        marginTop: '10@ms',
+        marginTop: '8@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
-        fontFamily: 'Inter-SemiBold'
+        fontFamily: FONTS.SEMIBOLD
     },
     description: {
         fontSize: '13@ms',
-        marginTop: '16@ms',
+        marginTop: '10@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
         lineHeight: '20@ms',
-        fontFamily: 'Inter-Regular'
+        fontFamily: FONTS.MEDIUM
     },
 })
 

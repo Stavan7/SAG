@@ -4,6 +4,7 @@ import {
   Text,
   SafeAreaView
 } from 'react-native';
+import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import { ScaledSheet } from 'react-native-size-matters';
 
@@ -37,7 +38,7 @@ const styles = ScaledSheet.create({
   headingText: {
     fontSize: '20@ms',
     color: COLORS.WHITE,
-    fontFamily: 'PTSerif-Bold'
+    fontFamily: FONTS.SEMIBOLD
   },
 });
 

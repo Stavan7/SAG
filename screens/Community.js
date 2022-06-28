@@ -7,6 +7,7 @@ import {
     SafeAreaView
 } from 'react-native';
 import contacts from '../data/contacts';
+import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import Header from "../components/header";
 import Founders from "../components/Founders";
@@ -61,7 +62,7 @@ const styles = ScaledSheet.create({
         color: COLORS.GREEN,
         marginBottom: '16@ms',
         marginLeft: '10@ms',
-        fontFamily: 'PTSerif-Bold',
+        fontFamily: FONTS.SEMIBOLD
     },
     founders: { height: HEIGHT / 2.7 },
     listContainer: {
@@ -80,13 +81,13 @@ const styles = ScaledSheet.create({
     listTitle: {
         fontSize: '16@ms',
         color: COLORS.BLACK,
-        fontFamily: 'PTSerif-Bold',
+        fontFamily: FONTS.SEMIBOLD,
     },
     listSubtitle: {
         fontSize: '14@ms',
         color: COLORS.BLACK,
         marginTop: '5@ms',
-        fontFamily: 'PTSerif-Regular',
+        fontFamily: FONTS.REGULAR,
     }
 })
 

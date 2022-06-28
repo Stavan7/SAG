@@ -8,6 +8,7 @@ import {
     TouchableOpacity,
 } from 'react-native';
 import data from '../data/data';
+import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import Header from "../components/header";
 import FastImage from 'react-native-fast-image';
@@ -103,14 +104,14 @@ const styles = ScaledSheet.create({
         fontSize: '17@ms',
         color: COLORS.WHITE,
         textAlign: 'center',
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD,
     },
     date: {
         fontSize: '15@ms',
         marginTop: '10@ms',
         color: COLORS.WHITE,
         textAlign: 'center',
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD,
     },
 })
 

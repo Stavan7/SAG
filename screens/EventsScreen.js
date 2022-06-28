@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PastEvents from "./PastEvents";
+import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import Header from "../components/header";
 import { SafeAreaView } from 'react-native';
@@ -83,12 +84,12 @@ const styles = ScaledSheet.create({
     },
     activeTabTextStyle: {
         color: COLORS.BLACK,
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD
     },
     tabTextStyle: {
         color: COLORS.BLACK,
         fontSize: '14@ms',
-        fontFamily: 'PTSerif-Bold'
+        fontFamily: FONTS.SEMIBOLD
     },
 })
 
