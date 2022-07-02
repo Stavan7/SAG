@@ -94,14 +94,14 @@ const styles = ScaledSheet.create({
         fontSize: '20@ms',
         color: COLORS.BLACK,
         textAlign: 'center',
-        fontFamily: FONTS.SEMIBOLD,
+        fontFamily: FONTS.BOLD,
     },
     date: {
         color: COLORS.BLACK,
         marginTop: '5@ms',
         fontSize: '17@ms',
         textAlign: 'center',
-        fontFamily: FONTS.SEMIBOLD,
+        fontFamily: FONTS.BOLD,
     },
     image: {
         height: '35%',

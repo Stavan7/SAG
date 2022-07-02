@@ -104,14 +104,14 @@ const styles = ScaledSheet.create({
         fontSize: '17@ms',
         color: COLORS.WHITE,
         textAlign: 'center',
-        fontFamily: FONTS.SEMIBOLD,
+        fontFamily: FONTS.BOLD,
     },
     date: {
         fontSize: '15@ms',
         marginTop: '10@ms',
         color: COLORS.WHITE,
         textAlign: 'center',
-        fontFamily: FONTS.SEMIBOLD,
+        fontFamily: FONTS.BOLD,
     },
 })
 

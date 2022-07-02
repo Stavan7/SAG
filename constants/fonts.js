@@ -1,12 +1,11 @@
 const FONTS = {
-    BOLD: 'Inter-Bold',
-    SEMIBOLD: 'Inter-SemiBold',
-    REGULAR: 'Inter-Regular',
-    LIGHT: 'Inter-Light',
-    MEDIUM: 'Inter-Medium',
-    THIN: 'Inter-Thin',
-    EXTRABOLD: 'Inter-ExtraBold',
-    EXTRALIGHT: 'Inter-ExtraLight'
+    BOLD: 'Raleway-Bold',
+    SEMIBOLD: 'Raleway-SemiBold',
+    REGULAR: 'Raleway-Regular',
+    LIGHT: 'Raleway-Light',
+    MEDIUM: 'Raleway-Medium',
+    THIN: 'Raleway-Thin',
+    EXTRABOLD: 'Raleway-ExtraBold',
 }
 
 export default FONTS;

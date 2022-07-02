@@ -62,7 +62,7 @@ const styles = ScaledSheet.create({
         color: COLORS.GREEN,
         marginBottom: '16@ms',
         marginLeft: '10@ms',
-        fontFamily: FONTS.SEMIBOLD
+        fontFamily: FONTS.BOLD
     },
     founders: { height: HEIGHT / 2.7 },
     listContainer: {
@@ -81,13 +81,13 @@ const styles = ScaledSheet.create({
     listTitle: {
         fontSize: '16@ms',
         color: COLORS.BLACK,
-        fontFamily: FONTS.SEMIBOLD,
+        fontFamily: FONTS.BOLD
     },
     listSubtitle: {
         fontSize: '14@ms',
         color: COLORS.BLACK,
         marginTop: '5@ms',
-        fontFamily: FONTS.REGULAR,
+        fontFamily: FONTS.MEDIUM,
     }
 })
 

@@ -84,12 +84,12 @@ const styles = ScaledSheet.create({
     },
     activeTabTextStyle: {
         color: COLORS.BLACK,
-        fontFamily: FONTS.SEMIBOLD
+        fontFamily: FONTS.BOLD
     },
     tabTextStyle: {
         color: COLORS.BLACK,
         fontSize: '14@ms',
-        fontFamily: FONTS.SEMIBOLD
+        fontFamily: FONTS.BOLD
     },
 })
 

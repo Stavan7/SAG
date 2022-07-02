@@ -42,12 +42,12 @@ const styles = ScaledSheet.create({
     title: {
         fontSize: '21@ms',
         color: COLORS.BLACK,
-        fontFamily: FONTS.SEMIBOLD
+        fontFamily: FONTS.BOLD
     },
     subtitle: {
         fontSize: '21@ms',
         color: COLORS.GREEN,
-        fontFamily: FONTS.SEMIBOLD
+        fontFamily: FONTS.BOLD
     },
     footer: {
         position: 'absolute',
@@ -56,7 +56,7 @@ const styles = ScaledSheet.create({
         color: COLORS.BLACK,
         marginHorizontal: '20@ms',
         textDecorationLine: 'underline',
-        fontFamily: FONTS.REGULAR
+        fontFamily: FONTS.MEDIUM
     }
 })
 

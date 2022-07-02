@@ -49,7 +49,7 @@ const data = {
             id: 1,
             name: 'Ajay Waghmode',
             position: 'Founder',
-            avatarUrl: 'https://cdn.pixabay.com/photo/2019/05/27/19/08/puppy-4233378_960_720.jpg',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2015/05/05/08/36/pets-753464_960_720.jpg',
         },
         {
             id: 2,
@@ -61,19 +61,19 @@ const data = {
             id: 3,
             name: 'Arun Matthews',
             position: 'President',
-            avatarUrl: 'https://cdn.pixabay.com/photo/2019/07/03/10/16/pug-4314106_960_720.jpg',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2015/05/05/08/36/pets-753464_960_720.jpg',
         },
         {
             id: 4,
             name: 'Nirai Rajan',
             position: 'Treasurer',
-            avatarUrl: 'https://cdn.pixabay.com/photo/2018/01/17/00/46/shiba-inu-3087207_960_720.jpg',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2015/05/05/08/36/pets-753464_960_720.jpg',
         },
         {
             id: 5,
             name: 'Nishant Charan',
             position: 'Vice-President',
-            avatarUrl: 'https://cdn.pixabay.com/photo/2012/08/28/00/43/dog-55141_960_720.jpg',
+            avatarUrl: 'https://cdn.pixabay.com/photo/2015/05/05/08/36/pets-753464_960_720.jpg',
         },
     ],
 

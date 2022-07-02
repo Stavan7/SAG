@@ -38,7 +38,7 @@ const styles = ScaledSheet.create({
   headingText: {
     fontSize: '20@ms',
     color: COLORS.WHITE,
-    fontFamily: FONTS.SEMIBOLD
+    fontFamily: FONTS.BOLD
   },
 });
 

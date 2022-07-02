@@ -33,7 +33,7 @@ const BottomTabs = () => {
                                 <>
                                     <Ionicons
                                         name="ios-calendar-outline"
-                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                        color={COLORS.WHITE}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -41,7 +41,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Ionicons
                                     name="ios-calendar-outline"
-                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                    color={COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -59,7 +59,7 @@ const BottomTabs = () => {
                                 <>
                                     <Ionicons
                                         name="md-image-outline"
-                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                        color={COLORS.WHITE}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -67,7 +67,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Ionicons
                                     name="md-image-outline"
-                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                    color={COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -85,7 +85,7 @@ const BottomTabs = () => {
                                 <>
                                     <Ionicons
                                         name="md-people-outline"
-                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                        color={COLORS.WHITE}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -93,7 +93,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Ionicons
                                     name="md-people-outline"
-                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                    color={COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -111,7 +111,7 @@ const BottomTabs = () => {
                                 <>
                                     <Ionicons
                                         name="ios-information-circle-outline"
-                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                        color={COLORS.WHITE}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -120,7 +120,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Ionicons
                                     name="ios-information-circle-outline"
-                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                    color={COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )
@@ -138,7 +138,7 @@ const BottomTabs = () => {
                                 <>
                                     <Feather
                                         name="phone-call"
-                                        color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                        color={COLORS.WHITE}
                                         size={moderateScale(23)}
                                     />
                                     <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -147,7 +147,7 @@ const BottomTabs = () => {
                             ) : (
                                 <Feather
                                     name="phone-call"
-                                    color={focused ? COLORS.WHITE : COLORS.ICONS}
+                                    color={COLORS.ICONS}
                                     size={moderateScale(23)}
                                 />
                             )

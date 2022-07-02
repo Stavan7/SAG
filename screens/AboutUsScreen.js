@@ -21,7 +21,7 @@ class AboutUsScreen extends Component {
     render() {
         return (
             <SafeAreaView style={styles.background}>
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <Header heading="About Us" />
 
                     <Image
@@ -33,7 +33,7 @@ class AboutUsScreen extends Component {
                         {
                             content.map((data, index) => {
                                 return (
-                                    <View style={styles.card} key={index}>
+                                    <View key={index}>
                                         <Text style={styles.header}>{data.header} : </Text>
                                         <Text style={styles.about}>{data.content}</Text>
                                     </View>
@@ -54,6 +54,7 @@ const styles = ScaledSheet.create({
         backgroundColor: COLORS.WHITE
     },
     container: {
+        padding: '20@ms',
         backgroundColor: COLORS.BLACK,
         borderTopLeftRadius: moderateScale(20),
         borderTopRightRadius: moderateScale(20)
@@ -75,13 +76,9 @@ const styles = ScaledSheet.create({
     about: {
         fontSize: '16@ms',
         color: COLORS.WHITE,
-        marginTop: '10@ms',
-        fontFamily: FONTS.REGULAR
-    },
-    card: {
-        flex: 1,
-        padding: '20@ms',
-        paddingBottom: '0@ms'
+        marginTop: '5@ms',
+        marginBottom: '10@ms',
+        fontFamily: FONTS.MEDIUM
     },
 })
 

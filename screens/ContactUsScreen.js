@@ -151,7 +151,7 @@ const styles = ScaledSheet.create({
         fontSize: '18@ms',
         textAlign: "left",
         marginHorizontal: '20@ms',
-        fontFamily: FONTS.SEMIBOLD,
+        fontFamily: FONTS.BOLD
     },
     upi: {
         marginVertical: '3@ms',
@@ -163,7 +163,7 @@ const styles = ScaledSheet.create({
         color: COLORS.WHITE,
         fontSize: '14@ms',
         marginVertical: '5@ms',
-        fontFamily: FONTS.REGULAR,
+        fontFamily: FONTS.MEDIUM,
     },
     qrcode: {
         height: '130@vs',
@@ -182,7 +182,7 @@ const styles = ScaledSheet.create({
         color: COLORS.BLACK,
         fontSize: '17@ms',
         marginVertical: '10@ms',
-        fontFamily: FONTS.SEMIBOLD,
+        fontFamily: FONTS.BOLD
     },
     mailid: {
         color: COLORS.BLACK,

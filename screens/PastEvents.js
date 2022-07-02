@@ -92,7 +92,7 @@ const styles = ScaledSheet.create({
         fontSize: '17@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
-        fontFamily: FONTS.SEMIBOLD,  
+        fontFamily: FONTS.BOLD,  
       
     },
     date: {
@@ -100,7 +100,7 @@ const styles = ScaledSheet.create({
         marginTop: '8@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
-        fontFamily: FONTS.SEMIBOLD
+        fontFamily: FONTS.BOLD
     },
     description: {
         fontSize: '13@ms',

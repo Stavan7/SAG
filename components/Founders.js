@@ -9,7 +9,7 @@ import data from '../data/data';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';
-import { ScaledSheet } from 'react-native-size-matters';
+import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 
 const events = data.Founders;
 
@@ -19,6 +19,7 @@ const Founders = () => {
         <SafeAreaView style={styles.container}>
             <Text style={styles.headerText}>Meet Our Founders</Text>
             <ScrollView
+                style={{ marginHorizontal: moderateScale(5) }}
                 horizontal
                 showsHorizontalScrollIndicator={false}>
                 {
@@ -53,7 +54,7 @@ const styles = ScaledSheet.create({
         flex: 1,
         height: '91%',
         width: '155@s',
-        marginHorizontal: '9@ms',
+        marginLeft: '7@s',
     },
     carousel: {
         width: 'auto',
@@ -85,9 +86,9 @@ const styles = ScaledSheet.create({
     headerText: {
         fontSize: '20@ms',
         color: COLORS.GREEN,
-        marginBottom: '16@ms',
+        marginBottom: '10@ms',
         marginLeft: '20@ms',
-        fontFamily: FONTS.SEMIBOLD,
+        fontFamily: FONTS.BOLD,
     },
 })
 
