@@ -1,3 +1,3 @@
 # Created in React-Native
 
-All the designs are temp designs and can be changed anytime
+All the designs are temp design and can be changed anytime
