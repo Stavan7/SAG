@@ -27,9 +27,8 @@ const Founders = () => {
                         return (
                             <View style={styles.eventContainer} key={index}>
                                 <FastImage
-                                    source={{ uri: item.avatarUrl }}
+                                    source={item.avatarUrl}
                                     style={styles.carousel}
-                                    resizeMethod="scale"
                                 />
                                 <View style={styles.textContainer}>
                                     <Text style={styles.title}>{item.name}</Text>
