@@ -8,10 +8,12 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "bundle":"react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
+    "bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res"
   },
   "dependencies": {
     "@react-native-clipboard/clipboard": "^1.10.0",
+    "@react-native-firebase/app": "^15.1.1",
+    "@react-native-firebase/database": "^15.1.1",
     "@react-navigation/bottom-tabs": "^6.1.0",
     "@react-navigation/native": "^6.0.7",
     "@react-navigation/native-stack": "^6.6.2",
@@ -23,7 +25,7 @@
     "react-native-elements": "^3.4.2",
     "react-native-fast-image": "^8.5.11",
     "react-native-fit-image": "^1.5.5",
-    "react-native-gesture-handler": "^2.4.1",
+    "react-native-gesture-handler": "^2.5.0",
     "react-native-image-swiper": "^0.0.8",
     "react-native-image-viewing": "^0.2.2",
     "react-native-linear-gradient": "^2.5.6",

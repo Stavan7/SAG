@@ -1,30 +1,19 @@
 import React from 'react'
-import {
-    View,
-    Text,
-    SafeAreaView,
-} from 'react-native';
-import FONTS from '../constants/fonts';
-import COLORS from '../constants/colors';
-import LottieView from 'lottie-react-native';
-import { ScaledSheet, verticalScale } from 'react-native-size-matters';
+import data from '../data/data';
+import { SafeAreaView } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
+import NoUpComingEvents from '../components/NoUpComingEvents';
+import UpComingEventsData from '../components/UpComingEventsData';
+
+const upcomingevents = data.UpComingEvents;
 
 const UpComingEventsScreen = () => {
+
     return (
         <SafeAreaView style={styles.container}>
-            <View style={styles.textContainer}>
-                <Text style={styles.title}>No Upcoming Events</Text>
-                <Text style={styles.subtitle}>Stay Tuned !!</Text>
-            </View>
-            <View style={{ height: '70%', marginTop: verticalScale(10), }}>
-                <LottieView
-                    resizeMode="contain"
-                    loop
-                    autoPlay
-                    source={require('../assets/lottieAnimations/waiting.json')}
-                />
-            </View>
-            <Text style={styles.footer}>Until Then, Check Out Past Events</Text>
+            {
+                upcomingevents.length === 0 ? <NoUpComingEvents /> : <UpComingEventsData />
+            }
         </SafeAreaView>
     )
 }
@@ -32,31 +21,8 @@ const UpComingEventsScreen = () => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        marginBottom: '61@ms',
+        marginBottom: '65@ms',
         backgroundColor: 'transparent'
-    },
-    textContainer: {
-        marginTop: '20@ms',
-        marginHorizontal: '20@s'
-    },
-    title: {
-        fontSize: '21@ms',
-        color: COLORS.BLACK,
-        fontFamily: FONTS.BOLD
-    },
-    subtitle: {
-        fontSize: '21@ms',
-        color: COLORS.GREEN,
-        fontFamily: FONTS.BOLD
-    },
-    footer: {
-        position: 'absolute',
-        fontSize: '14@ms',
-        bottom: '10@vs',
-        color: COLORS.BLACK,
-        marginHorizontal: '20@ms',
-        textDecorationLine: 'underline',
-        fontFamily: FONTS.MEDIUM
     }
 })
 

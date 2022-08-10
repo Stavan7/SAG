@@ -9,14 +9,12 @@ import {
     SafeAreaView,
     TouchableOpacity
 } from 'react-native';
-import data from '../data/data';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import Header from "../components/header";
 import { Avatar } from 'react-native-elements';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 
-const swiper = data.ContactUsSwiper;
 const HEIGHT = Dimensions.get('screen').height;
 
 class ContactUsScreen extends Component {
@@ -56,18 +54,7 @@ class ContactUsScreen extends Component {
                     </View>
 
                     <Text style={styles.linkHeader}>Social Media Links</Text>
-                    <View style={{
-                        flexDirection: 'row',
-                        marginHorizontal: moderateScale(20),
-                        justifyContent: 'space-around',
-                        borderWidth: 1,
-                        borderColor: 'black',
-                        width: '50%',
-                        alignSelf: 'flex-start',
-                        backgroundColor: 'black',
-                        borderRadius: moderateScale(10),
-                        marginBottom: moderateScale(20),
-                    }}>
+                    <View style={styles.socialMediaContainer}>
                         <Avatar
                             size="medium"
                             icon={{ name: 'whatsapp', color: '#086f23', type: 'font-awesome' }}
@@ -183,6 +170,18 @@ const styles = ScaledSheet.create({
         fontSize: '17@ms',
         marginVertical: '10@ms',
         fontFamily: FONTS.BOLD
+    },
+    socialMediaContainer: {
+        flexDirection: 'row',
+        marginHorizontal: moderateScale(20),
+        justifyContent: 'space-around',
+        borderWidth: 1,
+        borderColor: 'black',
+        width: '50%',
+        alignSelf: 'flex-start',
+        backgroundColor: 'black',
+        borderRadius: moderateScale(10),
+        marginBottom: moderateScale(20),
     },
     mailid: {
         color: COLORS.BLACK,

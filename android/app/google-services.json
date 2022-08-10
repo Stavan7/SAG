@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "56386320797",
+    "project_id": "social-army-group",
+    "storage_bucket": "social-army-group.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56386320797:android:14992ee0f759c0d7551774",
+        "android_client_info": {
+          "package_name": "com.sag"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "56386320797-ubf55jrapcbmgjms1h8bopc9t6b286e6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBnjvlXwezjV2J_qkNRaU-btc3A6uK2YFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "56386320797-ubf55jrapcbmgjms1h8bopc9t6b286e6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

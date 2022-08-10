@@ -26,22 +26,34 @@ const data = {
         {
             id: 1,
             header: 'Who Are We',
-            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. ."
+            content: "Social Army Group  is a non profit and non-governmental organisation, It was initiated by group of 3 friends in 2018. As time passed, many volunteers have joined this group for the welfare of society. It was in 2020, when this group got its name i.e. Social Army group."
         },
         {
             id: 2,
             header: 'What We Do',
-            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+            content: "At present, there are 100+ volunteers. for a cleaner, healthier, Education drive and for the betterment of children hailing from the socio-economically challenging background of society."
         },
         {
             id: 3,
             header: 'Our Mission',
-            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+            content: "Our aim is to create a more breathable and cleaner surrounding so as to increase sustainability and work towards United Nation’s Sustainable Development Goals 3,4,13,15, and 17."
         },
         {
             id: 4,
             header: "Achievements",
-            content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            content: `\u203A SAG FOOTBALL CUP 2022
+\u203A MENSTRUAL HEALTH CAMPAIGN
+\u203A BLANKETS DISTRIBUTION 2021
+\u203A EDUCATION DRIVE
+\u203A TREE PLANTATION DRIVE
+\u203A WATER BOWLS FOR STRAYS
+\u203A TREE PLANTATION DRIVE
+\u203A REFLECTIVE COLLARS FOR DOG
+\u203A RATION KIT DISTRIBUTION
+\u203A BLANKETS DISTRIBUTION 2020
+\u203A OUR COVID WARRIORS
+\u203A GROUP CYCLING DRIVE
+\u203A GIP DAM CLEAN DRIVE`
         },
     ],
     Founders: [
@@ -81,6 +93,16 @@ const data = {
             position: 'Vice-President',
             avatarUrl: require('../assets/founders/Nikhil.jpg'),
         },
+    ],
+
+    UpComingEvents: [
+        // {
+        //     id: 1,
+        //     title: "SAG FOOTBALL CUP 2022",
+        //     date: "30th April - 1st May",
+        //     image: require('../assets/swiper/5.jpeg'),
+        //     description: 'SAG is trying to encourage football with this tournament. And also will come up with events for other sports and will try to encourage others sports as well!'
+        // },
     ],
 
     PastEvents: [
