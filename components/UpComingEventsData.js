@@ -4,19 +4,15 @@ import {
     Text,
     Image
 } from 'react-native';
-import data from '../data/data';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
-import FastImage from 'react-native-fast-image'
 import { moderateScale, ScaledSheet } from 'react-native-size-matters';
 
-const upcomingevents = data.UpComingEvents;
-
-const UpComingEventsData = () => {
+const UpComingEventsData = ({ data }) => {
     return (
         <View style={styles.container}>
             {
-                upcomingevents.map(data => {
+                data.map(data => {
                     return (
                         <View key={data.id} style={styles.textContainer}>
 
@@ -27,9 +23,7 @@ const UpComingEventsData = () => {
 
                             <Image
                                 source={require('../assets/grpImage.jpeg')}
-                                style={{
-                                    height: 300, width: 'auto', borderRadius: moderateScale(10),
-                                }}
+                                style={styles.image}
                                 resizeMode="cover"
                                 resizeMethod="scale"
                             />
@@ -44,7 +38,6 @@ const UpComingEventsData = () => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'transparent'
     },
@@ -74,6 +67,12 @@ const styles = ScaledSheet.create({
         color: COLORS.WHITE,
         textAlign: 'justify',
         fontFamily: FONTS.MEDIUM
+    },
+    image: {
+        height: '250@ms',
+        width: '100%',
+        resizeMode: 'contain',
+        borderRadius: moderateScale(10),
     }
 })
 

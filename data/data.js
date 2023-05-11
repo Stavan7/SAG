@@ -275,7 +275,7 @@ Let's fight together against Corona💪`
             image: require('../assets/lottieImages/cycling.png'),
             gallery: require('../assets/lottieAnimations/cycling.gif'),
             event: require('../assets/eventDetails/cycling.jpeg'),
-            shortDescription: 'Exploring the beauty of Nature😍💚 Save the planet Ride a bicycle 🚲\n',
+            shortDescription: 'Exploring the beauty of Nature😍💚 Save the planet Ride a bicycle 🚲',
             description: `Cycling is always fun!!! 
 Exploring the beauty of Nature😍💚\n
 Save the planet Ride a bicycle 🚲\n
@@ -299,7 +299,7 @@ S.A.G enjoying Cycling.`,
             image: require('../assets/lottieImages/cleaning.png'),
             gallery: require('../assets/lottieAnimations/cleaning.gif'),
             event: require('../assets/eventDetails/GIP.jpeg'),
-            shortDescription: 'When it Comes to cleanliness, you be clean only when your surrounding is clean Intiative to clean GIP Dam on 9th August 2020 as many people visit the area to enjoy a breath, ',
+            shortDescription: 'When it Comes to cleanliness, you be clean only when your surrounding is clean Intiative to clean GIP Dam on 9th August 2020 as many people visit the area to enjoy a breath ',
             description: `When it Comes to cleanliness, you be clean only when your surrounding is clean.\n
 🏞  Intiative to clean GIP Dam on 9th August' 2020 as many people visit the area to enjoy a breath, 
 and few litter around it! Lets not encourage them yet make the importance of smell - free aware.\n

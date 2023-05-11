@@ -4,6 +4,7 @@ import {
     View,
     ScrollView,
     SafeAreaView,
+    useWindowDimensions,
     TouchableOpacity
 } from 'react-native';
 import {
@@ -14,9 +15,15 @@ import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
-
+import RenderHtml, { defaultSystemFonts } from 'react-native-render-html';
 const EventDetailsScreen = ({ route, navigation }) => {
     const data = route.params
+    const { width } = useWindowDimensions();
+    const desc = data.description
+    const source = {
+        html: desc
+    };
+    const systemFonts = [...defaultSystemFonts, FONTS.BOLD, FONTS.MEDIUM];
     return (
         <SafeAreaView style={styles.view}>
             <View style={styles.container} >
@@ -28,18 +35,28 @@ const EventDetailsScreen = ({ route, navigation }) => {
                             size={moderateScale(25)}
                         />
                     </TouchableOpacity>
-
                 </View>
+
                 <Text style={styles.header}>{data.title}</Text>
                 <Text style={styles.date}>{data.date}</Text>
-                <FastImage style={styles.image} source={data.event} />
+                <FastImage style={styles.image} source={require('../assets/eventDetails/blankets1.jpeg')} />
 
-                <View style={styles.card}>
-                    <ScrollView>
-                        <Text style={styles.description}> {data.description}</Text>
-                    </ScrollView>
-                </View>
 
+
+            </View>
+            <View style={styles.card}>
+                <ScrollView>
+                    <RenderHtml
+                        source={source}
+                        contentWidth={width}
+                        systemFonts={systemFonts}
+                        tagsStyles={{
+                            li: { fontFamily: FONTS.MEDIUM, marginBottom: 10 },
+                            body: { fontFamily: FONTS.MEDIUM, color: COLORS.WHITE, fontSize: 16 },
+                            span: { fontFamily: FONTS.MEDIUM }
+                        }}
+                    />
+                </ScrollView>
             </View>
         </SafeAreaView>
 
@@ -52,20 +69,12 @@ const styles = ScaledSheet.create({
         backgroundColor: COLORS.WHITE
     },
     container: {
-        flex: 1,
-        margin: '20@ms',
         padding: '10@ms',
         borderRadius: '10@ms',
-        elevation: 16,
-        shadowOffset: {
-            width: 0,
-            height: 11,
-        },
-        shadowOpacity: 0.57,
         shadowRadius: 15.19,
         borderColor: COLORS.BLACK,
-        backgroundColor: COLORS.WHITE,
-        shadowColor: COLORS.BLACK
+        marginHorizontal: '10@ms',
+        marginTop: 10
     },
     iconsContainer: {
         top: '-14@ms',
@@ -92,8 +101,8 @@ const styles = ScaledSheet.create({
     header: {
         marginTop: '10@ms',
         fontSize: '20@ms',
-        color: COLORS.BLACK,
         textAlign: 'center',
+        color: COLORS.BLACK,
         fontFamily: FONTS.BOLD,
     },
     date: {
@@ -104,18 +113,19 @@ const styles = ScaledSheet.create({
         fontFamily: FONTS.BOLD,
     },
     image: {
-        height: '35%',
+        height: '250@ms',
         width: '100%',
         marginTop: '10@ms',
         borderRadius: '10@ms',
     },
     card: {
         flex: 1,
-        marginTop: '-20@ms',
-        borderRadius: '10@ms',
-        paddingVertical: '20@ms',
-        paddingHorizontal: '10@ms',
-        backgroundColor: COLORS.BLACK,
+        marginTop: '20@ms',
+        borderTopRightRadius: '20@ms',
+        borderTopLeftRadius: '20@ms',
+        paddingHorizontal: '20@ms',
+        paddingTop: '10@ms',
+        backgroundColor: COLORS.BLACK
     },
     description: {
         fontSize: '16@ms',

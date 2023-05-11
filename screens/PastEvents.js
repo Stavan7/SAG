@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Text,
     View,
@@ -6,16 +6,29 @@ import {
     SafeAreaView,
     TouchableOpacity
 } from 'react-native';
-import data from '../data/data';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image'
 import { useNavigation } from '@react-navigation/native';
 import { ScaledSheet } from 'react-native-size-matters';
-
-const events = data.PastEvents;
+import firestore from '@react-native-firebase/firestore'
 
 const PastEventsScreen = () => {
+
+    const [data, setData] = useState([])
+
+    const getData = async () => {
+        const snapshot = await firestore().collection("PastEvents").orderBy("id", "asc").get();
+        const data = snapshot.docs.map(doc => doc.data());
+        return data;
+    }
+
+    useEffect(() => {
+        getData().then(data => setData(data));
+        console.log(data)
+    }, [])
+
+
     const navigation = useNavigation();
 
     const renderItem = ({ item }) => {
@@ -25,7 +38,7 @@ const PastEventsScreen = () => {
                 onPress={() => navigation.navigate('NoBottomTab', { screen: 'EventsDetail', params: item })}>
                 <View style={styles.eventContainer}>
                     <FastImage
-                        source={item.image}
+                        source={require('../assets/lottieImages/dogCollars.png')}
                         style={styles.carousel}
                     />
                     <View style={styles.textContainer}>
@@ -41,7 +54,7 @@ const PastEventsScreen = () => {
     return (
         <SafeAreaView style={styles.container}>
             <FlatList
-                data={events}
+                data={data}
                 initialNumToRender={10}
                 renderItem={renderItem}
                 showsVerticalScrollIndicator={false}
@@ -92,8 +105,8 @@ const styles = ScaledSheet.create({
         fontSize: '17@ms',
         color: COLORS.WHITE,
         textAlign: 'left',
-        fontFamily: FONTS.BOLD,  
-      
+        fontFamily: FONTS.BOLD,
+
     },
     date: {
         fontSize: '15@ms',
