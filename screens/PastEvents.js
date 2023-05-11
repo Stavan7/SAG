@@ -4,32 +4,48 @@ import {
     View,
     FlatList,
     SafeAreaView,
-    TouchableOpacity
+    ActivityIndicator,
+    TouchableOpacity,
 } from 'react-native';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image'
-import { useNavigation } from '@react-navigation/native';
 import { ScaledSheet } from 'react-native-size-matters';
 import firestore from '@react-native-firebase/firestore'
+import { useNavigation } from '@react-navigation/native';
 
 const PastEventsScreen = () => {
 
     const [data, setData] = useState([])
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true)
 
     const getData = async () => {
-        const snapshot = await firestore().collection("PastEvents").orderBy("id", "asc").get();
-        const data = snapshot.docs.map(doc => doc.data());
-        return data;
+        try {
+            const snapshot = await firestore().collection("PastEvents").orderBy("id", "asc").get();
+            const response = snapshot.docs.map(doc => doc.data());
+            setData(response);
+            setLoading(false)
+        } catch (error) {
+            setLoading(false);
+            setError(error.message);
+        }
     }
 
     useEffect(() => {
-        getData().then(data => setData(data));
-        console.log(data)
-    }, [])
-
+        getData();
+    }, [getData])
 
     const navigation = useNavigation();
+
+    if (loading) {
+        return <ActivityIndicator
+            size={35}
+            color={COLORS.BLACK}
+            shouldRasterizeIOS={true}
+            style={styles.activityIndicator}
+        />
+    }
 
     const renderItem = ({ item }) => {
         return (
@@ -38,8 +54,8 @@ const PastEventsScreen = () => {
                 onPress={() => navigation.navigate('NoBottomTab', { screen: 'EventsDetail', params: item })}>
                 <View style={styles.eventContainer}>
                     <FastImage
-                        source={require('../assets/lottieImages/dogCollars.png')}
                         style={styles.carousel}
+                        source={require('../assets/lottieImages/dogCollars.png')}
                     />
                     <View style={styles.textContainer}>
                         <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
@@ -123,6 +139,11 @@ const styles = ScaledSheet.create({
         lineHeight: '20@ms',
         fontFamily: FONTS.MEDIUM
     },
+    activityIndicator: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+    }
 })
 
 export default PastEventsScreen
