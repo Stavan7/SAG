@@ -23,13 +23,13 @@ class EventsScreen extends Component {
         });
     };
 
-    render(navigation) {
+    render() {
         return (
             <SafeAreaView style={styles.background}>
                 <Header heading="Events" />
                 <SegmentedControlTab
-                    borderRadius={moderateScale(10)}
                     tabStyle={styles.tabStyle}
+                    borderRadius={moderateScale(10)}
                     values={["Upcoming Events", "Past Events"]}
                     onTabPress={this.handleIndexChange}
                     tabTextStyle={styles.tabTextStyle}
@@ -40,8 +40,8 @@ class EventsScreen extends Component {
                 />
                 {
                     this.state.selectedIndex === 0 ?
-                        (<UpComingEvents navigation={navigation} />)
-                        : <PastEvents navigation={navigation} />
+                        <UpComingEvents /> :
+                        <PastEvents navigation={this.props.navigation} />
                 }
             </SafeAreaView >
         )

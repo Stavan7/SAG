@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import EventsScreen from '../screens/EventsScreen';
 import PastEvents from '../screens/PastEvents';
 import UpComingEvents from '../screens/UpComingEvents';
-import EventDetailsScreen from '../screens/EventDetailsScreen';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();

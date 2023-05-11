@@ -16,14 +16,13 @@ import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import RenderHtml, { defaultSystemFonts } from 'react-native-render-html';
+
 const EventDetailsScreen = ({ route, navigation }) => {
+
     const data = route.params
     const { width } = useWindowDimensions();
-    const desc = data.description
-    const source = {
-        html: desc
-    };
     const systemFonts = [...defaultSystemFonts, FONTS.BOLD, FONTS.MEDIUM];
+
     return (
         <SafeAreaView style={styles.view}>
             <View style={styles.container} >
@@ -36,24 +35,24 @@ const EventDetailsScreen = ({ route, navigation }) => {
                         />
                     </TouchableOpacity>
                 </View>
-
                 <Text style={styles.header}>{data.title}</Text>
                 <Text style={styles.date}>{data.date}</Text>
-                <FastImage style={styles.image} source={require('../assets/eventDetails/blankets1.jpeg')} />
-
-
-
+                <FastImage
+                    style={styles.image}
+                    source={require('../assets/eventDetails/blankets1.jpeg')}
+                />
             </View>
+
             <View style={styles.card}>
                 <ScrollView>
                     <RenderHtml
-                        source={source}
+                        source={{ html: data.description }}
                         contentWidth={width}
                         systemFonts={systemFonts}
                         tagsStyles={{
+                            span: { fontFamily: FONTS.MEDIUM },
                             li: { fontFamily: FONTS.MEDIUM, marginBottom: 10 },
                             body: { fontFamily: FONTS.MEDIUM, color: COLORS.WHITE, fontSize: 16 },
-                            span: { fontFamily: FONTS.MEDIUM }
                         }}
                     />
                 </ScrollView>
@@ -70,17 +69,14 @@ const styles = ScaledSheet.create({
     },
     container: {
         padding: '10@ms',
-        borderRadius: '10@ms',
-        shadowRadius: 15.19,
-        borderColor: COLORS.BLACK,
+        marginTop: '10@ms',
         marginHorizontal: '10@ms',
-        marginTop: 10
     },
     iconsContainer: {
         top: '-14@ms',
         width: '40@ms',
         height: '40@ms',
-        right: '-14@ms',
+        right: '-10@ms',
         borderWidth: '2@ms',
         borderRadius: '50@ms',
         borderColor: COLORS.BLACK,

@@ -11,10 +11,9 @@ import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image'
 import { ScaledSheet } from 'react-native-size-matters';
-import firestore from '@react-native-firebase/firestore'
-import { useNavigation } from '@react-navigation/native';
+import firestore from '@react-native-firebase/firestore';
 
-const PastEventsScreen = () => {
+const PastEventsScreen = ({ navigation }) => {
 
     const [data, setData] = useState([])
     const [error, setError] = useState(null);
@@ -36,7 +35,6 @@ const PastEventsScreen = () => {
         getData();
     }, [getData])
 
-    const navigation = useNavigation();
 
     if (loading) {
         return <ActivityIndicator

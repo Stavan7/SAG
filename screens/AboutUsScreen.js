@@ -13,7 +13,6 @@ import COLORS from '../constants/colors';
 import Header from "../components/header";
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 
-
 const content = data.AboutUs;
 const HEIGHT = Dimensions.get('screen').height;
 
@@ -23,7 +22,6 @@ class AboutUsScreen extends Component {
             <SafeAreaView style={styles.background}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <Header heading="About Us" />
-
                     <Image
                         resizeMode="cover"
                         style={styles.image}
@@ -62,21 +60,21 @@ const styles = ScaledSheet.create({
     image: {
         height: HEIGHT / 4.0,
         width: '90%',
-        marginBottom: '20@ms',
         alignSelf: 'center',
-        borderRadius: '10@ms',
         resizeMode: 'cover',
+        borderRadius: '10@ms',
+        marginBottom: '20@ms',
     },
     header: {
         fontSize: '17@ms',
-        color: COLORS.GREEN,
         textAlign: "justify",
+        color: COLORS.GREEN,
         fontFamily: FONTS.SEMIBOLD
     },
     about: {
         fontSize: '16@ms',
-        color: COLORS.WHITE,
         marginTop: '5@ms',
+        color: COLORS.WHITE,
         marginBottom: '10@ms',
         fontFamily: FONTS.MEDIUM
     },

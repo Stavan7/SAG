@@ -54,6 +54,7 @@ class ContactUsScreen extends Component {
                     </View>
 
                     <Text style={styles.linkHeader}>Social Media Links</Text>
+
                     <View style={styles.socialMediaContainer}>
                         <Avatar
                             size="medium"
@@ -73,9 +74,8 @@ class ContactUsScreen extends Component {
                             onPress={() => Linking.openURL('https://www.facebook.com/social_army_group-103076275246248/')}
                             activeOpacity={0.7}
                         />
-                    </View>
-
-
+                    </View> 
+                    
                     <Text style={styles.linkHeader}>Write to us at</Text>
                     <View style={styles.emailView}>
                         <TouchableOpacity
