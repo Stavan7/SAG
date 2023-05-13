@@ -44,7 +44,7 @@ const EventDetailsScreen = ({ route, navigation }) => {
             </View>
 
             <View style={styles.card}>
-                <ScrollView>
+                <ScrollView showsVerticalScrollIndicator={false}>
                     <RenderHtml
                         source={{ html: data.description }}
                         contentWidth={width}

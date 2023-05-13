@@ -19,7 +19,7 @@ const UpComingEventsData = ({ data }) => {
                             <Text style={styles.date}>{data.date}</Text>
                             <Text style={styles.description}>{data.description}</Text>
                             <Image
-                                source={require('../assets/grpImage.jpeg')}
+                                source={{ uri: data.image }}
                                 style={styles.image}
                                 resizeMode="cover"
                                 resizeMethod="scale"
@@ -43,6 +43,7 @@ const styles = ScaledSheet.create({
         marginHorizontal: '20@s',
         backgroundColor: COLORS.BLACK,
         padding: '20@ms',
+        borderBottomLeftRadius: 5
     },
     title: {
         fontSize: '18@ms',
