@@ -31,8 +31,8 @@ const styles = ScaledSheet.create({
     }),
     margin: '10@ms',
     alignItems: 'center',
-    marginBottom: '20@ms',
     justifyContent: 'center',
+    marginBottom: '20@ms',
     backgroundColor: COLORS.BLACK,
   },
   headingText: {

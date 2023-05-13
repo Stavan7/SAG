@@ -70,7 +70,7 @@ const styles = ScaledSheet.create({
         height: '250@ms',
         width: '100%',
         resizeMode: 'contain',
-        borderRadius: moderateScale(10),
+        borderRadius: '10@ms',
     }
 })
 

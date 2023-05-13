@@ -64,29 +64,29 @@ const styles = ScaledSheet.create({
     textContainer: {
         flex: 1,
         padding: '10@s',
-        backgroundColor: COLORS.BLACK,
         justifyContent: 'center',
+        backgroundColor: COLORS.BLACK,
         borderBottomLeftRadius: '10@ms',
         borderBottomRightRadius: '10@ms',
     },
     title: {
         fontSize: '16@ms',
-        color: COLORS.WHITE,
         textAlign: 'center',
+        color: COLORS.WHITE,
         fontFamily: FONTS.SEMIBOLD,
     },
     date: {
         fontSize: '14@ms',
-        color: COLORS.WHITE,
         marginTop: '3@ms',
         textAlign: 'center',
+        color: COLORS.WHITE,
         fontFamily: FONTS.SEMIBOLD,
     },
     headerText: {
         fontSize: '20@ms',
+        marginLeft: '20@ms',
         color: COLORS.GREEN,
         marginBottom: '10@ms',
-        marginLeft: '20@ms',
         fontFamily: FONTS.BOLD,
     },
 })

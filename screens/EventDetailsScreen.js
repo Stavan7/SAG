@@ -2,10 +2,12 @@ import React from 'react'
 import {
     Text,
     View,
+    Image,
     ScrollView,
+    Dimensions,
     SafeAreaView,
+    TouchableOpacity,
     useWindowDimensions,
-    TouchableOpacity
 } from 'react-native';
 import {
     ScaledSheet,
@@ -13,10 +15,10 @@ import {
 } from 'react-native-size-matters';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
-import FastImage from 'react-native-fast-image';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import RenderHtml, { defaultSystemFonts } from 'react-native-render-html';
 
+const HEIGHT = Dimensions.get('screen').height;
 const EventDetailsScreen = ({ route, navigation }) => {
 
     const data = route.params
@@ -30,19 +32,19 @@ const EventDetailsScreen = ({ route, navigation }) => {
                     <TouchableOpacity activeOpacity={0.5} onPress={() => navigation.goBack()}>
                         <FontAwesome
                             name="close"
-                            color='black'
+                            color='white'
                             size={moderateScale(25)}
                         />
                     </TouchableOpacity>
                 </View>
                 <Text style={styles.header}>{data.title}</Text>
                 <Text style={styles.date}>{data.date}</Text>
-                <FastImage
-                    style={styles.image}
-                    source={{ uri: data.image }}
-                />
             </View>
-
+            <Image
+                resizeMode="cover"
+                style={styles.image}
+                source={{ uri: data.image }}
+            />
             <View style={styles.card}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <RenderHtml
@@ -68,31 +70,20 @@ const styles = ScaledSheet.create({
         backgroundColor: COLORS.WHITE
     },
     container: {
-        padding: '10@ms',
-        marginTop: '10@ms',
+        paddingBottom: '10@ms',
+        marginTop: '20@ms',
         marginHorizontal: '10@ms',
     },
     iconsContainer: {
+        right: '-8@ms',
         top: '-14@ms',
         width: '40@ms',
         height: '40@ms',
-        right: '-10@ms',
-        borderWidth: '2@ms',
-        borderRadius: '50@ms',
-        borderColor: COLORS.BLACK,
         position: 'absolute',
         alignItems: 'center',
         justifyContent: 'center',
-        elevation: 23,
-        shadowOffset: {
-            width: 0,
-            height: 11,
-        },
-        shadowOpacity: 0.57,
-        shadowRadius: 15.19,
-        borderColor: 'transparent',
-        backgroundColor: COLORS.WHITE,
-        shadowColor: COLORS.BLACK,
+        borderRadius: '50@ms',
+        backgroundColor: COLORS.BLACK,
     },
     header: {
         marginTop: '10@ms',
@@ -102,33 +93,30 @@ const styles = ScaledSheet.create({
         fontFamily: FONTS.BOLD,
     },
     date: {
-        color: COLORS.BLACK,
-        marginTop: '5@ms',
         fontSize: '17@ms',
         textAlign: 'center',
+        marginTop: '5@ms',
+        color: COLORS.BLACK,
         fontFamily: FONTS.BOLD,
     },
     image: {
-        height: '250@ms',
-        width: '100%',
+        width: '90%',
         alignSelf: 'center',
-        resizeMode: 'cover',
-        marginTop: '10@ms',
+        height: HEIGHT / 3.9,
         borderRadius: '10@ms',
     },
     card: {
         flex: 1,
-        marginTop: '20@ms',
+        padding: 20,
+        marginTop: '10@ms',
         borderTopRightRadius: '20@ms',
         borderTopLeftRadius: '20@ms',
-        paddingHorizontal: '20@ms',
-        paddingTop: '10@ms',
         backgroundColor: COLORS.BLACK
     },
     description: {
+        textAlign: "left",
         fontSize: '16@ms',
         color: COLORS.WHITE,
-        textAlign: "left",
         fontFamily: FONTS.REGULAR
     },
 })
