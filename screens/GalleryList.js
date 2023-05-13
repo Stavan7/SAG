@@ -69,7 +69,8 @@ const GalleryList = () => {
                     <FastImage
                         style={styles.carousel}
                         resizeMethod="scale"
-                        source={require('../assets/lottieImages/dogCollars.png')}
+                        source={{ uri: item.cardImage }}
+
                     />
                     <View style={styles.textContainer}>
                         <Text style={styles.title}>{item.title}</Text>

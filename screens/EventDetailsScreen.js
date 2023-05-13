@@ -39,7 +39,7 @@ const EventDetailsScreen = ({ route, navigation }) => {
                 <Text style={styles.date}>{data.date}</Text>
                 <FastImage
                     style={styles.image}
-                    source={require('../assets/eventDetails/blankets1.jpeg')}
+                    source={{ uri: data.image }}
                 />
             </View>
 
@@ -111,6 +111,8 @@ const styles = ScaledSheet.create({
     image: {
         height: '250@ms',
         width: '100%',
+        alignSelf: 'center',
+        resizeMode: 'cover',
         marginTop: '10@ms',
         borderRadius: '10@ms',
     },

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {
     Text,
     View,
+    Image,
     FlatList,
     SafeAreaView,
     ActivityIndicator,
@@ -52,8 +53,9 @@ const PastEventsScreen = ({ navigation }) => {
                 onPress={() => navigation.navigate('NoBottomTab', { screen: 'EventsDetail', params: item })}>
                 <View style={styles.eventContainer}>
                     <FastImage
+                        resizeMode='contain'
                         style={styles.carousel}
-                        source={require('../assets/lottieImages/dogCollars.png')}
+                        source={{ uri: item.cardImage }}
                     />
                     <View style={styles.textContainer}>
                         <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
