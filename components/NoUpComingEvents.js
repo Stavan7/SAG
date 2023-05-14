@@ -22,7 +22,7 @@ const NoUpComingEvents = () => {
                     resizeMode="contain"
                     loop
                     autoPlay
-                    source={require('../assets/lottieAnimations/waiting.json')}
+                    source={require('../assets/waiting.json')}
                 />
             </View>
             <Text style={styles.footer}>Until Then, Check Out Past Events</Text>
