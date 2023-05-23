@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import {
     Text,
     View,
-    Image,
     FlatList,
     SafeAreaView,
     ActivityIndicator,
@@ -11,6 +10,7 @@ import {
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image'
+import SortEvents from '../components/SortEvents';
 import { ScaledSheet } from 'react-native-size-matters';
 import firestore from '@react-native-firebase/firestore';
 
@@ -19,10 +19,14 @@ const PastEventsScreen = ({ navigation }) => {
     const [data, setData] = useState([])
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true)
+    const [sortOrder, setSortOrder] = useState('desc')
 
     const getData = async () => {
         try {
-            const snapshot = await firestore().collection("PastEvents").orderBy("id", "asc").get();
+            const snapshot = await firestore()
+                .collection("PastEvents")
+                .orderBy("id", sortOrder)
+                .get();
             const response = snapshot.docs.map(doc => doc.data());
             setData(response);
             setLoading(false)
@@ -36,6 +40,10 @@ const PastEventsScreen = ({ navigation }) => {
         getData();
     }, [getData])
 
+    const toggleSortOrder = () => {
+        setLoading(true);
+        setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')
+    }
 
     if (loading) {
         return <ActivityIndicator
@@ -69,6 +77,7 @@ const PastEventsScreen = ({ navigation }) => {
 
     return (
         <SafeAreaView style={styles.container}>
+            <SortEvents sortOrder={sortOrder} toggleSortOrder={toggleSortOrder} />
             <FlatList
                 data={data}
                 initialNumToRender={10}
@@ -79,7 +88,6 @@ const PastEventsScreen = ({ navigation }) => {
     )
 }
 
-
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
@@ -88,21 +96,21 @@ const styles = ScaledSheet.create({
         backgroundColor: 'transparent'
     },
     eventContainer: {
+        elevation: 23,
         height: '160@vs',
+        flexDirection: 'row',
         marginVertical: '10@ms',
         marginHorizontal: '20@ms',
-        flexDirection: 'row',
-        elevation: 23,
         shadowOffset: {
             width: 0,
             height: '11@vs',
         },
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
-        borderColor: 'transparent',
         backgroundColor: '#fff',
+        borderRadius: '10@ms',
+        borderColor: 'transparent',
         shadowColor: COLORS.BLACK,
-        borderRadius: '10@ms'
     },
     carousel: {
         width: '41%',
@@ -125,18 +133,18 @@ const styles = ScaledSheet.create({
 
     },
     date: {
+        textAlign: 'left',
         fontSize: '15@ms',
         marginTop: '8@ms',
         color: COLORS.WHITE,
-        textAlign: 'left',
         fontFamily: FONTS.BOLD
     },
     description: {
         fontSize: '13@ms',
         marginTop: '10@ms',
-        color: COLORS.WHITE,
         textAlign: 'left',
         lineHeight: '20@ms',
+        color: COLORS.WHITE,
         fontFamily: FONTS.MEDIUM
     },
     activityIndicator: {
