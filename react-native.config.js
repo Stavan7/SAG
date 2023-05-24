@@ -5,8 +5,6 @@ module.exports = {
   },
   assets: [
     './assets/fonts/',
-    './assets/fonts/Inter',
-    './assets/fonts/Serif',
     './assets/fonts/Raleway'
   ],
 };
