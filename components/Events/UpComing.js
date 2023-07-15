@@ -4,11 +4,11 @@ import {
     View,
     Image
 } from 'react-native';
-import FONTS from '../constants/fonts';
-import COLORS from '../constants/colors';
-import { moderateScale, ScaledSheet } from 'react-native-size-matters';
+import FONTS from '../../constants/fonts';
+import COLORS from '../../constants/colors';
+import { ScaledSheet } from 'react-native-size-matters';
 
-const UpComingEventsData = ({ data }) => {
+const UpComing = ({ data }) => {
     return (
         <View style={styles.container}>
             {
@@ -74,4 +74,4 @@ const styles = ScaledSheet.create({
     }
 })
 
-export default UpComingEventsData;
+export default UpComing

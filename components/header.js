@@ -26,7 +26,7 @@ const styles = ScaledSheet.create({
         height: 90,
       },
       android: {
-        height: '50@ms',
+        height: '44@ms',
       },
     }),
     margin: '10@ms',
@@ -36,9 +36,9 @@ const styles = ScaledSheet.create({
     backgroundColor: COLORS.BLACK,
   },
   headingText: {
-    fontSize: '20@ms',
+    fontSize: 20,
     color: COLORS.WHITE,
-    fontFamily: FONTS.BOLD
+    fontFamily: FONTS.SEMIBOLD
   },
 });
 

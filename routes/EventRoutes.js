@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import EventsScreen from '../screens/EventsScreen';
-import PastEvents from '../screens/PastEvents';
-import UpComingEvents from '../screens/UpComingEvents';
+import Events from '../screens/Events/Events';
+import PastEvents from '../screens/Events/PastEvents';
 import { createStackNavigator } from '@react-navigation/stack';
+import UpComingEvents from '../screens/Events//UpComingEvents';
 
 const Stack = createStackNavigator();
 
@@ -14,8 +14,8 @@ export class EventRoutes extends Component {
                 screenOptions={{ headerShown: false }}
             >
                 <Stack.Screen
-                    name="EventsScreen"
-                    component={EventsScreen}
+                    name="Events"
+                    component={Events}
                     options={{ headerShown: false }}
                 />
                 <Stack.Screen

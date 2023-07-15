@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import PastEvents from "./PastEvents";
-import FONTS from '../constants/fonts';
-import COLORS from '../constants/colors';
-import Header from "../components/header";
+import FONTS from '../../constants/fonts';
 import { SafeAreaView } from 'react-native';
+import COLORS from '../../constants/colors';
+import Header from "../../components/Header";
 import UpComingEvents from "./UpComingEvents";
 import SegmentedControlTab from 'react-native-segmented-control-tab';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 
-class EventsScreen extends Component {
+class Events extends Component {
     constructor() {
         super();
         this.state = {
@@ -93,4 +93,4 @@ const styles = ScaledSheet.create({
     },
 })
 
-export default EventsScreen;
+export default Events;

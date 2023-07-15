@@ -10,7 +10,8 @@ import {
 } from 'react-native';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
-import Header from "../components/header";
+import Loader from '../components/Loader';
+import Header from "../components/Header";
 import FastImage from 'react-native-fast-image';
 import { ScaledSheet } from 'react-native-size-matters';
 import firestore from '@react-native-firebase/firestore';
@@ -36,7 +37,10 @@ const GalleryList = () => {
 
     const getData = async () => {
         try {
-            const snapshot = await firestore().collection("PastEvents").orderBy("id", "asc").get();
+            const snapshot = await firestore().
+                collection("PastEvents")
+                .orderBy("id", "asc")
+                .get();
             const response = snapshot.docs.map(doc => doc.data());
             setData(response);
             setLoading(false)
@@ -51,29 +55,22 @@ const GalleryList = () => {
     }, [getData])
 
     if (loading) {
-        return <ActivityIndicator
-            size={35}
-            color={COLORS.BLACK}
-            shouldRasterizeIOS={true}
-            style={styles.activityIndicator}
-        />
+        return <Loader />
     }
 
     const renderItem = ({ item }) => {
         return (
             <TouchableOpacity
-                key={item.id}
                 activeOpacity={0.8}
                 onPress={() => showAlert()}>
                 <View style={styles.eventContainer}>
                     <FastImage
-                        style={styles.carousel}
-                        resizeMethod="scale"
+                        resizeMode='contain'
+                        style={styles.image}
                         source={{ uri: item.cardImage }}
-
                     />
                     <View style={styles.textContainer}>
-                        <Text style={styles.title}>{item.title}</Text>
+                        <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
                         <Text style={styles.date}>{item.date}</Text>
                     </View>
                 </View>
@@ -100,25 +97,27 @@ const styles = ScaledSheet.create({
         backgroundColor: 'transparent'
     },
     eventContainer: {
-        height: '120@vs',
+        height: '150@ms',
+        elevation: 23,
+        flexDirection: 'row',
         marginVertical: '10@ms',
         marginHorizontal: '20@ms',
-        flexDirection: 'row',
-        elevation: 23,
         shadowOffset: {
             width: 0,
             height: '11@vs',
         },
+        padding: '10@ms',
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
-        borderColor: 'transparent',
         backgroundColor: COLORS.BLACK,
+        borderRadius: '10@ms',
+        borderColor: 'transparent',
         shadowColor: COLORS.BLACK,
-        borderRadius: '10@ms'
     },
-    carousel: {
+    image: {
         width: '41%',
-        height: 'auto',
+        aspectRatio: 1,
+        alignSelf: 'center',
         borderTopLeftRadius: '10@ms',
         borderBottomLeftRadius: '10@ms'
     },
@@ -142,11 +141,6 @@ const styles = ScaledSheet.create({
         color: COLORS.WHITE,
         textAlign: 'center',
         fontFamily: FONTS.BOLD,
-    },
-    activityIndicator: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     }
 })
 

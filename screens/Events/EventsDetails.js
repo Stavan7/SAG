@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 import {
     Text,
     View,
     Image,
     ScrollView,
-    Dimensions,
     SafeAreaView,
     TouchableOpacity,
     useWindowDimensions,
@@ -13,15 +12,14 @@ import {
     ScaledSheet,
     moderateScale
 } from 'react-native-size-matters';
-import FONTS from '../constants/fonts';
-import COLORS from '../constants/colors';
+import FONTS from '../../constants/fonts';
+import COLORS from '../../constants/colors';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import RenderHtml, { defaultSystemFonts } from 'react-native-render-html';
 
-const HEIGHT = Dimensions.get('screen').height;
-const EventDetailsScreen = ({ route, navigation }) => {
+const EventsDetails = ({ route, navigation }) => {
+    const data = route.params;
 
-    const data = route.params
     const { width } = useWindowDimensions();
     const systemFonts = [...defaultSystemFonts, FONTS.BOLD, FONTS.MEDIUM];
 
@@ -40,11 +38,11 @@ const EventDetailsScreen = ({ route, navigation }) => {
                 <Text style={styles.header}>{data.title}</Text>
                 <Text style={styles.date}>{data.date}</Text>
             </View>
-            <Image
-                resizeMode="cover"
-                style={styles.image}
-                source={{ uri: data.image }}
-            />
+
+            <View style={styles.imageContainer}>
+                <Image style={styles.image} source={{ uri: data.image }} />
+            </View>
+
             <View style={styles.card}>
                 <ScrollView showsVerticalScrollIndicator={false}>
                     <RenderHtml
@@ -85,6 +83,17 @@ const styles = ScaledSheet.create({
         borderRadius: '50@ms',
         backgroundColor: COLORS.BLACK,
     },
+    imageContainer: {
+        height: '210@ms',
+        overflow: 'hidden',
+        marginHorizontal: "20@ms",
+    },
+    image: {
+        flex: 1,
+        width: '100%',
+        borderRadius: '10@ms',
+        resizeMode: 'contain'
+    },
     header: {
         marginTop: '10@ms',
         fontSize: '20@ms',
@@ -98,12 +107,6 @@ const styles = ScaledSheet.create({
         marginTop: '5@ms',
         color: COLORS.BLACK,
         fontFamily: FONTS.BOLD,
-    },
-    image: {
-        width: '90%',
-        alignSelf: 'center',
-        height: HEIGHT / 3.9,
-        borderRadius: '10@ms',
     },
     card: {
         flex: 1,
@@ -121,4 +124,4 @@ const styles = ScaledSheet.create({
     },
 })
 
-export default EventDetailsScreen
+export default EventsDetails

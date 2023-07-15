@@ -7,14 +7,15 @@ import {
     ActivityIndicator,
     TouchableOpacity,
 } from 'react-native';
-import FONTS from '../constants/fonts';
-import COLORS from '../constants/colors';
+import FONTS from '../../constants/fonts';
+import COLORS from '../../constants/colors';
+import Loader from '../../components/Loader';
 import FastImage from 'react-native-fast-image'
-import SortEvents from '../components/SortEvents';
+import SortEvents from '../../components/SortEvents';
 import { ScaledSheet } from 'react-native-size-matters';
 import firestore from '@react-native-firebase/firestore';
 
-const PastEventsScreen = ({ navigation }) => {
+const PastEvents = ({ navigation }) => {
 
     const [data, setData] = useState([])
     const [error, setError] = useState(null);
@@ -46,12 +47,7 @@ const PastEventsScreen = ({ navigation }) => {
     }
 
     if (loading) {
-        return <ActivityIndicator
-            size={35}
-            color={COLORS.BLACK}
-            shouldRasterizeIOS={true}
-            style={styles.activityIndicator}
-        />
+        return <Loader />
     }
 
     const renderItem = ({ item }) => {
@@ -62,7 +58,7 @@ const PastEventsScreen = ({ navigation }) => {
                 <View style={styles.eventContainer}>
                     <FastImage
                         resizeMode='contain'
-                        style={styles.carousel}
+                        style={styles.image}
                         source={{ uri: item.cardImage }}
                     />
                     <View style={styles.textContainer}>
@@ -97,7 +93,6 @@ const styles = ScaledSheet.create({
     },
     eventContainer: {
         elevation: 23,
-        height: '160@vs',
         flexDirection: 'row',
         marginVertical: '10@ms',
         marginHorizontal: '20@ms',
@@ -112,9 +107,10 @@ const styles = ScaledSheet.create({
         borderColor: 'transparent',
         shadowColor: COLORS.BLACK,
     },
-    carousel: {
+    image: {
         width: '41%',
-        height: 'auto',
+        aspectRatio: 1,
+        alignSelf: 'center',
         borderTopLeftRadius: '10@ms',
         borderBottomLeftRadius: '10@ms'
     },
@@ -146,12 +142,7 @@ const styles = ScaledSheet.create({
         lineHeight: '20@ms',
         color: COLORS.WHITE,
         fontFamily: FONTS.MEDIUM
-    },
-    activityIndicator: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
     }
 })
 
-export default PastEventsScreen
+export default PastEvents

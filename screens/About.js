@@ -10,13 +10,13 @@ import {
 import data from '../data/data';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
-import Header from "../components/header";
+import Header from "../components/Header";
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 
 const content = data.AboutUs;
 const HEIGHT = Dimensions.get('screen').height;
 
-class AboutUsScreen extends Component {
+class About extends Component {
     render() {
         return (
             <SafeAreaView style={styles.background}>
@@ -61,7 +61,6 @@ const styles = ScaledSheet.create({
         height: HEIGHT / 4.0,
         width: '90%',
         alignSelf: 'center',
-        resizeMode: 'cover',
         borderRadius: '10@ms',
         marginBottom: '20@ms',
     },
@@ -80,4 +79,4 @@ const styles = ScaledSheet.create({
     },
 })
 
-export default AboutUsScreen
+export default About

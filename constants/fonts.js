@@ -1,10 +1,10 @@
 const FONTS = {
-    BOLD: 'Raleway-Bold',
-    SEMIBOLD: 'Raleway-SemiBold',
-    REGULAR: 'Raleway-Regular',
-    LIGHT: 'Raleway-Light',
-    MEDIUM: 'Raleway-Medium',
     THIN: 'Raleway-Thin',
+    BOLD: 'Raleway-Bold',
+    LIGHT: 'Raleway-Light',
+    REGULAR: 'Raleway-Regular',
+    MEDIUM: 'Raleway-Medium',
+    SEMIBOLD: 'Raleway-SemiBold',
     EXTRABOLD: 'Raleway-ExtraBold',
 }
 

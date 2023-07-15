@@ -4,8 +4,8 @@ import {
     Text,
     SafeAreaView,
 } from 'react-native';
-import FONTS from '../constants/fonts';
-import COLORS from '../constants/colors';
+import FONTS from '../../constants/fonts';
+import COLORS from '../../constants/colors';
 import LottieView from 'lottie-react-native';
 import { ScaledSheet, verticalScale } from 'react-native-size-matters';
 
@@ -22,7 +22,7 @@ const NoUpComingEvents = () => {
                     resizeMode="contain"
                     loop
                     autoPlay
-                    source={require('../assets/waiting.json')}
+                    source={require('../../assets/waiting.json')}
                 />
             </View>
             <Text style={styles.footer}>Until Then, Check Out Past Events</Text>

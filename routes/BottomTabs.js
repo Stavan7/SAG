@@ -1,16 +1,13 @@
 import React from 'react';
-import { Text } from 'react-native';
+import TabIcon from './TabIcon';
+import About from '../screens/About';
+import Contact from '../screens/Contact';
 import EventRoutes from './EventRoutes';
 import COLORS from '../constants/colors';
 import GalleryList from '../screens/GalleryList';
-import CommunityScreen from '../screens/Community';
-import AboutUsScreen from '../screens/AboutUsScreen';
-import Feather from 'react-native-vector-icons/Feather';
-import ContactUsScreen from '../screens/ContactUsScreen';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Community from '../screens/Community';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-
 
 const Tab = createBottomTabNavigator();
 
@@ -28,24 +25,7 @@ const BottomTabs = () => {
                     component={EventRoutes}
                     options={{
                         tabBarLabel: 'Events',
-                        tabBarIcon: ({ focused }) => (
-                            focused ? (
-                                <>
-                                    <Ionicons
-                                        name="ios-calendar-outline"
-                                        color={COLORS.WHITE}
-                                        size={moderateScale(23)}
-                                    />
-                                    <Text style={styles.dot}>{'\u2B24'}</Text>
-                                </>
-                            ) : (
-                                <Ionicons
-                                    name="ios-calendar-outline"
-                                    color={COLORS.ICONS}
-                                    size={moderateScale(23)}
-                                />
-                            )
-                        ),
+                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="ios-calendar-outline" />
                     }}
                 />
                 <Tab.Screen
@@ -54,104 +34,34 @@ const BottomTabs = () => {
                     options={{
                         title: 'Gallery',
                         tabBarLabel: 'Gallery',
-                        tabBarIcon: ({ focused }) => (
-                            focused ? (
-                                <>
-                                    <Ionicons
-                                        name="md-image-outline"
-                                        color={COLORS.WHITE}
-                                        size={moderateScale(23)}
-                                    />
-                                    <Text style={styles.dot}>{'\u2B24'}</Text>
-                                </>
-                            ) : (
-                                <Ionicons
-                                    name="md-image-outline"
-                                    color={COLORS.ICONS}
-                                    size={moderateScale(23)}
-                                />
-                            )
-                        )
+                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="md-image-outline" />
                     }}
                 />
                 <Tab.Screen
                     name="Community"
-                    component={CommunityScreen}
+                    component={Community}
                     options={{
                         title: 'Community',
                         tabBarLabel: 'Community',
-                        tabBarIcon: ({ focused }) => (
-                            focused ? (
-                                <>
-                                    <Ionicons
-                                        name="md-people-outline"
-                                        color={COLORS.WHITE}
-                                        size={moderateScale(23)}
-                                    />
-                                    <Text style={styles.dot}>{'\u2B24'}</Text>
-                                </>
-                            ) : (
-                                <Ionicons
-                                    name="md-people-outline"
-                                    color={COLORS.ICONS}
-                                    size={moderateScale(23)}
-                                />
-                            )
-                        )
+                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="md-people-outline" />
                     }}
                 />
                 <Tab.Screen
-                    name="AboutUs"
-                    component={AboutUsScreen}
+                    name="About"
+                    component={About}
                     options={{
-                        title: 'AboutUs',
-                        tabBarLabel: 'AboutUs',
-                        tabBarIcon: ({ focused }) => (
-                            focused ? (
-                                <>
-                                    <Ionicons
-                                        name="ios-information-circle-outline"
-                                        color={COLORS.WHITE}
-                                        size={moderateScale(23)}
-                                    />
-                                    <Text style={styles.dot}>{'\u2B24'}</Text>
-
-                                </>
-                            ) : (
-                                <Ionicons
-                                    name="ios-information-circle-outline"
-                                    color={COLORS.ICONS}
-                                    size={moderateScale(23)}
-                                />
-                            )
-                        )
+                        title: 'About',
+                        tabBarLabel: 'About',
+                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="ios-information-circle-outline" />
                     }}
                 />
                 <Tab.Screen
-                    name="ContactUs"
-                    component={ContactUsScreen}
+                    name="Contact"
+                    component={Contact}
                     options={{
                         title: 'ContactUs',
                         tabBarLabel: 'ContactUs',
-                        tabBarIcon: ({ focused }) => (
-                            focused ? (
-                                <>
-                                    <Feather
-                                        name="phone-call"
-                                        color={COLORS.WHITE}
-                                        size={moderateScale(23)}
-                                    />
-                                    <Text style={styles.dot}>{'\u2B24'}</Text>
-
-                                </>
-                            ) : (
-                                <Feather
-                                    name="phone-call"
-                                    color={COLORS.ICONS}
-                                    size={moderateScale(23)}
-                                />
-                            )
-                        )
+                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="call-outline" />
                     }}
                 />
             </Tab.Navigator>

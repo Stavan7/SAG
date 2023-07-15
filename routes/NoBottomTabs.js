@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import EventDetailsScreen from '../screens/EventDetailsScreen';
+import EventsDetails from '../screens/Events/EventsDetails';
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Stack = createStackNavigator();
@@ -13,7 +13,7 @@ export class NoBottomTabs extends Component {
             >
                 <Stack.Screen
                     name="EventsDetail"
-                    component={EventDetailsScreen}
+                    component={EventsDetails}
                     options={{ headerShown: false }}
                 />
             </Stack.Navigator>
