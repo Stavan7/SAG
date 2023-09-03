@@ -5,8 +5,8 @@ import { SafeAreaView } from 'react-native';
 import COLORS from '../../constants/colors';
 import Header from "../../components/Header";
 import UpComingEvents from "./UpComingEvents";
+import { ScaledSheet } from 'react-native-size-matters';
 import SegmentedControlTab from 'react-native-segmented-control-tab';
-import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 
 class Events extends Component {
     constructor() {
@@ -23,20 +23,53 @@ class Events extends Component {
         });
     };
 
+
     render() {
+
+        const styles = ScaledSheet.create({
+            background: {
+                flex: 1,
+                backgroundColor: COLORS.WHITE,
+            },
+            tabStyle: {
+                borderColor: 'transparent',
+                backgroundColor: 'transparent',
+            },
+            tabsContainerStyle: {
+                height: 50,
+                width: '80%',
+                alignSelf: 'center',
+            },
+            activeTabTextStyle: {
+                fontSize: '15@ms',
+                color: COLORS.BLACK,
+                borderBottomWidth: 2,
+                borderBottomColor: '#000',
+                fontFamily: FONTS.BOLD
+            },
+            tabTextStyle: {
+                fontSize: '15@ms',
+                color: 'grey',
+                paddingBottom: 5,
+                borderBottomWidth: 2,
+                borderBottomColor: 'grey',
+                fontFamily: FONTS.BOLD
+            }
+        })
+
         return (
             <SafeAreaView style={styles.background}>
                 <Header heading="Events" />
                 <SegmentedControlTab
                     tabStyle={styles.tabStyle}
-                    borderRadius={moderateScale(10)}
                     values={["Upcoming Events", "Past Events"]}
                     onTabPress={this.handleIndexChange}
                     tabTextStyle={styles.tabTextStyle}
-                    activeTabStyle={styles.activeTabStyle}
+                    activeTabStyle={styles.tabStyle}
                     selectedIndex={this.state.selectedIndex}
                     activeTabTextStyle={styles.activeTabTextStyle}
                     tabsContainerStyle={styles.tabsContainerStyle}
+
                 />
                 {
                     this.state.selectedIndex === 0 ?
@@ -48,49 +81,5 @@ class Events extends Component {
     }
 }
 
-const styles = ScaledSheet.create({
-    background: {
-        flex: 1,
-        backgroundColor: COLORS.WHITE,
-    },
-    tabStyle: {
-        width: 'auto',
-        elevation: '23@vs',
-        shadowColor: COLORS.BLACK,
-        shadowOffset: {
-            width: 0,
-            height: '11@vs',
-        },
-        shadowOpacity: 0.57,
-        shadowRadius: 15.19,
-        borderColor: 'transparent',
-        backgroundColor: '#D9DDDB',
-    },
-    tabsContainerStyle: {
-        height: '40@ms',
-        width: '80%',
-        alignSelf: 'center',
-    },
-    activeTabStyle: {
-        elevation: '23@vs',
-        shadowColor: COLORS.BLACK,
-        shadowOffset: {
-            width: 0,
-            height: '11@ms',
-        },
-        shadowOpacity: 0.57,
-        shadowRadius: 15.19,
-        backgroundColor: COLORS.WHITE,
-    },
-    activeTabTextStyle: {
-        color: COLORS.BLACK,
-        fontFamily: FONTS.BOLD
-    },
-    tabTextStyle: {
-        color: COLORS.BLACK,
-        fontSize: '14@ms',
-        fontFamily: FONTS.BOLD
-    },
-})
 
 export default Events;
