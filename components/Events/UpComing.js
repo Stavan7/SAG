@@ -14,7 +14,7 @@ const UpComing = ({ data }) => {
             {
                 data.map(data => {
                     return (
-                        <View key={data.id} style={styles.textContainer}>
+                        <View key={data.Id} style={styles.textContainer}>
                             <Text style={styles.title}>{data.title}</Text>
                             <Text style={styles.date}>{data.date}</Text>
                             <Text style={styles.description}>{data.description}</Text>
