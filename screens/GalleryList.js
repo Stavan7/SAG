@@ -1,35 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import {
-    Text,
-    View,
-    Alert,
     FlatList,
     SafeAreaView,
-    ActivityIndicator,
-    TouchableOpacity,
+    ImageBackground
 } from 'react-native';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import Loader from '../components/Loader';
 import Header from "../components/Header";
-import FastImage from 'react-native-fast-image';
 import { ScaledSheet } from 'react-native-size-matters';
 import firestore from '@react-native-firebase/firestore';
+import EventsCard from '../components/Events/EventsCard';
 
-const showAlert = () =>
-    Alert.alert(
-        "Sorry !",
-        "Can't Access Images right now",
-        [
-            {
-                text: "Cancel",
-                style: "cancel",
-            },
-        ],
-        { cancelable: true }
-    );
-
-const GalleryList = () => {
+const GalleryList = ({ navigation }) => {
 
     const [data, setData] = useState([])
     const [error, setError] = useState(null);
@@ -39,7 +22,7 @@ const GalleryList = () => {
         try {
             const snapshot = await firestore().
                 collection("PastEvents")
-                .orderBy("id", "asc")
+                .orderBy("id", "desc")
                 .get();
             const response = snapshot.docs.map(doc => doc.data());
             setData(response);
@@ -57,35 +40,18 @@ const GalleryList = () => {
     if (loading) {
         return <Loader />
     }
-
-    const renderItem = ({ item }) => {
-        return (
-            <TouchableOpacity
-                activeOpacity={0.8}
-                onPress={() => showAlert()}>
-                <View style={styles.eventContainer}>
-                    <FastImage
-                        resizeMode='contain'
-                        style={styles.image}
-                        source={{ uri: item.cardImage }}
-                    />
-                    <View style={styles.textContainer}>
-                        <Text style={styles.title} numberOfLines={2}>{item.title}</Text>
-                        <Text style={styles.date}>{item.date}</Text>
-                    </View>
-                </View>
-            </TouchableOpacity>
-        )
-    }
+    const bgImage = require('../assets/backgrounds/bgBlob.jpeg')
 
     return (
         <SafeAreaView style={styles.container}>
             <Header heading="Gallery" />
-            <FlatList
-                data={data}
-                initialNumToRender={10}
-                renderItem={renderItem}
-            />
+            <ImageBackground style={{ flex: 1 }} source={bgImage} resizeMode='contain'>
+                <FlatList
+                    data={data}
+                    initialNumToRender={10}
+                    renderItem={({ item }) => <EventsCard item={item} navigation={navigation} />}
+                />
+            </ImageBackground>
         </SafeAreaView >
     )
 }
@@ -109,7 +75,7 @@ const styles = ScaledSheet.create({
         padding: '10@ms',
         shadowOpacity: 0.57,
         shadowRadius: 15.19,
-        backgroundColor: COLORS.BLACK,
+        backgroundColor: '#757575',
         borderRadius: '10@ms',
         borderColor: 'transparent',
         shadowColor: COLORS.BLACK,
@@ -124,21 +90,20 @@ const styles = ScaledSheet.create({
     textContainer: {
         flex: 1,
         padding: '10@s',
-        backgroundColor: COLORS.BLACK,
         justifyContent: 'center',
         borderTopRightRadius: '10@ms',
         borderBottomRightRadius: '10@ms',
     },
     title: {
         fontSize: '17@ms',
-        color: COLORS.WHITE,
+        color: '#000',
         textAlign: 'center',
         fontFamily: FONTS.BOLD,
     },
     date: {
         fontSize: '15@ms',
         marginTop: '10@ms',
-        color: COLORS.WHITE,
+        color: '#000',
         textAlign: 'center',
         fontFamily: FONTS.BOLD,
     }

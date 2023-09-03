@@ -1,22 +1,17 @@
 import React from 'react';
 import {
-    Text,
     View,
     TouchableOpacity
 } from 'react-native';
-import FONTS from '../constants/fonts';
-import COLORS from '../constants/colors';
 import { ScaledSheet } from 'react-native-size-matters';
-import Feather from 'react-native-vector-icons/Feather';
+import Octicons from 'react-native-vector-icons/Octicons';
 
 const SortEvents = ({ sortOrder, toggleSortOrder }) => {
-    const filterText = sortOrder === 'desc' ? 'Latest events' : 'Older events';
 
     return (
         <View style={styles.header}>
             <TouchableOpacity style={styles.filterIcon} onPress={toggleSortOrder}>
-                <Feather name={sortOrder === 'desc' ? 'arrow-up' : 'arrow-down'} size={20} color={COLORS.WHITE} />
-                <Text style={styles.filterText}>{filterText}</Text>
+                <Octicons name={sortOrder === 'desc' ? 'sort-asc' : 'sort-desc'} size={30} color={'black'} />
             </TouchableOpacity>
         </View>
     );
@@ -24,28 +19,18 @@ const SortEvents = ({ sortOrder, toggleSortOrder }) => {
 
 const styles = ScaledSheet.create({
     header: {
-        width: '40%',
-        alignItems: 'center',
-        padding: '10@ms',
-        flexDirection: 'row',
+        height: '50@ms',
+        width: '50@ms',
         alignSelf: 'flex-end',
-        marginRight: '20@ms',
-        borderRadius: '5@ms',
+        borderRadius: '40@ms',
         alignItems: 'center',
-        marginBottom: '5@ms',
-        justifyContent: 'space-between',
-        backgroundColor: COLORS.BLACK,
-    },
-    filterIcon: {
-        flexDirection: 'row',
-        alignItems: 'center',
-    },
-    filterText: {
-        fontSize: 16,
-        marginLeft: 8,
-        color: COLORS.WHITE,
-        fontFamily: FONTS.MEDIUM
-    },
+        backgroundColor: '#94CBA0',
+        justifyContent: 'center',
+        position: 'absolute',
+        zIndex: 1,
+        right: '20@ms',
+        bottom: '35@ms'
+    }
 });
 
 export default SortEvents;
