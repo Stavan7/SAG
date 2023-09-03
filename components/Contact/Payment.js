@@ -1,92 +1,56 @@
 import React from 'react'
 import {
     View,
-    Text,
-    Image,
-    Dimensions,
+    Text, 
+    SafeAreaView,
 } from 'react-native';
-import FONTS from '../../constants/fonts';
-import COLORS from '../../constants/colors';
-import { ScaledSheet } from 'react-native-size-matters';
-
-const HEIGHT = Dimensions.get('screen').height;
+import FONTS from '../../constants/fonts'; 
+import { ScaledSheet } from 'react-native-size-matters'; 
 
 const Payment = () => {
     return (
-        <>
-            <Text style={styles.linkHeader}>Payment Links</Text>
-            <View style={styles.paymentView}>
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <View>
-                        <Text style={styles.upi}>UPI</Text>
-                        <Text style={styles.upilinks} selectable>johndoe25@okaxis.com</Text>
-                        <Text style={styles.upilinks} selectable>johndoe25@okaxis.com</Text>
-                    </View>
-                    <Image source={require('../../assets/UPI.png')} style={styles.upiImage} />
-                </View>
-
-                <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                    <View>
-                        <Text style={styles.upi}>Gpay</Text>
-                        <Text style={styles.upilinks} selectable>9987654321</Text>
-                        <Text style={styles.upilinks} selectable>9987654321</Text>
-                    </View>
-                    <Image source={require('../../assets/Gpay.png')} style={styles.upiImage} />
-                </View>
+        <SafeAreaView >
+            <View style={styles.cardContainer}>
+                <Text style={[styles.cardText, { fontFamily: FONTS.BOLD, textDecorationLine: 'underline' }]}>UPI ID</Text>
+                <Text style={styles.cardText}>johndoe25@okaxis.com</Text>
+                <Text style={styles.cardText}>johndoe25@okaxis.com</Text>
             </View>
-        </>
+
+            <View style={styles.cardContainer}>
+                <Text style={[styles.cardText, { fontFamily: FONTS.BOLD, textDecorationLine: 'underline' }]}>UPI Phone Numbers</Text>
+                <Text style={styles.cardText}>johndoe25@okaxis.com</Text>
+                <Text style={styles.cardText}>johndoe25@okaxis.com</Text>
+            </View>
+        </SafeAreaView>
     )
 }
 
 export default Payment
 
 const styles = ScaledSheet.create({
-    linkHeader: {
-        fontSize: '18@ms',
-        marginLeft: '20@ms',
-        color: COLORS.BLACK,
-        marginBottom: '10@ms',
-        fontFamily: FONTS.BOLD
-    },
-    paymentView: {
-        flex: 1,
+    cardContainer: {
+        height: 120,
         width: '90%',
+        marginTop: 20,
         alignSelf: 'center',
+        borderRadius: 12,
+        alignItems: 'center',
         justifyContent: 'center',
-        height: HEIGHT / 4.4,
-        borderRadius: '10@ms',
-        marginBottom: '10@ms',
-        paddingHorizontal: '20@ms',
-        elevation: 14,
+        backgroundColor: '#94CBA0',
+        //shadow
+        shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: '11@vs',
+            height: 3,
         },
-        shadowOpacity: 0.57,
-        shadowRadius: 15.19,
-        borderRadius: '10@ms',
-        borderColor: 'transparent',
-        shadowColor: COLORS.GREEN,
-        backgroundColor: COLORS.BLACK,
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+        elevation: 7,
     },
-    upiImage: {
-        width: '90@s',
-        height: '45@vs',
-        alignSelf: 'center',
-        resizeMode: 'cover',
-        marginLeft: '20@ms',
-        borderRadius: '10@ms',
-    },
-    upi: {
-        fontSize: '17@ms',
-        color: COLORS.GREEN,
-        marginVertical: '3@ms',
-        fontFamily: 'PTSerif-Bold',
-    },
-    upilinks: {
-        fontSize: '14@ms',
-        color: COLORS.WHITE,
-        marginVertical: '5@ms',
-        fontFamily: FONTS.MEDIUM,
-    },
+    cardText: {
+        fontSize: 16,
+        color: '#000',
+        paddingVertical: 2,
+        fontFamily: FONTS.MEDIUM
+    }
 })

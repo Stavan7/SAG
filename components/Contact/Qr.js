@@ -2,61 +2,47 @@ import React from 'react'
 import {
     View,
     Text,
-    Image,
-    Dimensions,
+    Image, 
 } from 'react-native';
-import FONTS from '../../constants/fonts';
-import COLORS from '../../constants/colors';
-import { ScaledSheet } from 'react-native-size-matters';
-
-const HEIGHT = Dimensions.get('screen').height;
+import FONTS from '../../constants/fonts'; 
+import { ScaledSheet } from 'react-native-size-matters'; 
 
 const Qr = () => {
     return (
         <View style={styles.paymentView}>
-            <View style={{ flexDirection: 'row' }}>
-                <Image source={require('../../assets/qr-dummy.png')} style={styles.qrcode} />
-                <Text style={styles.qrcodeText}>Scan the QR code to continue with the payment </Text>
-            </View>
+            <Text style={styles.qrcodeText}>Scan the QR code</Text>
+            <Image source={require('../../assets/qr-dummy.png')} resizeMode='contain' />
         </View>
     )
 }
 
 const styles = ScaledSheet.create({
     paymentView: {
-        flex: 1,
-        width: '90%',
+        width: '62%',
+        marginTop: 30,
         alignSelf: 'center',
+        borderRadius: 12,
         alignItems: 'center',
         justifyContent: 'center',
-        height: HEIGHT / 4.4,
-        borderRadius: '10@ms',
-        marginBottom: '10@ms',
-        paddingHorizontal: '20@ms',
-        elevation: 14,
+        paddingVertical: 20,
+        backgroundColor: '#94CBA0',
+        //shadow
+        shadowColor: "#000",
         shadowOffset: {
             width: 0,
-            height: '11@vs',
+            height: 3,
         },
-        shadowOpacity: 0.57,
-        shadowRadius: 15.19,
-        borderRadius: '10@ms',
-        borderColor: 'transparent',
-        shadowColor: COLORS.GREEN,
-        backgroundColor: COLORS.BLACK,
-    },
-    qrcode: {
-        height: '130@vs',
-        width: '50%',
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+        elevation: 7,
     },
     qrcodeText: {
-        flex: 1,
-        padding: '10@ms',
-        fontSize: '15@ms',
-        color: COLORS.WHITE,
+        fontSize: '16@ms',
+        color: '#000',
         textAlign: 'center',
-        fontFamily: FONTS.MEDIUM,
-        textAlignVertical: 'center',
+        marginBottom: 10,
+        textDecorationLine: 'underline',
+        fontFamily: FONTS.BOLD,
     },
 })
 

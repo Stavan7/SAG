@@ -14,19 +14,19 @@ const emailUrl = 'mailto:kulkarnistavan25@gmail.com?subject=  Suggestions for SA
 const Email = () => {
     return (
         <>
-            <Text style={styles.linkHeader}>Write to us at</Text>
-            <View style={styles.emailView}>
+            <View style={styles.cardContainer}>
+                <Text style={[styles.cardText, { fontFamily: FONTS.BOLD, textDecorationLine: 'underline' }]}>Gmail ID</Text>
                 <TouchableOpacity
                     activeOpacity={0.7}
                     onPress={() => Linking.openURL(emailUrl)}
                 >
-                    <Text style={styles.mailid}>kulkarnistavan25@gmail.com</Text>
+                    <Text style={styles.cardText}>kulkarnistavan25@gmail.com</Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     activeOpacity={0.7}
                     onPress={() => Linking.openURL(emailUrl)}
                 >
-                    <Text style={styles.mailid} >kulkarnistavan25@gmail.com</Text>
+                    <Text style={styles.cardText} >kulkarnistavan25@gmail.com</Text>
                 </TouchableOpacity>
             </View>
         </>
@@ -36,22 +36,29 @@ const Email = () => {
 export default Email
 
 const styles = ScaledSheet.create({
-    linkHeader: {
-        fontSize: '18@ms',
-        marginLeft: '20@ms',
-        color: COLORS.BLACK,
-        marginBottom: '10@ms',
-        fontFamily: FONTS.BOLD
+    cardText: {
+        fontSize: 16,
+        color: '#000',
+        paddingVertical: 2,
+        fontFamily: FONTS.MEDIUM
     },
-    mailid: {
-        fontSize: '16@ms',
-        color: COLORS.BLACK,
-        marginBottom: '10@ms',
-        fontFamily: FONTS.MEDIUM,
-        textDecorationLine: 'underline',
-    },
-    emailView: {
-        marginBottom: '20@ms',
-        marginHorizontal: '20@ms',
+    cardContainer: {
+        height: 120,
+        width: '90%',
+        marginTop: 20,
+        alignSelf: 'center',
+        borderRadius: 12,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#94CBA0',
+        //shadow
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+        elevation: 7,
     }
 })
