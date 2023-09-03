@@ -9,6 +9,31 @@ import COLORS from '../constants/colors';
 import { ScaledSheet } from 'react-native-size-matters';
 
 const Header = ({ heading }) => {
+  const styles = ScaledSheet.create({
+    header: {
+      ...Platform.select({
+        ios: {
+          height: 90,
+        },
+        android: {
+          height: '50@ms',
+        },
+      }),
+      marginBottom: '20@ms',
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+      borderBottomLeftRadius: '13@ms',
+      borderBottomRightRadius: '13@ms',
+      backgroundColor: COLORS.GREEN,
+    },
+    headingText: {
+      fontSize: 20,
+      color: COLORS.BLACK,
+      fontFamily: FONTS.BOLD,
+      marginLeft: '20@ms'
+    },
+  });
+
   return (
     <SafeAreaView>
       <View style={styles.header} >
@@ -17,29 +42,5 @@ const Header = ({ heading }) => {
     </SafeAreaView>
   );
 };
-
-const styles = ScaledSheet.create({
-  header: {
-    borderRadius: '10@ms',
-    ...Platform.select({
-      ios: {
-        height: 90,
-      },
-      android: {
-        height: '44@ms',
-      },
-    }),
-    margin: '10@ms',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: '20@ms',
-    backgroundColor: COLORS.BLACK,
-  },
-  headingText: {
-    fontSize: 20,
-    color: COLORS.WHITE,
-    fontFamily: FONTS.SEMIBOLD
-  },
-});
 
 export default Header;
