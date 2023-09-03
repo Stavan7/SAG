@@ -2,75 +2,86 @@ import React from 'react'
 import {
     Text,
     View,
-    Image
+    Image,
+    ImageBackground
 } from 'react-native';
 import FONTS from '../../constants/fonts';
 import COLORS from '../../constants/colors';
 import { ScaledSheet } from 'react-native-size-matters';
 
 const UpComing = ({ data }) => {
+    const bgImage = require('../../assets/backgrounds/bgBlob.jpeg')
+    const cardBgImage = require('../../assets/backgrounds/cardImageBg.png')
     return (
-        <View style={styles.container}>
-            {
-                data.map(data => {
-                    return (
-                        <View key={data.Id} style={styles.textContainer}>
-                            <Text style={styles.title}>{data.title}</Text>
-                            <Text style={styles.date}>{data.date}</Text>
-                            <Text style={styles.description}>{data.description}</Text>
-                            <Image
-                                source={{ uri: data.image }}
-                                style={styles.image}
-                                resizeMode="cover"
-                                resizeMethod="scale"
-                            />
-                        </View>
-                    )
-                })
-            }
-        </View>
+        <ImageBackground source={bgImage} resizeMode='cover' style={{ flex: 1 }} >
+            <View style={styles.container}>
+                {
+                    data.map(data => {
+                        return (
+                            <View key={data.Id} style={styles.textContainer}>
+                                <View style={{
+                                    margin: 16,
+                                    borderRadius: 12,
+                                    backgroundColor: '#94CBA0'
+                                }}>
+                                    <ImageBackground source={cardBgImage} resizeMode='contain'>
+                                        <Image
+                                            style={styles.image}
+                                            source={{ uri: data.image }}
+                                        />
+                                    </ImageBackground>
+
+                                </View>
+                                <Text style={styles.title}>{data.title}</Text>
+                                <Text style={styles.date}>{data.date}</Text>
+                            </View>
+                        )
+                    })
+                }
+            </View>
+        </ImageBackground>
     )
 }
 
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
-        backgroundColor: 'transparent'
     },
     textContainer: {
-        borderTopLeftRadius: '100@ms',
-        marginHorizontal: '20@s',
-        backgroundColor: COLORS.BLACK,
-        padding: '20@ms',
-        borderBottomLeftRadius: 5
+        height: 300,
+        width: 320,
+        marginTop: 50,
+        alignSelf: 'center',
+        borderRadius: 12,
+        backgroundColor: '#fff',
+        //shadow
+        elevation: 3,
+        shadowOffset: {
+            width: 2,
+            height: 5,
+        },
+        shadowOpacity: 0.25,
+        shadowRadius: 12,
+        shadowColor: '#000'
     },
     title: {
-        fontSize: '18@ms',
-        marginTop: '10@ms',
+        fontSize: '15@ms',
         textAlign: 'center',
-        color: COLORS.WHITE,
+        color: COLORS.BLACK,
         fontFamily: FONTS.BOLD
     },
     date: {
-        fontSize: '16@ms',
-        marginTop: '10@ms',
-        color: COLORS.WHITE,
+        fontSize: '14@ms',
+        marginVertical: '10@ms',
+        color: COLORS.BLACK,
         textAlign: 'center',
         fontFamily: FONTS.BOLD
     },
-    description: {
-        fontSize: '16@ms',
-        marginVertical: '10@ms',
-        color: COLORS.WHITE,
-        textAlign: 'justify',
-        fontFamily: FONTS.MEDIUM
-    },
     image: {
-        height: '250@ms',
+        height: 200,
         width: '100%',
+        marginVertical: -8,
         resizeMode: 'contain',
-        borderRadius: '10@ms',
     }
 })
 

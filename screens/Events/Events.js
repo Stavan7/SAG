@@ -23,7 +23,6 @@ class Events extends Component {
         });
     };
 
-
     render() {
 
         const styles = ScaledSheet.create({
@@ -80,6 +79,5 @@ class Events extends Component {
         )
     }
 }
-
 
 export default Events;
