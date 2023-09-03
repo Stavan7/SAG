@@ -10,7 +10,7 @@ const TabIcon = ({ focused, name }) => {
             <>
                 <Ionicons
                     name={name}
-                    color={COLORS.WHITE}
+                    color={'#000'}
                     size={moderateScale(23)}
                 />
                 <Text style={styles.dot}>{'\u2B24'}</Text>
@@ -20,7 +20,7 @@ const TabIcon = ({ focused, name }) => {
         return (
             <Ionicons
                 name={name}
-                color={COLORS.ICONS}
+                color={'#757575'}
                 size={moderateScale(23)}
             />
         );
@@ -29,7 +29,7 @@ const TabIcon = ({ focused, name }) => {
 
 const styles = ScaledSheet.create({
     dot: {
-        color: COLORS.GREEN,
+        color: '#000',
         fontSize: '7@ms',
         marginTop: '3@ms',
     }

@@ -6,7 +6,7 @@ import EventRoutes from './EventRoutes';
 import COLORS from '../constants/colors';
 import GalleryList from '../screens/GalleryList';
 import Community from '../screens/Community';
-import { ScaledSheet, moderateScale } from 'react-native-size-matters';
+import { ScaledSheet } from 'react-native-size-matters';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
@@ -38,21 +38,21 @@ const BottomTabs = () => {
                     }}
                 />
                 <Tab.Screen
-                    name="Community"
-                    component={Community}
-                    options={{
-                        title: 'Community',
-                        tabBarLabel: 'Community',
-                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="md-people-outline" />
-                    }}
-                />
-                <Tab.Screen
                     name="About"
                     component={About}
                     options={{
                         title: 'About',
                         tabBarLabel: 'About',
                         tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="ios-information-circle-outline" />
+                    }}
+                />
+                <Tab.Screen
+                    name="Community"
+                    component={Community}
+                    options={{
+                        title: 'Community',
+                        tabBarLabel: 'Community',
+                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="md-people-outline" />
                     }}
                 />
                 <Tab.Screen
@@ -77,15 +77,10 @@ const styles = ScaledSheet.create({
                 height: 90,
             },
             android: {
-                height: '62@ms',
+                height: '61@ms',
             },
         }),
-        backgroundColor: COLORS.BLACK,
-    },
-    dot: {
-        color: COLORS.GREEN,
-        fontSize: '7@ms',
-        marginTop: '3@ms',
+        backgroundColor: COLORS.GREEN,
     }
 });
 
