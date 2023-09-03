@@ -4,42 +4,55 @@ import {
     View,
     Image,
     ScrollView,
-    Dimensions,
     SafeAreaView,
+    ImageBackground
 } from 'react-native';
 import data from '../data/data';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
-import Header from "../components/Header";
-import { ScaledSheet, moderateScale } from 'react-native-size-matters';
+import Swiper from 'react-native-swiper';
+import { ScaledSheet } from 'react-native-size-matters';
 
 const content = data.AboutUs;
-const HEIGHT = Dimensions.get('screen').height;
 
 class About extends Component {
     render() {
         return (
             <SafeAreaView style={styles.background}>
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    <Header heading="About Us" />
-                    <Image
-                        resizeMode="cover"
-                        style={styles.image}
-                        source={require('../assets/grpImage.jpeg')}
-                    />
-                    <View style={styles.container} >
-                        {
-                            content.map((data, index) => {
-                                return (
-                                    <View key={index}>
-                                        <Text style={styles.header}>{data.header} : </Text>
-                                        <Text style={styles.about}>{data.content}</Text>
-                                    </View>
-                                )
-                            })
-                        }
-                    </View>
-                </ScrollView>
+                <ImageBackground style={{ flex: 1, }} source={require('../assets/backgrounds/bgBlob.jpeg')}>
+                    <ScrollView showsVerticalScrollIndicator={false}>
+                        <Image source={require('../assets/backgrounds/aboutUs.png')} resizeMode='cover' style={{ width: '100%', height: 120, borderWidth: 1, borderColor: '#000' }} />
+                        <Text style={styles.title}>About Us</Text>
+
+                        <Swiper style={{ height: 250, marginTop: 25, overflow: 'visible' }} dotColor='#757575' activeDotColor='#111'>
+                            <Image source={require('../assets/grpImage.jpeg')} style={{ height: 190, width: '90%', alignSelf: 'center', borderRadius: 20, resizeMode: 'cover' }} />
+                            <Image source={require('../assets/grpImage.jpeg')} style={{ height: 190, width: '90%', alignSelf: 'center', borderRadius: 20, resizeMode: 'cover' }} />
+                            <Image source={require('../assets/grpImage.jpeg')} style={{ height: 190, width: '90%', alignSelf: 'center', borderRadius: 20, resizeMode: 'cover' }} />
+                        </Swiper>
+                        <View style={styles.container} >
+                            {
+                                content.map((data, index) => {
+                                    const lastItem = data.id === 4
+                                    return (
+                                        <View key={index}>
+                                            <Text style={[styles.header, { textAlign: index % 2 === 0 ? 'left' : 'right' }]}>{data.header}</Text>
+                                            <Text style={[styles.about, {
+                                                textAlign: index % 2 === 0 || lastItem ? 'left' : 'right',
+                                                marginLeft: lastItem ? 40 : 0
+                                            }]}>{data.content}</Text>
+                                            {
+                                                !lastItem ?
+                                                    <Image style={{ marginVertical: 10, alignSelf: 'center' }} source={require('../assets/aboutUsBg.png')} />
+                                                    : null
+                                            }
+                                        </View>
+                                    )
+                                })
+                            }
+                        </View>
+
+                    </ScrollView>
+                </ImageBackground>
             </SafeAreaView >
         )
     }
@@ -49,31 +62,29 @@ const styles = ScaledSheet.create({
     background: {
         flex: 1,
         marginBottom: '59@ms',
-        backgroundColor: COLORS.WHITE
+    },
+    title: {
+        fontSize: 30,
+        textAlign: 'center',
+        color: '#000',
+        marginTop: -50,
+        fontFamily: FONTS.BOLD
     },
     container: {
         padding: '20@ms',
-        backgroundColor: COLORS.BLACK,
-        borderTopLeftRadius: moderateScale(20),
-        borderTopRightRadius: moderateScale(20)
-    },
-    image: {
-        height: HEIGHT / 4.0,
-        width: '90%',
-        alignSelf: 'center',
-        borderRadius: '10@ms',
-        marginBottom: '20@ms',
     },
     header: {
-        fontSize: '17@ms',
+        fontSize: '25@ms',
         textAlign: "justify",
-        color: COLORS.GREEN,
+        marginVertical: 10,
+        color: COLORS.BLACK,
         fontFamily: FONTS.SEMIBOLD
     },
     about: {
+        lineHeight: 35,
         fontSize: '16@ms',
         marginTop: '5@ms',
-        color: COLORS.WHITE,
+        color: COLORS.BLACK,
         marginBottom: '10@ms',
         fontFamily: FONTS.MEDIUM
     },
