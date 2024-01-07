@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import {
     Text,
     View,
-    TouchableOpacity,
     Alert,
+    TouchableOpacity,
 } from 'react-native';
 import FONTS from '../../constants/fonts';
-import COLORS from '../../constants/colors';
 import FastImage from 'react-native-fast-image'
 import { ScaledSheet } from 'react-native-size-matters';
 

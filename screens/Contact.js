@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import FONTS from '../constants/fonts';
-import { SafeAreaView } from 'react-native';
-import Header from "../components/Header"; 
-import SegmentedControlTab from 'react-native-segmented-control-tab';
-import { ScaledSheet, moderateScale } from 'react-native-size-matters'; 
-import Email from '../components/Contact/Email'
-import Payment from '../components/Contact/Payment'
-import Qr from "../components/Contact/Qr";
-import Socials from '../components/Contact/Socials'
 import COLORS from "../constants/colors";
+import { SafeAreaView } from 'react-native';
+import Qr from "../components/Contact/Qr";
+import Header from "../components/Header";
+import Email from '../components/Contact/Email'
+import Socials from '../components/Contact/Socials'
+import { ScaledSheet } from 'react-native-size-matters';
+import Payment from '../components/Contact/Payment'
+import SegmentedControlTab from 'react-native-segmented-control-tab';
 
 class Contact extends Component {
     constructor() {
@@ -23,9 +23,9 @@ class Contact extends Component {
             ...this.state,
             selectedIndex: index
         });
-    }; 
+    };
 
-    render() { 
+    render() {
 
         const styles = ScaledSheet.create({
             background: {
@@ -88,6 +88,5 @@ class Contact extends Component {
         )
     }
 }
-
 
 export default Contact;

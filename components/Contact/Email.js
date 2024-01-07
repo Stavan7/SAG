@@ -6,7 +6,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 import FONTS from '../../constants/fonts';
-import COLORS from '../../constants/colors';
 import { ScaledSheet } from 'react-native-size-matters';
 
 const emailUrl = 'mailto:kulkarnistavan25@gmail.com?subject=  Suggestions for SAG=body'
@@ -32,8 +31,6 @@ const Email = () => {
         </>
     )
 }
-
-export default Email
 
 const styles = ScaledSheet.create({
     cardText: {
@@ -62,3 +59,5 @@ const styles = ScaledSheet.create({
         elevation: 7,
     }
 })
+
+export default Email

@@ -2,16 +2,20 @@ import React from 'react'
 import {
     View,
     Text,
-    Image, 
+    Image,
 } from 'react-native';
-import FONTS from '../../constants/fonts'; 
-import { ScaledSheet } from 'react-native-size-matters'; 
+import FONTS from '../../constants/fonts';
+import { ScaledSheet } from 'react-native-size-matters';
 
 const Qr = () => {
     return (
         <View style={styles.paymentView}>
             <Text style={styles.qrcodeText}>Scan the QR code</Text>
-            <Image source={require('../../assets/qr-dummy.png')} resizeMode='contain' />
+            <Image
+                resizeMode='contain'
+                style={{ height: 230 }}
+                source={require('../../assets/qr-dummy.png')}
+            />
         </View>
     )
 }
@@ -43,7 +47,7 @@ const styles = ScaledSheet.create({
         marginBottom: 10,
         textDecorationLine: 'underline',
         fontFamily: FONTS.BOLD,
-    },
+    }
 })
 
 export default Qr

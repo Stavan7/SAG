@@ -1,6 +1,5 @@
 import React from "react";
 import { Text } from 'react-native';
-import COLORS from "../constants/colors";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters'
 

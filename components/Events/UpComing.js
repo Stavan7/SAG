@@ -19,11 +19,7 @@ const UpComing = ({ data }) => {
                     data.map(data => {
                         return (
                             <View key={data.Id} style={styles.textContainer}>
-                                <View style={{
-                                    margin: 16,
-                                    borderRadius: 12,
-                                    backgroundColor: '#94CBA0'
-                                }}>
+                                <View style={styles.textView}>
                                     <ImageBackground source={cardBgImage} resizeMode='contain'>
                                         <Image
                                             style={styles.image}
@@ -63,6 +59,11 @@ const styles = ScaledSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 12,
         shadowColor: '#000'
+    },
+    textView: {
+        margin: 16,
+        borderRadius: 12,
+        backgroundColor: '#94CBA0'
     },
     title: {
         fontSize: '15@ms',

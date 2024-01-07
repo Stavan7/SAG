@@ -2,7 +2,6 @@ import React from 'react'
 import {
     View,
     Text,
-    SafeAreaView,
 } from 'react-native';
 import FONTS from '../../constants/fonts';
 import COLORS from '../../constants/colors';

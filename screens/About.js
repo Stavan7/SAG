@@ -21,13 +21,17 @@ class About extends Component {
             <SafeAreaView style={styles.background}>
                 <ImageBackground style={{ flex: 1, }} source={require('../assets/backgrounds/bgBlob.jpeg')}>
                     <ScrollView showsVerticalScrollIndicator={false}>
-                        <Image source={require('../assets/backgrounds/aboutUs.png')} resizeMode='cover' style={{ width: '100%', height: 120, borderWidth: 1, borderColor: '#000' }} />
+                        <Image
+                            resizeMode='cover'
+                            style={{ width: '100%', height: 120 }}
+                            source={require('../assets/backgrounds/aboutUs.png')}
+                        />
                         <Text style={styles.title}>About Us</Text>
 
                         <Swiper style={{ height: 250, marginTop: 25, overflow: 'visible' }} dotColor='#757575' activeDotColor='#111'>
-                            <Image source={require('../assets/grpImage.jpeg')} style={{ height: 190, width: '90%', alignSelf: 'center', borderRadius: 20, resizeMode: 'cover' }} />
-                            <Image source={require('../assets/grpImage.jpeg')} style={{ height: 190, width: '90%', alignSelf: 'center', borderRadius: 20, resizeMode: 'cover' }} />
-                            <Image source={require('../assets/grpImage.jpeg')} style={{ height: 190, width: '90%', alignSelf: 'center', borderRadius: 20, resizeMode: 'cover' }} />
+                            <Image source={require('../assets/grpImage.jpeg')} style={styles.swiperImage} />
+                            <Image source={require('../assets/grpImage.jpeg')} style={styles.swiperImage} />
+                            <Image source={require('../assets/grpImage.jpeg')} style={styles.swiperImage} />
                         </Swiper>
                         <View style={styles.container} >
                             {
@@ -88,6 +92,13 @@ const styles = ScaledSheet.create({
         marginBottom: '10@ms',
         fontFamily: FONTS.MEDIUM
     },
+    swiperImage: {
+        height: 190,
+        width: '90%',
+        alignSelf: 'center',
+        borderRadius: 20,
+        resizeMode: 'cover'
+    }
 })
 
 export default About
