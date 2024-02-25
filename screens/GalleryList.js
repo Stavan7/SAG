@@ -40,12 +40,12 @@ const GalleryList = ({ navigation }) => {
     if (loading) {
         return <Loader />
     }
-    const bgImage = require('../assets/backgrounds/bgBlob.jpeg')
+    const bgImage = require('../assets/backgrounds/bg-blob.png')
 
     return (
         <SafeAreaView style={styles.container}>
             <Header heading="Gallery" />
-            <ImageBackground style={{ flex: 1 }} source={bgImage} resizeMode='contain'>
+            <ImageBackground style={{ flex: 1 }} source={bgImage} resizeMode='cover'>
                 <FlatList
                     data={data}
                     initialNumToRender={10}

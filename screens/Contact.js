@@ -26,7 +26,6 @@ class Contact extends Component {
     };
 
     render() {
-
         const styles = ScaledSheet.create({
             background: {
                 flex: 1,
@@ -70,7 +69,6 @@ class Contact extends Component {
                     selectedIndex={this.state.selectedIndex}
                     activeTabTextStyle={styles.activeTabTextStyle}
                     tabsContainerStyle={styles.tabsContainerStyle}
-
                 />
                 {
                     this.state.selectedIndex === 0 ?

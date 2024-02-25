@@ -19,7 +19,7 @@ class About extends Component {
     render() {
         return (
             <SafeAreaView style={styles.background}>
-                <ImageBackground style={{ flex: 1, }} source={require('../assets/backgrounds/bgBlob.jpeg')}>
+                <ImageBackground style={{ flex: 1 }} source={require('../assets/backgrounds/bgBlob.jpeg')}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                         <Image
                             resizeMode='cover'
@@ -27,8 +27,7 @@ class About extends Component {
                             source={require('../assets/backgrounds/aboutUs.png')}
                         />
                         <Text style={styles.title}>About Us</Text>
-
-                        <Swiper style={{ height: 250, marginTop: 25, overflow: 'visible' }} dotColor='#757575' activeDotColor='#111'>
+                        <Swiper style={styles.swiperContainer} dotColor='#757575' activeDotColor='#111'>
                             <Image source={require('../assets/grpImage.jpeg')} style={styles.swiperImage} />
                             <Image source={require('../assets/grpImage.jpeg')} style={styles.swiperImage} />
                             <Image source={require('../assets/grpImage.jpeg')} style={styles.swiperImage} />
@@ -54,7 +53,6 @@ class About extends Component {
                                 })
                             }
                         </View>
-
                     </ScrollView>
                 </ImageBackground>
             </SafeAreaView >
@@ -91,6 +89,11 @@ const styles = ScaledSheet.create({
         color: COLORS.BLACK,
         marginBottom: '10@ms',
         fontFamily: FONTS.MEDIUM
+    },
+    swiperContainer: {
+        height: 250,
+        marginTop: 25,
+        overflow: 'visible'
     },
     swiperImage: {
         height: 190,

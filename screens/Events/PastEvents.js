@@ -45,7 +45,7 @@ const PastEvents = ({ navigation }) => {
         return <Loader />
     }
 
-    const bgImage = require('../../assets/backgrounds/bgBlob.jpeg')
+    const bgImage = require('../../assets/backgrounds/bg-blob.png')
 
     return (
         <SafeAreaView style={styles.container}>
