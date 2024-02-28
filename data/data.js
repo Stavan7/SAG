@@ -56,22 +56,16 @@ const data = {
         },
         {
             id: 4,
-            name: 'Nirai Rajan',
+            name: 'Stavan Kulkarni',
             position: 'Treasurer',
-            avatarUrl: require('../assets/founders/Nirai.jpg'),
+            avatarUrl: require('../assets/founders/Stavan.jpg'),
         },
         {
             id: 5,
             name: 'Nishant Charan',
             position: 'President',
             avatarUrl: require('../assets/founders/Charan.jpg'),
-        },
-        {
-            id: 6,
-            name: 'Nikhil Arvind',
-            position: 'Vice-President',
-            avatarUrl: require('../assets/founders/Nikhil.jpg'),
-        },
+        }
     ],
 }
 

@@ -2,93 +2,60 @@ import React from 'react'
 import {
     Text,
     View,
-    ScrollView,
-    SafeAreaView,
 } from 'react-native';
-import data from '../data/data';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';
 import { ScaledSheet, moderateScale } from 'react-native-size-matters';
 
-const events = data.Founders;
-
-const Founders = () => {
-
+const Founders = ({ item, index }) => {
+    let oddIndex = index % 2 === 0
     return (
-        <SafeAreaView style={styles.container}>
-            <Text style={styles.headerText}>Meet Our Founders</Text>
-            <ScrollView
-                style={{ marginHorizontal: moderateScale(5) }}
-                horizontal
-                showsHorizontalScrollIndicator={false}>
-                {
-                    events.map((item, index) => {
-                        return (
-                            <View style={styles.eventContainer} key={index}>
-                                <FastImage
-                                    source={item.avatarUrl}
-                                    style={styles.carousel}
-                                />
-                                <View style={styles.textContainer}>
-                                    <Text style={styles.title}>{item.name}</Text>
-                                    <Text style={styles.date}>{item.position}</Text>
-                                </View>
-                            </View>
-                        )
-                    })
-                }
-            </ScrollView>
-        </SafeAreaView >
+        <View key={index} style={[styles.container, { flexDirection: oddIndex ? 'row' : 'row-reverse' }]}>
+            <FastImage
+                source={item.avatarUrl}
+                style={styles.image}
+                resizeMode='cover'
+            />
+            <View style={[styles.nameContainer, {
+                borderBottomRightRadius: oddIndex ? 10 : 0,
+                borderTopRightRadius: oddIndex ? 10 : 0,
+                borderTopLeftRadius: !oddIndex ? 10 : 0,
+                borderBottomLeftRadius: !oddIndex ? 10 : 0,
+            }]}>
+                <Text style={styles.name}>{item.position}</Text>
+                <Text style={[styles.name, { fontFamily: FONTS.MEDIUM, fontSize: moderateScale(14), marginTop: 3 }]}>{item.name}</Text>
+            </View>
+        </View>
     )
 }
 
 
 const styles = ScaledSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: COLORS.WHITE,
+        marginVertical: '10@ms',
+        justifyContent: 'flex-start',
+        marginHorizontal: '20@ms',
+        backgroundColor: COLORS.WHITE
     },
-    eventContainer: {
-        flex: 1,
-        height: '91%',
-        width: '155@s',
-        marginLeft: '7@s',
+    image: {
+        width: 140,
+        height: 160,
+        borderRadius: '10@ms',
     },
-    carousel: {
-        width: 'auto',
-        height: '68%',
-        borderTopLeftRadius: '10@ms',
-        borderTopRightRadius: '10@ms'
+    nameContainer: {
+        height: 70,
+        elevation: 5,
+        padding: 8,
+        marginTop: 10,
+        shadowColor: COLORS.BLACK,
+        backgroundColor: COLORS.WHITE
     },
-    textContainer: {
-        flex: 1,
-        padding: '10@s',
-        justifyContent: 'center',
-        backgroundColor: COLORS.BLACK,
-        borderBottomLeftRadius: '10@ms',
-        borderBottomRightRadius: '10@ms',
-    },
-    title: {
+    name: {
         fontSize: '16@ms',
-        textAlign: 'center',
-        color: COLORS.WHITE,
-        fontFamily: FONTS.SEMIBOLD,
-    },
-    date: {
-        fontSize: '14@ms',
-        marginTop: '3@ms',
-        textAlign: 'center',
-        color: COLORS.WHITE,
-        fontFamily: FONTS.SEMIBOLD,
-    },
-    headerText: {
-        fontSize: '20@ms',
-        marginLeft: '20@ms',
-        color: COLORS.GREEN,
-        marginBottom: '10@ms',
-        fontFamily: FONTS.BOLD,
-    },
+        color: COLORS.BLACK,
+        fontFamily: FONTS.SEMIBOLD
+    }
 })
 
 export default Founders
