@@ -48,7 +48,6 @@ const UpComingEvents = () => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        marginBottom: '65@ms',
         backgroundColor: 'transparent'
     }
 })

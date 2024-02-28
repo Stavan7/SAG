@@ -59,7 +59,6 @@ const GalleryList = ({ navigation }) => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
-        marginBottom: '59@ms',
         backgroundColor: 'transparent'
     },
     eventContainer: {

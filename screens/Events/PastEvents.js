@@ -71,7 +71,6 @@ const styles = ScaledSheet.create({
     container: {
         flex: 1,
         marginTop: '10@ms',
-        marginBottom: '59@ms',
     },
     eventContainer: {
         height: '95@s',

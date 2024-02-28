@@ -63,7 +63,7 @@ class About extends Component {
 const styles = ScaledSheet.create({
     background: {
         flex: 1,
-        marginBottom: '59@ms',
+        backgroundColor: COLORS.WHITE
     },
     title: {
         fontSize: 30,

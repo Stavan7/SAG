@@ -42,6 +42,7 @@ const UpComing = ({ data }) => {
 const styles = ScaledSheet.create({
     container: {
         flex: 1,
+        backgroundColor: COLORS.WHITE
     },
     textContainer: {
         height: 300,

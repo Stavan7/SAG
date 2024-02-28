@@ -71,15 +71,9 @@ const BottomTabs = () => {
 
 const styles = ScaledSheet.create({
     shadow: {
-        position: 'absolute',
-        ...Platform.select({
-            ios: {
-                height: 90,
-            },
-            android: {
-                height: '61@ms',
-            },
-        }),
+        elevation: 5,
+        height: '61@ms',
+        shadowColor: COLORS.BLACK,
         backgroundColor: COLORS.GREEN,
     }
 });
