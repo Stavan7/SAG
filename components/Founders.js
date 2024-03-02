@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-    Text,
-    View,
-} from 'react-native';
+import { View, Text, } from 'react-native';
 import FONTS from '../constants/fonts';
 import COLORS from '../constants/colors';
 import FastImage from 'react-native-fast-image';

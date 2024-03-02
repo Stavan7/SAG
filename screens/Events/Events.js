@@ -68,7 +68,6 @@ class Events extends Component {
                     selectedIndex={this.state.selectedIndex}
                     activeTabTextStyle={styles.activeTabTextStyle}
                     tabsContainerStyle={styles.tabsContainerStyle}
-
                 />
                 {
                     this.state.selectedIndex === 0 ?

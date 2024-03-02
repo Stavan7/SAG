@@ -2,7 +2,8 @@ import React from 'react';
 import {
     View,
     TouchableOpacity
-} from 'react-native';
+} from 'react-native'
+import COLORS from '../constants/colors';
 import { ScaledSheet } from 'react-native-size-matters';
 import Octicons from 'react-native-vector-icons/Octicons';
 
@@ -19,17 +20,17 @@ const SortEvents = ({ sortOrder, toggleSortOrder }) => {
 
 const styles = ScaledSheet.create({
     header: {
+        zIndex: 1,
         height: '50@ms',
         width: '50@ms',
-        alignSelf: 'flex-end',
-        borderRadius: '40@ms',
-        alignItems: 'center',
-        backgroundColor: '#94CBA0',
-        justifyContent: 'center',
-        position: 'absolute',
-        zIndex: 1,
         right: '20@ms',
-        bottom: '35@ms'
+        bottom: '35@ms',
+        alignSelf: 'flex-end',
+        alignItems: 'center',
+        position: 'absolute',
+        justifyContent: 'center',
+        borderRadius: '40@ms',
+        backgroundColor: COLORS.GREEN,
     }
 });
 

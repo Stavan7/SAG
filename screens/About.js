@@ -19,7 +19,7 @@ class About extends Component {
     render() {
         return (
             <SafeAreaView style={styles.background}>
-                <ImageBackground style={{ flex: 1 }} source={require('../assets/backgrounds/bgBlob.jpeg')}>
+                <ImageBackground style={{ flex: 1 }} source={require('../assets/backgrounds/bg-blob.png')}>
                     <ScrollView showsVerticalScrollIndicator={false}>
                         <Image
                             resizeMode='cover'

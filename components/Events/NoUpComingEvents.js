@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-    View,
-    Text,
-} from 'react-native';
+import { View, Text, } from 'react-native';
 import FONTS from '../../constants/fonts';
 import COLORS from '../../constants/colors';
 import LottieView from 'lottie-react-native';
@@ -16,12 +13,12 @@ const NoUpComingEvents = () => {
                 <Text style={styles.title}>No Upcoming Events</Text>
                 <Text style={styles.subtitle}>Stay Tuned !!</Text>
             </View>
-            <View style={{ height: '70%', marginTop: verticalScale(10), }}>
+            <View style={{ height: '70%', marginTop: verticalScale(10) }}>
                 <LottieView
                     resizeMode="contain"
                     loop
                     autoPlay
-                    source={require('../../assets/waiting.json')}
+                    source={require('../../assets/animation/waiting.json')}
                 />
             </View>
             <Text style={styles.footer}>Until Then, Check Out Past Events</Text>

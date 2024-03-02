@@ -1,12 +1,13 @@
 import React from 'react';
-import TabIcon from './TabIcon';
+import { Text } from 'react-native';
 import About from '../screens/About';
 import Contact from '../screens/Contact';
 import EventRoutes from './EventRoutes';
 import COLORS from '../constants/colors';
 import GalleryList from '../screens/GalleryList';
 import Community from '../screens/Community';
-import { ScaledSheet } from 'react-native-size-matters';
+import Ionicons from 'react-native-vector-icons/Ionicons'
+import { ScaledSheet, moderateScale } from 'react-native-size-matters'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 const Tab = createBottomTabNavigator();
@@ -15,55 +16,35 @@ const BottomTabs = () => {
     return (
         <>
             <Tab.Navigator
-                screenOptions={{
+                screenOptions={({ route }) => ({
                     tabBarShowLabel: false,
                     headerShown: false,
                     tabBarStyle: { ...styles.shadow },
-                }}>
-                <Tab.Screen
-                    name="EventRoutes"
-                    component={EventRoutes}
-                    options={{
-                        tabBarLabel: 'Events',
-                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="ios-calendar-outline" />
-                    }}
-                />
-                <Tab.Screen
-                    name="Gallery"
-                    component={GalleryList}
-                    options={{
-                        title: 'Gallery',
-                        tabBarLabel: 'Gallery',
-                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="md-image-outline" />
-                    }}
-                />
-                <Tab.Screen
-                    name="About"
-                    component={About}
-                    options={{
-                        title: 'About',
-                        tabBarLabel: 'About',
-                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="ios-information-circle-outline" />
-                    }}
-                />
-                <Tab.Screen
-                    name="Community"
-                    component={Community}
-                    options={{
-                        title: 'Community',
-                        tabBarLabel: 'Community',
-                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="md-people-outline" />
-                    }}
-                />
-                <Tab.Screen
-                    name="Contact"
-                    component={Contact}
-                    options={{
-                        title: 'ContactUs',
-                        tabBarLabel: 'ContactUs',
-                        tabBarIcon: ({ focused }) => <TabIcon focused={focused} name="call-outline" />
-                    }}
-                />
+                    tabBarIcon: ({ focused }) => {
+                        const iconName = {
+                            EventRoutes: 'ios-calendar-outline',
+                            Gallery: 'md-image-outline',
+                            About: 'ios-information-circle-outline',
+                            Community: 'md-people-outline',
+                            Contact: 'call-outline',
+                        }[route.name]
+                        return (
+                            <>
+                                <Ionicons
+                                    name={iconName}
+                                    size={moderateScale(23)}
+                                    color={focused ? COLORS.BLACK : COLORS.ICONS}
+                                />
+                                {focused && <Text style={styles.dot}>{'\u2B24'}</Text>}
+                            </>
+                        )
+                    }
+                })}>
+                <Tab.Screen name="EventRoutes" component={EventRoutes} />
+                <Tab.Screen name="Gallery" component={GalleryList} />
+                <Tab.Screen name="About" component={About} />
+                <Tab.Screen name="Community" component={Community} />
+                <Tab.Screen name="Contact" component={Contact} />
             </Tab.Navigator>
         </>
     )
@@ -75,6 +56,11 @@ const styles = ScaledSheet.create({
         height: '61@ms',
         shadowColor: COLORS.BLACK,
         backgroundColor: COLORS.GREEN,
+    },
+    dot: {
+        color: '#000',
+        fontSize: '7@ms',
+        marginTop: '3@ms',
     }
 });
 

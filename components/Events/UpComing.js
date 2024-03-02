@@ -10,7 +10,7 @@ import COLORS from '../../constants/colors';
 import { ScaledSheet } from 'react-native-size-matters';
 
 const UpComing = ({ data }) => {
-    const bgImage = require('../../assets/backgrounds/bgBlob.jpeg')
+    const bgImage = require('../../assets/backgrounds/bg-blob.png')
     const cardBgImage = require('../../assets/backgrounds/cardImageBg.png')
     return (
         <ImageBackground source={bgImage} resizeMode='cover' style={{ flex: 1 }} >
