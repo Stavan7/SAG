@@ -8,7 +8,7 @@ import FONTS from '../../constants/fonts';
 import Loader from '../../components/Loader';
 import SortEvents from '../../components/SortEvents';
 import { ScaledSheet } from 'react-native-size-matters';
-import firestore from '@react-native-firebase/firestore';
+import { BASE_URL, api_routes } from '../../config/api';
 import EventsCard from '../../components/Events/EventsCard';
 
 const PastEvents = ({ navigation }) => {
@@ -19,15 +19,15 @@ const PastEvents = ({ navigation }) => {
 
     const getData = async () => {
         try {
-            const snapshot = await firestore()
-                .collection("PastEvents")
-                .orderBy("id", sortOrder)
-                .get();
-            const response = snapshot.docs.map(doc => doc.data());
-            setData(response);
+            const response = await fetch(`${BASE_URL}${api_routes.pastEvents}`, {
+                method: "GET"
+            })
+            const result = await response.json()
+            setData(result.data)
             setLoading(false)
         } catch (error) {
             setLoading(false);
+            console.log(error)
             setError(error.message);
         }
     }

@@ -3,9 +3,9 @@ import {
     Text,
     View,
     Image,
+    Pressable,
     ScrollView,
     SafeAreaView,
-    TouchableOpacity,
     useWindowDimensions,
 } from 'react-native';
 import {
@@ -14,10 +14,13 @@ import {
 } from 'react-native-size-matters';
 import FONTS from '../../constants/fonts';
 import COLORS from '../../constants/colors';
+import { useNavigation } from '@react-navigation/native';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import RenderHtml, { defaultSystemFonts } from 'react-native-render-html';
 
-const EventsDetails = ({ route, navigation }) => {
+const EventsDetails = ({ route }) => {
+
+    const nav = useNavigation()
     const data = route.params;
 
     const { width } = useWindowDimensions();
@@ -26,17 +29,16 @@ const EventsDetails = ({ route, navigation }) => {
     return (
         <SafeAreaView style={styles.view}>
             <View style={styles.container} >
-                <TouchableOpacity
-                    hitSlop={20}
+                <Pressable
                     activeOpacity={0.5}
                     style={styles.iconsContainer}
-                    onPress={() => navigation.goBack()} >
+                    onPress={() => nav.goBack()} >
                     <FontAwesome
                         name="close"
                         color='black'
                         size={moderateScale(25)}
                     />
-                </TouchableOpacity>
+                </Pressable>
 
                 <Text style={styles.header}>{data.title}</Text>
                 <Text style={styles.date}>{data.date}</Text>
@@ -94,7 +96,7 @@ const styles = ScaledSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: '50@ms',
-        backgroundColor: COLORS.GREEN,
+        backgroundColor: COLORS.GREEN
     },
     imageContainer: {
         height: '210@ms',

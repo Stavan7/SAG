@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { SafeAreaView } from 'react-native';
 import Loader from '../../components/Loader';
 import { ScaledSheet } from 'react-native-size-matters';
-import firestore from '@react-native-firebase/firestore';
 import UpComing from '../../components/Events/UpComing';
+import { BASE_URL, api_routes } from '../../config/api';
 import NoUpComingEvents from '../../components/Events/NoUpComingEvents';
 
 const UpComingEvents = () => {
@@ -14,11 +14,11 @@ const UpComingEvents = () => {
 
     const getData = async () => {
         try {
-            const snapshot = await firestore()
-                .collection("UpcomingEvents")
-                .get();
-            const response = snapshot.docs.map(doc => doc.data());
-            setData(response)
+            const response = await fetch(`${BASE_URL}${api_routes.upcomingEvents}`, {
+                method: "GET"
+            })
+            const result = await response.json()
+            setData(result.data)
             setLoading(false)
         }
         catch (error) {
@@ -29,7 +29,7 @@ const UpComingEvents = () => {
 
     useEffect(() => {
         getData();
-    }, [getData])
+    }, [data])
 
     if (loading) {
         return <Loader />

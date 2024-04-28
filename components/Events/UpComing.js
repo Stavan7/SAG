@@ -18,12 +18,12 @@ const UpComing = ({ data }) => {
                 {
                     data.map(data => {
                         return (
-                            <View key={data.Id} style={styles.textContainer}>
+                            <View key={data._id} style={styles.textContainer}>
                                 <View style={styles.textView}>
                                     <ImageBackground source={cardBgImage} resizeMode='contain'>
                                         <Image
                                             style={styles.image}
-                                            source={{ uri: data.image }}
+                                            source={{ uri: data.cardImage }}
                                         />
                                     </ImageBackground>
 

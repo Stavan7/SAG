@@ -47,7 +47,7 @@ const EventsCard = ({ navigation, item, description }) => {
                     <Text style={styles.date}>{item.date}</Text>
                     {
                         description &&
-                        <Text style={styles.description} numberOfLines={1} >{item.shortDescription}</Text>
+                        <Text style={styles.description} numberOfLines={1} >{item.short_description}</Text>
                     }
                 </View>
             </View>
