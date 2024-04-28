@@ -15,9 +15,10 @@ const NoUpComingEvents = () => {
             </View>
             <View style={{ height: '70%', marginTop: verticalScale(10) }}>
                 <LottieView
-                    resizeMode="contain"
                     loop
                     autoPlay
+                    resizeMode="contain"
+                    style={{ flex: 1 }}
                     source={require('../../assets/animation/waiting.json')}
                 />
             </View>
