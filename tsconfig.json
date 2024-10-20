@@ -1,0 +1,36 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"jsx": "react-native",
+		"esModuleInterop": true,
+		"paths": {
+			"": [
+				"src/"
+			],
+			"@data/*": [
+				"src/data/*"
+			],
+			"@utils/*": [
+				"src/utils/*"
+			],
+			"@screens/*": [
+				"src/screens/*"
+			],
+			"@assets/*": [
+				"src/assets/*"
+			],
+			"@config/*": [
+				"src/config/*"
+			],
+			"@routes/*": [
+				"src/routes/*"
+			],
+			"@constants/*": [
+				"src/constants/*"
+			],
+			"@components/*": [
+				"src/components/*"
+			]
+		}
+	}
+}
