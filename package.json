@@ -18,6 +18,7 @@
     "lottie-react-native": "^6.7.2",
     "react": "18.2.0",
     "react-native": "0.74.0",
+    "react-native-bootsplash": "^6.2.2",
     "react-native-cli": "^2.0.1",
     "react-native-fast-image": "^8.5.11",
     "react-native-gesture-handler": "^2.5.0",
@@ -25,7 +26,6 @@
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.20.0",
     "react-native-segmented-control-tab": "^4.0.0",
-    "react-native-splash-screen": "^3.3.0",
     "react-native-swiper": "^1.6.0",
     "react-native-vector-icons": "^10.1.0"
   },
